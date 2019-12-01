@@ -1,0 +1,96 @@
+body {
+    font-family: 'Bebas Neue';
+    letter-spacing: 2px;
+}
+
+aside {
+    float: left;
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-right: 3px solid black;
+    background: gainsboro;
+}
+
+.convo_name, .convo_type, .possible_answers, .response_delay, .save_button {
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 10%;
+    padding: 10% 0;
+    font-size: 149%;
+    background: white;
+    box-shadow: 0px 0px 5px 2px #a0a0a0;
+}
+
+.save_button {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    color: white;
+    background: #00bd00;
+    border-bottom: none;
+    cursor: pointer;
+    margin-bottom: 0;
+    box-shadow: none;
+}
+
+.save_button:hover {
+    background: #168316;
+}
+
+.possible_answers ul {
+    margin: 0;
+    padding: 0;
+}
+
+.possible_answers li {
+    list-style: none;
+    margin-bottom: 7%;
+    padding-bottom: 1px;
+    border-bottom: 1px solid black;
+    width: 90%;
+    margin: auto;
+    text-align: left;
+    text-indent: 7%;
+    font-size: medium;
+}
+
+main {
+    float: right;
+    width: 79%;
+}
+
+.convo_block {
+    margin: auto;
+    width: 30%;
+    text-align: center;
+    background: white;
+    margin-bottom: 6vh;
+    padding: 1vh;
+    box-shadow: 0px 0px 5px 2px #a0a0a0;
+    cursor: pointer;
+}
+
+.convo_block:hover {
+    background: #e6e6e6;
+}
+
+.text-wrapper {
+    margin: auto;
+}
+
+.convo_block p {
+    font-size: x-large;
+    font-weight: bold;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+}
+
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+}

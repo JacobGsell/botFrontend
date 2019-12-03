@@ -1,8 +1,75 @@
+body {
+    font-family: 'Bebas Neue';
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+nav {
+    background: #d4d4d4;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid black;
+    padding: 1%;
+}
+
+nav h2 {
+    text-align: left;
+    margin: 1% 0 0.5% 6%;
+    display: inline;;
+}
+
+nav h4 {
+    display: inline-block;
+    text-align: center;
+    margin: 0 0 0 5%;
+}
+
+main {
+    margin-top: 6%;
+}
+
+.content {
+    margin: 1%;
+}
+
+.card-wrapper {
+    width: 20%;
+    display: inline-block;
+    margin: 1%;
+}
+
 .card {
-    width: 30%;
     box-shadow: 0px 0px 2px 2px #b4b4b4;
+}
+
+.card:hover {
+    box-shadow: inset 0px 0px 2px 2px #b4b4b4;
+}
+
+.card:hover {
+    background: #ddd;
 }
 
 .card-icon {
     text-align: center;
+    padding: 30%;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+.icon-new {
+    color: #aaa;
+}
+
+.card-title {
+    border-top: 2px solid black;
+    text-align: center;
+    padding: 1%;
+    background-color: #4DD0E1;
+}
+
+.new-title {
+    background-color: #FF9800!important;
 }

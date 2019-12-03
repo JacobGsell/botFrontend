@@ -36,6 +36,7 @@ main {
 
 .card-wrapper {
     width: 20%;
+    max-width: 250px;
     display: inline-block;
     margin: 1%;
 }

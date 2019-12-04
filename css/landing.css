@@ -40,6 +40,7 @@ main {
     min-width: 195px;
     display: inline-block;
     margin: 1%;
+    margin-left: 4%;
 }
 
 .card {

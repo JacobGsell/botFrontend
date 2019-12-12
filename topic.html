@@ -35,7 +35,7 @@
             <div class="text-wrapper">
                 <label>Vorgänger:</label>
                 <select>
-                    <option value="answer">Tabesablauf</option>
+                    <option value="answer">---</option>
                     <option value="question">Generelle Zufriedenheit</option>
                     <option value="buttons">Kundenzufriedenheit</option>
                 </select>
@@ -45,7 +45,7 @@
             <div class="text-wrapper">
                 <label>Nachfolger:</label>
                 <select>
-                    <option value="answer">Tabesablauf</option>
+                    <option value="answer">---</option>
                     <option value="question">Generelle Zufriedenheit</option>
                     <option value="buttons">Kundenzufriedenheit</option>
                 </select>
@@ -56,6 +56,13 @@
                 <p>Speichern</p>
             </div>
         </div>
+        <a href="../Frontend/dialog.html">
+            <div class="button edit_button">
+                <div class="text-wrapper">
+                    <p>Zum Dialog</p>
+                </div>
+            </div>
+        </a>
         <div class="button delete_button">
             <div class="text-wrapper">
                 <p>Entfernen</p>
@@ -63,37 +70,29 @@
         </div>
     </aside>
     <main>
-        <a href="../Frontend/dialog.html">
-            <div class="convo_block">
-                <div class="text-wrapper">
-                    <p>Tagesablauf</p>
-                </div>
+        <div class="convo_block" onclick="printTopic('Tagesablauf')">
+            <div class="text-wrapper">
+                <p>Tagesablauf</p>
             </div>
-        </a>
+        </div>
 
-        <a href="../Frontend/dialog.html">
-            <div class="convo_block">
-                <div class="text-wrapper">
-                    <p>Essverhalten</p>
-                </div>
+        <div class="convo_block" onclick="printTopic('Essverhalten')">
+            <div class="text-wrapper">
+                <p>Essverhalten</p>
             </div>
-        </a>
+        </div>
 
-        <a href="../Frontend/dialog.html">
-            <div class="convo_block">
-                <div class="text-wrapper">
-                    <p>Generelle Zufriedenheit</p>
-                </div>
+        <div class="convo_block" onclick="printTopic('GenZuf')">
+            <div class="text-wrapper">
+                <p>Generelle Zufriedenheit</p>
             </div>
-        </a>
+        </div>
 
-        <a href="../Frontend/dialog.html">
-            <div class="convo_block">
-                <div class="text-wrapper">
-                    <p>Kundenzufriedenheit</p>
-                </div>
+        <div class="convo_block" onclick="printTopic('KunZuf')">
+            <div class="text-wrapper">
+                <p>Kundenzufriedenheit</p>
             </div>
-        </a>
+        </div>
         <div class="add_block">
             <div class="text-wrapper">
                 <i class="fas fa-plus-circle" onclick="addConvoBlock()"></i>

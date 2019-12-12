@@ -1,9 +1,13 @@
 class topic {
-    constructor(prev, next) {
+    constructor(name, prev, next) {
+        this.name = name
         this.prev = prev;
         this.next = next;
     }
     show() {
+        let name = document.querySelector('.convo_name');
+        name.innerHTML = this.name;
+
         let selects = document.querySelectorAll('select');
         let prev = selects[0].querySelector('option');
         let next = selects[1].querySelector('option');
@@ -13,7 +17,24 @@ class topic {
     }
 }
 
+// Test-Objects
+const Tagesablauf = new topic("Tagesablauf", "---", "Essverhalten");
+const Essverhalten = new topic("Essverhalten", "Tagesablauf", "Generelle Zufriedenheit");
+const GenZuf = new topic("Generelle Zufriedenheit", "Essverhalten", "Kundenzufriedenheit");
+const KunZuf = new topic("Kundenzufriedenheit", "Generelle Zufriedenheit", "---");
+
+let testies = [];
+testies["Tagesablauf"] = Tagesablauf;
+testies["Essverhalten"] = Essverhalten;
+testies["GenZuf"] = GenZuf;
+testies["KunZuf"] = KunZuf;
+
 const NewBlock = makeAddBlock();
+
+// Prints Topics
+function printTopic(name) {
+    testies[name].show();
+}
 
 // Add conversation block
 function addConvoBlock() {

@@ -1,6 +1,16 @@
-body {
-    font-family: 'Bebas Neue';
-    letter-spacing: 2px;
+header {
+    margin-bottom: 17vh;
+}
+
+nav {
+    text-align: center;
+    padding: 1%;
+    border-bottom: 1px solid black;
+    background: #cecece;
+    width: 80%;
+    top: 0;
+    right: 0;
+    position: fixed;
 }
 
 aside {
@@ -14,20 +24,32 @@ aside {
     background: gainsboro;
 }
 
-.convo_name, .convo_type, .possible_answers, .response_delay, .save_button {
+body {
+    font-family: 'Bebas Neue';
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+.convo_name, .convo_type, .possible_answers, .response_delay {
     width: 100%;
     text-align: center;
     margin: auto;
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     padding: 10% 0;
     font-size: 149%;
     background: white;
     box-shadow: 0px 0px 5px 2px #a0a0a0;
 }
 
-.save_button {
+.convo_name {
+    background: white;
+    color: black;
+}
+
+.button {
+    width: 100%;
+    text-align: center;
     position: absolute;
-    bottom: 0;
     left: 0;
     color: white;
     background: #00bd00;
@@ -35,10 +57,29 @@ aside {
     cursor: pointer;
     margin-bottom: 0;
     box-shadow: none;
+    padding: 3% 0;
+}
+
+.save_button {
+    bottom: 10%;
+    background: #00bd00;
+}
+
+.delete_button {
+    bottom: 0%;
+    background: #bd0000;
 }
 
 .save_button:hover {
     background: #168316;
+}
+
+.edit_button:hover {
+    background: #838316;
+}
+
+.delete_button:hover {
+    background: #831616;
 }
 
 .possible_answers ul {
@@ -65,7 +106,7 @@ main {
 
 .convo_block {
     margin: auto;
-    width: 30%;
+    width: 55%;
     text-align: center;
     background: white;
     margin-bottom: 6vh;

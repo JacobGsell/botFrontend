@@ -18,9 +18,11 @@
 
 <body>
     <header>
-        <nav>
-            <h1>Themenbereiche des Chatbots "TestBot"</h1>
-        </nav>
+        <a href="../Frontend/landing.html">
+            <nav>
+                <h1>Themenbereiche des Chatbots "TestBot"</h1>
+            </nav>
+        </a>
     </header>
     <aside>
         <div class="convo_name">
@@ -28,16 +30,31 @@
                 <p>Essverhalten</p>
             </div>
         </div>
+        <div class="convo_type">
+            <div class="text-wrapper">
+                <label>Vorgänger:</label>
+                <select>
+                    <option value="answer">Tabesablauf</option>
+                    <option value="question">Generelle Zufriedenheit</option>
+                    <option value="buttons">Kundenzufriedenheit</option>
+                </select>
+            </div>
+        </div>
+        <div class="convo_type">
+            <div class="text-wrapper">
+                <label>Nachfolger:</label>
+                <select>
+                    <option value="answer">Tabesablauf</option>
+                    <option value="question">Generelle Zufriedenheit</option>
+                    <option value="buttons">Kundenzufriedenheit</option>
+                </select>
+            </div>
+        </div>
         <div class="button save_button">
             <div class="text-wrapper">
                 <p>Speichern</p>
             </div>
         </div>
-        <div class="button edit_button">
-                <div class="text-wrapper">
-                    <p>Bearbeiten</p>
-                </div>
-            </div>
         <div class="button delete_button">
             <div class="text-wrapper">
                 <p>Entfernen</p>
@@ -45,28 +62,36 @@
         </div>
     </aside>
     <main>
-        <div class="convo_block">
-            <div class="text-wrapper">
-                <p>Tagesablauf</p>
+        <a href="../Frontend/dialog.html">
+            <div class="convo_block">
+                <div class="text-wrapper">
+                    <p>Tagesablauf</p>
+                </div>
             </div>
-        </div>
+        </a>
 
-        <div class="convo_block">
-            <div class="text-wrapper">
-                <p>Essverhalten</p>
+        <a href="../Frontend/dialog.html">
+            <div class="convo_block">
+                <div class="text-wrapper">
+                    <p>Essverhalten</p>
+                </div>
             </div>
-        </div>
+        </a>
 
-        <div class="convo_block">
-            <div class="text-wrapper">
-                <p>Generelle Zufriedenheit</p>
+        <a href="../Frontend/dialog.html">
+            <div class="convo_block">
+                <div class="text-wrapper">
+                    <p>Generelle Zufriedenheit</p>
+                </div>
             </div>
-        </div>
+        </a>
 
-        <div class="convo_block">
-            <div class="text-wrapper">
-                <p>Kundenzufriedenheit</p>
+        <a href="../Frontend/dialog.html">
+            <div class="convo_block">
+                <div class="text-wrapper">
+                    <p>Kundenzufriedenheit</p>
+                </div>
             </div>
-        </div>
+        </a>
     </main>
 </body>

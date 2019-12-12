@@ -19,7 +19,7 @@
 
 <body>
     <header>
-        <a href="../topic.html">
+        <a href="topic.html">
             <nav>
                 <h1>Dialog "Tagesablauf"</h1>
             </nav>
@@ -28,14 +28,14 @@
     <aside>
         <div class="convo_name">
             <div class="text-wrapper">
-                <p>Frage_Gutgeschlafen?</p>
+                <p>---</p>
             </div>
         </div>
         <div class="convo_type">
             <div class="text-wrapper">
                 <label>Typ:</label>
                 <select>
-                    <option value="answer">Antwort</option>
+                    <option value="answer">---</option>
                     <option value="question">Frage</option>
                     <option value="buttons">Buttons</option>
                 </select>
@@ -46,8 +46,6 @@
                 <p>Mögliche Antworten</p>
             </div>
             <ul>
-                <li>Ja</li>
-                <li>Nein</li>
             </ul>
         </div>
         <div class="response_delay">
@@ -70,64 +68,28 @@
         </div>
     </aside>
     <main>
-        <div class="convo_block">
-            <div class="text-wrapper">
-                <p>Willkommen</p>
-            </div>
-        </div>
-
-        <div class="convo_block">
-            <div class="text-wrapper">
-                <p>Frage_Gutgeschlafen?</p>
-            </div>
-        </div>
-
-        <div class="convo_block">
+        <div class="convo_block" onclick="printDialog('Fruehstueck')">
             <div class="text-wrapper">
                 <p>Frühstück?</p>
             </div>
         </div>
 
-        <div class="convo_block">
+        <div class="convo_block" onclick="printDialog('Duschen')">
             <div class="text-wrapper">
                 <p>Duschen?</p>
             </div>
         </div>
 
-        <div class="convo_block">
-            <div class="text-wrapper">
-                <p>Arbeit?</p>
-            </div>
-        </div>
-
-        <div class="convo_block">
-            <div class="text-wrapper">
-                <p>Mittagessen?</p>
-            </div>
-        </div>
-
-        <div class="convo_block">
-            <div class="text-wrapper">
-                <p>Abendessen?</p>
-            </div>
-        </div>
-
-        <div class="convo_block">
+        <div class="convo_block" onclick="printDialog('GuteNacht')">
             <div class="text-wrapper">
                 <p>Gute Nacht!</p>
             </div>
         </div>
 
-        <div class="convo_block">
-            <div class="text-wrapper">
-                <p>Gute Nacht!</p>
+        <div class="add_block">
+                <div class="text-wrapper">
+                    <i class="fas fa-plus-circle" onclick="addConvoBlock()"></i>
+                </div>
             </div>
-        </div>
-
-        <div class="convo_block">
-            <div class="text-wrapper">
-                <p>Mögl. Antworten</p>
-            </div>
-        </div>
     </main>
 </body>

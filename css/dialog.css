@@ -115,6 +115,19 @@ main {
     cursor: pointer;
 }
 
+.add_block {
+    margin: auto;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 6vh;;
+    padding: 1vh;
+}
+
+.add_block i {
+    font-size: 130%;
+    cursor: pointer;
+}
+
 .convo_block:hover {
     background: #e6e6e6;
 }

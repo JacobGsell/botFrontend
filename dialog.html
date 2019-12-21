@@ -26,70 +26,101 @@
         </a>
     </header>
     <aside>
-        <div class="convo_name">
-            <div class="text-wrapper">
-                <p>---</p>
+        <div class="aside_wrapper">
+            <div class="convo_name">
+                <div class="text-wrapper">
+                    <p>---</p>
+                </div>
             </div>
-        </div>
-        <div class="convo_type">
-            <div class="text-wrapper">
-                <label>Typ:</label>
-                <select>
-                    <option value="answer">---</option>
-                    <option value="question">Frage</option>
-                    <option value="buttons">Buttons</option>
-                </select>
+            <div class="convo_type">
+                <div class="text-wrapper">
+                    <label>Typ:</label>
+                    <select>
+                        <option value="answer">---</option>
+                        <option value="question">Frage</option>
+                        <option value="buttons">Buttons</option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <div class="possible_answers">
-            <div class="text-wrapper">
-                <p>Mögliche Antworten</p>
+            <div class="possible_answers">
+                <div class="text-wrapper">
+                    <p>Mögliche Antworten</p>
+                </div>
+                <div class="text_option">
+                    <h6>Option 1</h6>
+                    <div class="lastText">
+                        <p>Ja</p>
+                    </div>
+                </div>
+                <div class="add_text">
+                    <div class="text-wrapper">
+                        <i class="fas fa-plus-circle" onclick="addTextBlock('answers')"></i>
+                    </div>
+                </div>
             </div>
             <ul>
             </ul>
+            <div class="response_delay">
+                <div class="text-wrapper">
+                    <p>Wartezeiten</p>
+                </div>
+                <div>
+                    <input type="number">
+                </div>
+            </div>
+            <div class="possible_texts">
+                <div class="text_option">
+                    <h6>Option 1</h6>
+                    <div class="lastText">
+                        <p>Ja</p>
+                    </div>
+                </div>
+                <div class="add_text">
+                    <div class="text-wrapper">
+                        <i class="fas fa-plus-circle" onclick="addTextBlock('texts')"></i>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="response_delay">
-            <div class="text-wrapper">
-                <p>Wartezeiten</p>
-            </div>
-            <div>
-                <input type="number">
-            </div>
         </div>
-        <div class="button save_button">
-            <div class="text-wrapper">
-                <p>Speichern</p>
+
+        <!-- <div class="button save_button">
+                <div class="text-wrapper">
+                    <p>Speichern</p>
+                </div>
             </div>
-        </div>
-        <div class="button delete_button">
-            <div class="text-wrapper">
-                <p>Entfernen</p>
-            </div>
+            <div class="button delete_button">
+                <div class="text-wrapper">
+                    <p>Entfernen</p>
+                </div>
+            </div> -->
         </div>
     </aside>
     <main>
-        <div class="convo_block" onclick="printDialog('Fruehstueck')">
-            <div class="text-wrapper">
-                <p>Frühstück?</p>
+        <div class="main_wrapper">
+            <div class="convo_block" onclick="printDialog('Fruehstueck')">
+                <div class="text-wrapper">
+                    <p>Frühstück?</p>
+                </div>
             </div>
-        </div>
 
-        <div class="convo_block" onclick="printDialog('Duschen')">
-            <div class="text-wrapper">
-                <p>Duschen?</p>
+            <div class="convo_block" onclick="printDialog('Duschen')">
+                <div class="text-wrapper">
+                    <p>Duschen?</p>
+                </div>
             </div>
-        </div>
 
-        <div class="convo_block" onclick="printDialog('GuteNacht')">
-            <div class="text-wrapper">
-                <p>Gute Nacht!</p>
+            <div class="convo_block" onclick="printDialog('GuteNacht')">
+                <div class="text-wrapper">
+                    <p>Gute Nacht!</p>
+                </div>
             </div>
-        </div>
 
-        <div class="add_block">
+            <div class="add_block">
                 <div class="text-wrapper">
                     <i class="fas fa-plus-circle" onclick="addConvoBlock()"></i>
                 </div>
             </div>
+        </div>
     </main>
 </body>

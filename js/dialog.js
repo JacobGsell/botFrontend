@@ -1,3 +1,6 @@
+// Dialog or Topic page
+const isDialog = (window.location.href.indexOf('dialog.html') > -1) ? true : false;
+
 class topic {
     constructor(name, prev, next) {
         this.name = name;
@@ -36,7 +39,7 @@ class dialog {
         let input = document.querySelector('input[type=number]');
         input.value = this.timeout;
 
-        let ul = document.querySelector(".possible_answers ul");
+        let ul = document.querySelector('.possible_answers');
 
         // First remove all entries for Answers
         let child = ul.lastElementChild;
@@ -44,16 +47,31 @@ class dialog {
             ul.removeChild(child);
             child = ul.lastElementChild;
         }
+        // Add title again:
+        let text_wrapper = makeClassedElem('div', 'text-wrapper');
+        let p = document.createElement('p');
+        p.innerHTML = 'Mögliche Antworten';
+        ul.appendChild(text_wrapper.appendChild(p));
 
         // Then Append the new ones
 
         for (let index = 0; index < this.possibleAnswers.length; index++) {
-            let li = document.createElement('li');
-            li.innerHTML = this.possibleAnswers[index];
-            ul.appendChild(li);
+            let text_option = makeClassedElem('div', 'text_option');
+            let h6 = document.createElement('h6');
+            let lastText = makeClassedElem('div', 'lastText');
+            let p = document.createElement('p');
+
+            h6.innerHTML = 'Option';
+            p.innerHTML = this.possibleAnswers[index];
+
+            text_option.appendChild(h6);
+            lastText.appendChild(p);
+            text_option.appendChild(lastText);
+            ul.appendChild(text_option);
         }
     }
 }
+
 
 // Test-Topics
 const Tagesablauf = new topic("Tagesablauf", "---", "Essverhalten");
@@ -78,7 +96,13 @@ testDialogs['Duschen'] = Duschen;
 testDialogs['GuteNacht'] = GuteNacht;
 
 
-let NewBlock = makeAddBlock();
+let NewConvoBlock = makeAddConvoBlock();
+
+let TextBlocks = [];
+TextBlocks['answers'] = makeAddTextBlock('answers');
+TextBlocks['texts'] = makeAddTextBlock('texts');
+
+
 
 // Prints Topics
 function printTopic(name) {
@@ -91,9 +115,14 @@ function printDialog(name) {
 }
 
 function printBlank() {
-    new dialog("---", "---", [], 0).show();
-    new topic("---", "---", "---").show();
+    if (isDialog) {
+        new dialog("---", "---", [], 0).show();
+    }
+    else {
+        new topic("---", "---", "---").show();
+    }
 }
+
 
 // Add conversation block
 function addConvoBlock() {
@@ -108,20 +137,52 @@ function addConvoBlock() {
     tmp.onclick = function () {
         printBlank();
     }
-    
+
     main.appendChild(tmp);
 
     document.querySelector('.add_block').remove()
-    main.appendChild(NewBlock);
+    main.appendChild(NewConvoBlock);
 }
 
-function makeAddBlock() {
+// Add block for possible texts
+function addTextBlock(block) {
+    let div = document.createElement('div');
+    let textarea = document.createElement('textarea');
+    let h6 = document.createElement('h6');
+    let holder = document.querySelector('.possible_' + block);
+
+    div.className = "text_option";
+    h6.innerHTML = "Option";
+
+    div.appendChild(h6);
+    div.appendChild(textarea);
+    div.onclick = function () {
+    }
+
+    holder.appendChild(div);
+
+    document.querySelector('.possible_' + block + ' > .add_text').remove()
+    holder.appendChild(TextBlocks[block]);
+}
+
+function makeAddConvoBlock() {
     let add_block = makeClassedElem('div', 'add_block');
     let text_wrapper = makeClassedElem('div', 'text-wrapper');
     let plusIcon = makeClassedElem('i', 'fas fa-plus-circle');
 
     add_block.appendChild(text_wrapper.appendChild(plusIcon));
     add_block.onclick = function () { addConvoBlock(); }
+
+    return add_block;
+}
+
+function makeAddTextBlock(block) {
+    let add_block = makeClassedElem('div', 'add_text');
+    let text_wrapper = makeClassedElem('div', 'text-wrapper');
+    let plusIcon = makeClassedElem('i', 'fas fa-plus-circle');
+
+    add_block.appendChild(text_wrapper.appendChild(plusIcon));
+    plusIcon.onclick = function () { addTextBlock(block); }
 
     return add_block;
 }

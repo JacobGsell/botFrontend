@@ -22,6 +22,7 @@ aside {
     left: 0;
     border-right: 3px solid black;
     background: gainsboro;
+    overflow-y: scroll;
 }
 
 body {
@@ -30,7 +31,7 @@ body {
     margin: 0;
 }
 
-.convo_name, .convo_type, .possible_answers, .response_delay {
+.convo_name, .convo_type, .possible_answers, .response_delay, .possible_texts {
     width: 100%;
     text-align: center;
     margin: auto;
@@ -99,6 +100,37 @@ body {
     font-size: medium;
 }
 
+.possible_texts h6 ,.possible_answers h6{
+    margin: 0;
+    text-align: left;
+    font-weight: 200;
+    margin-left: 10%;
+    font-size: 60%;
+}
+
+.lastText {
+    text-align: left;
+    background: #cacaca;
+    width: 74%;
+    box-sizing: content-box;
+    font-size: 81%;
+    letter-spacing: unset;
+    font-size: 68%;
+    text-align: left;
+    margin: auto;
+    cursor: pointer;
+}
+
+.lastText:hover {
+    background: #eaeaea;
+}
+
+.possible_texts textarea, .possible_answers textarea {
+    width: 80%;
+    max-width: 90%;
+    max-height: 100px;
+}
+
 main {
     float: right;
     width: 79%;
@@ -115,15 +147,20 @@ main {
     cursor: pointer;
 }
 
-.add_block {
+.add_block, .add_text {
     margin: auto;
     text-align: center;
-    margin-bottom: 6vh;;
+    margin-bottom: 6vh;
     padding: 1vh;
 }
 
 .add_block i {
     font-size: 130%;
+    cursor: pointer;
+}
+
+.add_text i {
+    font-size: 70%;
     cursor: pointer;
 }
 

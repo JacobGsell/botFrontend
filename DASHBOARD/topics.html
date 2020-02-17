@@ -16,19 +16,19 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg" style="background-color: #00001f;">
+    <nav class="navbar navbar-expand-lg bg-dark">
             <div class="container-fluid">
                 <div class="row">
                     <!-- sidebar -->
                     <div class="col-xl-2 col-lg-3 sidebar fixed-top d-none d-sm-none d-lg-block" id="navbarNav">
                         <div class="bottom-border pt-4">
-                            <h3 href=#" class="text-white">Generelle Zufriedenheit</h3>
+                            <h3 href=#" class="text-dark">Generelle Zufriedenheit</h3>
                         </div>
                         <ul class="navbar-nav flex-column mt-4">
                             <li class="nav-item bottom-border pt-4">
-                                <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link">
-                                    <i class="fas fa-backward text-light fa-lg mr-3"></i>
-                                    Vorgänger
+                                <a href="#" class="nav-link p-3 mb-2">
+                                    <i class="fas fa-backward fa-lg mr-3"></i>
+                                    <b class="text-dark">Vorgänger</b>
                                 </a>
                                 <select class="browser-default custom-select mb-4">
                                     <option selected>---</option>
@@ -37,9 +37,9 @@
                                   </select>
                             </li>
                             <li class="nav-item bottom-border pt-4">
-                                <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link">
-                                    <i class="fas fa-forward text-light fa-lg mr-3"></i>
-                                    Nachfolger
+                                <a href="#" class="nav-link p-3 mb-2">
+                                    <i class="fas fa-forward fa-lg mr-3"></i>
+                                    <b class="text-dark">Nachfolger</b>
                                 </a>
                                 <select class="browser-default custom-select mb-4">
                                     <option selected>---</option>
@@ -47,10 +47,15 @@
                                     <option value="2">Kurztest</option>
                                   </select>
                             </li>
-                            <li class="nav-item fixed-bottom">
-                                <a href="#" class="nav-link text-white p-3 mb-2">
-                                    <i class=" fas fa-arrow-left text-light fa-lg mr-3"></i>
-                                    Zurück
+                            <li class="text-center nav-item pt-4">
+                                <button type="button" class="btn btn-lg btn-block btn-success mb-4">
+                                    Zu den Dialogen
+                                </button>
+                            </li>
+                            <li class="nav-item fixed-bottom mb-2">
+                                <a href="#" class="p-3 mb-2">
+                                    <i class=" fas fa-arrow-left fa-lg mr-3 text-danger"></i>
+                                    <b class="text-dark">Zurück</b>
                                 </a>
                             </li>
                         </ul>
@@ -111,7 +116,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <p>Modal body text goes here.</p>
+                    <p>Musst du schon gehen? :(</p>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger">Ja</button>
@@ -180,7 +185,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-6 col-sm-6 p-2">
+                        <div class="col-xl-4 col-sm-4 p-2">
                             <div class="card card-common">
                                 <div class="card-body">
                                     <div class="display-flex justify-content-between">
@@ -197,7 +202,7 @@
                                 </div>
                             </div>
                         </div>   
-                        <div class="col-xl-6 col-sm-6 p-2">
+                        <div class="col-xl-4 col-sm-4 p-2">
                             <div class="card card-common">
                                 <div class="card-body">
                                     <div class="display-flex justify-content-between">
@@ -213,7 +218,24 @@
                                     <span>80</span>
                                 </div>
                             </div>
-                        </div>                      
+                        </div>    
+                        <div class="col-xl-4 col-sm-4 p-2">
+                            <div class="card card-common">
+                                <div class="card-body">
+                                    <div class="display-flex justify-content-between">
+                                        <i class="fas fa-file fa-3x text-info"></i>
+                                        <div class="text-right text-secondary">
+                                            <h5>Selbsteinschätzung</h5>
+                                            <h6>15 Dialoge</h6>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer text-secondary">
+                                    <i class="fas fa-eye mr-3"></i>
+                                    <span>70</span>
+                                </div>
+                            </div>
+                        </div>                   
                     </div>
                 </div>
             </div>

@@ -24,7 +24,6 @@ var treeData = [
         ]
     }
 ];
-console.log("Hello")
 // ************** Generate the tree diagram	 *****************
 var margin = { top: 40, right: 120, bottom: 20, left: 120 },
     width = 960 - margin.right - margin.left,

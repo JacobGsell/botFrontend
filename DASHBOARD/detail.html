@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="title icon" href="images/title-img png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>Detailansicht</title>
+</head>
+
+<body>
+  <!-- Navbar -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- sidebar -->
+        <div class="col-xl-2 col-lg-3 sidebar fixed-top d-none d-sm-none d-lg-block" id="navbarNav">
+          <div class="bottom-border pt-4">
+            <h3 href=#" class="text-dark">4 - Email</h3>
+          </div>
+          <ul class="navbar-nav flex-column mt-4">
+            <li class="nav-item bottom-border pt-4">
+              <a href="#" class="nav-link p-3 mb-2">
+                <i class="fas fa-square-full fa-lg mr-3"></i>
+                <b class="text-dark">Typ</b>
+              </a>
+              <select class="browser-default custom-select mb-4">
+                <option selected="">---</option>
+                <option value="1">Antwort</option>
+                <option value="2">Frage</option>
+                <option value="3">Frage-Button</option>
+              </select>
+            </li>
+            <li class="nav-item bottom-border pt-4">
+              <a href="#" class="nav-link p-3 mb-2">
+                <i class="fas fa-exclamation fa-lg mr-3"></i>
+                <b class="text-dark">Mögliche Nachfolger</b>
+              </a>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item">5 - Ja</li>
+                <li class="list-group-item">6 - Nein</li>
+                <li class="list-group-item text-center">
+                  <i class="fas fa-plus-square fa-lg text-warning"></i>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item bottom-border pt-4">
+              <a href="#" class="nav-link p-3 mb-2">
+                <i class="fas fa-comment fa-lg mr-3"></i>
+                <b class="text-dark">Text-Pool</b>
+              </a>
+              <div class="list-group-wrapper">
+
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Kann ich sie haben?</li>
+                  <li class="list-group-item">Kriege ich deine adresse?</li>
+                  <li class="list-group-item">Willst du mir deine Email-Adresse geben?</li>
+                  <li class="list-group-item">Dürfte ich um deine Email-Adresse bitten?</li>
+                  <li class="list-group-item text-center">
+                    <i class="fas fa-plus-square fa-lg text-warning"></i>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="text-center nav-item pt-4">
+              <button type="button" class="btn btn-lg btn-block btn-success mb-4">
+                Zu den Dialogen
+              </button>
+            </li>
+          </ul>
+        </div>
+        <!-- end of sidebar -->
+
+        <!-- test bar -->
+ 
+        <!-- end of test bar -->
+      </div>
+    </div>
+    </div>
+  <!-- End of Navbar-->
+
+  <!-- Log out modal -->
+  <div class="modal" tabindex="-1" role="dialog" id="sign-out">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Ausloggen?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p>Musst du schon gehen? :(</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger">Ja</button>
+          <button type="button" class="btn btn-success" data-dismiss="modal">Bleiben</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of modal -->
+
+  <!-- cards-->
+
+  <section>
+    <div class="container-fluid float-right col-10 pl-0 pr-0">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
+                    <i class="far fa-user text-dark fa-lg mr-3"></i>
+                    Benutzerkonto
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
+                    <i class="far fa-file-alt text-dark fa-lg mr-3"></i>
+                    Dokumentation
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
+                    <i class="far fa-question-circle text-dark fa-lg mr-3"></i>
+                    Hilfe
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link" data-toggle="modal"
+                    data-target="#sign-out"">
+                <i class=" fas fa-sign-out-alt text-dark fa-lg mr-3"></i>
+                    Ausloggen
+                </a>
+            </li>
+        </ul>
+        </div>
+      </nav>
+      <div class="row">
+        <div class="col-xl-10 col-lg-9 col-md-12 m-auto">
+          <div class="row pt-md-5 mt-md-3 mb-5">
+
+            <div class="col-12 p-2">
+              <div class="alert alert-dark mb-0 col-2 m-auto text-center" role="alert">
+                <b>
+                  Vorgänger
+                </b>
+              </div>
+            </div>
+            <div class="col-xl-12 col-sm-12 p-2">
+              <div class="card card-common">
+                <span class="badge badge-dark">1</span>
+                <div class="card-body">
+                  <b class="text-left">Guten Tag, ich bin ein Chatbot.</b>
+                </div>
+                <div class="card-footer">
+                  <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-12 col-sm-12 p-2 mb-5 mt-5">
+              <div class="card card-common" style="background-color: #fff494;">
+                <span class="badge badge-dark">4</span>
+                <div class="card-body">
+                  <b class="text-left">Kann ich sie haben?</b>
+                </div>
+                <div class="card-footer">
+                  <i class="fas fa-question text-success fa-lg"></i>
+                </div>
+              </div>
+
+            </div>
+            <div class="col-12 p-2">
+              <div class="alert alert-dark mb-0 col-2 m-auto text-center" role="alert">
+                <b>
+                  Nachfolger
+                </b>
+              </div>
+            </div>
+            <div class="col-xl-6 col-sm-6 p-2">
+              <div class="card card-common">
+                <span class="badge badge-dark">5</span>
+                <div class="card-header">
+                  <i class="fas fa-exclamation text-danger"></i>
+                  Ja
+                </div>
+                <div class="card-body">
+                  <b class="text-left">
+                    <i class="far fa-circle text-success"></i>
+                    &nbsp; also.
+                  </b>
+                </div>
+                <div class="card-footer">
+                  <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-6 col-sm-6 p-2">
+              <div class="card card-common">
+                <span class="badge badge-dark">6</span>
+                <div class="card-header">
+                  <i class="fas fa-exclamation text-danger"></i>
+                  Nein
+                </div>
+                <div class="card-body">
+                  <b class="text-left">Alles klar. Dann ab zur nächsten Frage!</b>
+                </div>
+                <div class="card-footer text-info">
+                  <i class="fas fa-arrow-right"></i>
+                  <b>[NAME]</b>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end of cards -->
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>

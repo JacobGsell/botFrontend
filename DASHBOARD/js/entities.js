@@ -7,7 +7,8 @@ class Topic {
     }
     update() {
         let name = document.getElementById('topic-title');
-        name.innerHTML = this.name;
+        name.innerHTML = this.name + '<span class="badge badge-warning float-right"><i class="fas fa-pen"></i></span>';
+        name.onclick = function () { Sidebar.EditTopicTitle() };
     }
 }
 

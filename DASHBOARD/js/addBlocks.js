@@ -1,6 +1,6 @@
-class TopicManager {
+class TopicFactory {
     static drawPlus() {
-        return '<div id="topicPlus" class="col-xl-2 col-sm-2 p-5 m-auto" onclick="TopicManager.add()">'
+        return '<div id="topicPlus" class="col-xl-2 col-sm-2 p-5 m-auto" onclick="TopicFactory.add()">'
         + '<div class="card card-common pb-5 pt-5">'
         + '<div class="text-center">'
         + '<i class="fas fa-plus fa-2x text-success"></i>'

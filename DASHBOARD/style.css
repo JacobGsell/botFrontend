@@ -88,6 +88,27 @@ body {
 
 /* end of cards*/
 
+/* Topic */
+.topic-card-wrapper {
+    width: 100%;
+}
+
+/* Initially disabled */
+#topic-title-edit {
+    display: none;
+}
+
+#topic-title .badge {
+    cursor: pointer;
+}
+
+#topic-title .badge:hover {
+    background-color: #ffa107;;
+}
+
+
+/* End of topic */
+
 /* Animations */
 
 .topic-card {

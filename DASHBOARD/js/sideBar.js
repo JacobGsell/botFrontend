@@ -1,11 +1,19 @@
 class Sidebar {
     // Changes the icon of the active topic:
-    static changeIcon(id) {
+    static topicIcon(id) {
         // ToBeChanged:
         id = 1;
 
         $('#Topic_' + id + ' svg')[0].remove();
         $('#Topic_' + id + ' .card-body .display-flex').prepend(this.getIcon());
+    }
+
+    static botIcon(id) {
+        // ToBeChanged:
+        id = 1;
+
+        $('#Bot_' + id + ' svg')[0].remove();
+        $('#Bot_' + id + ' .card-body .display-flex').prepend(this.getIcon());
     }
 
     // Returns icons HTML for FontAwesome-Icons:
@@ -84,6 +92,16 @@ class Sidebar {
         $('#topic-title-edit').css('display', 'none');
     }
 
+    static EditBotTitle() {
+        $('#bot-title').css('display', 'none');
+        $('#bot-title-edit').css('display', 'flex');
+    }
+
+    static CloseBotEdit() {
+        $('#bot-title').css('display', 'block');
+        $('#bot-title-edit').css('display', 'none');
+    }
+
     static SaveTopicTitle(id) {
         // ToBeChanged:
         id = 1;
@@ -93,8 +111,22 @@ class Sidebar {
         if(!newTitle) this.CloseTopicEdit();
 
         $('#topic-title').html(newTitle + '<span class="badge badge-warning float-right"><i class="fas fa-pen"></i></span>');
-        $('#Topic_1 h5').html(newTitle);
+        $('#Topic_' + id + ' h5').html(newTitle);
 
         this.CloseTopicEdit();
+    }
+
+    static SaveBotTitle(id) {
+        // ToBeChanged:
+        id = 1;
+
+        let newTitle = $('#bot-title-edit input').val();
+
+        if(!newTitle) this.CloseTopicEdit();
+
+        $('#bot-title').html(newTitle + '<span class="badge badge-warning float-right"><i class="fas fa-pen"></i></span>');
+        $('#Bot_' + id + ' h5').html(newTitle);
+
+        this.CloseBotEdit();
     }
 }

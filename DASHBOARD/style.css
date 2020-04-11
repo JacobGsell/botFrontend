@@ -3,6 +3,10 @@ body {
     background-color: #eee;
 }
 
+a {
+    color: black;
+}
+
 /* navbar */
 
 .sidebar {
@@ -94,11 +98,11 @@ body {
 }
 
 /* Initially disabled */
-#topic-title-edit {
+#topic-title-edit, #bot-title-edit {
     display: none;
 }
 
-#topic-title .badge {
+#topic-title .badge, #bot-title .badge {
     cursor: pointer;
 }
 
@@ -112,6 +116,10 @@ body {
 /* Animations */
 
 .topic-card {
+    animation: createBox .25s;
+}
+
+.bot-card {
     animation: createBox .25s;
 }
 

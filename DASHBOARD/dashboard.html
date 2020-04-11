@@ -16,95 +16,67 @@
 
 <body>
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg bg-dark">
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- sidebar -->
-                    <div class="col-xl-2 col-lg-3 sidebar fixed-top d-none d-sm-none d-lg-block" id="navbarNav">
-                        <a href="#"
-                            class="navbar-brand text-dark d-block mx-auto text-center py-3 mb-4 bottom-border">Hauptmenü</a>
-                        <div class="bottom-border pb-2">
-                            <img src="https://www.jacobgsell.de/wp-content/uploads/elementor/thumbs/WhatsApp-Image-2019-11-06-at-17.04.30-ogbsdnn4fnfk8te8kttvta5zx5mmvuu8l32v3ys0c8.jpeg"
-                                width="50" class="rounded-circle mr-3">
-                            <a href=#" class="text-dark">Jacob Gsell</a>
+    <div class="container-fluid">
+        <div class="row">
+            <!-- sidebar -->
+            <div class="col-xl-2 col-lg-3 sidebar fixed-top d-none d-sm-none d-lg-block" id="navbarNav">
+                <div class="bottom-border pt-4">
+                    <h3 href=#" id="bot-title" class="text-dark" onclick="Sidebar.EditBotTitle()">
+                        Studierfähigkeit
+                        <span class="badge badge-warning float-right"><i class="fas fa-pen"></i></span>
+                    </h3>
+                    <div id="bot-title-edit" class="input-group mb-3">
+                        <input type="text" class="form-control" placeholder="Neuer Titel..." aria-label="Neuer Titel..."
+                            aria-describedby="titel-save">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-success" type="button" onclick="Sidebar.SaveBotTitle()"
+                                id="titel-save"><i class="fas fa-check"></i></button>
+                            <button class="btn btn-outline-danger" type="button" onclick="Sidebar.CloseTopicEdit()"
+                                id="titel-cancel"><i class="fas fa-times"></i></button>
                         </div>
-                        <ul class="navbar-nav flex-column mt-4">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link current">
-                                    <i class="far fa-user text-dark fa-lg mr-3"></i>
-                                    Benutzerkonto
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
-                                    <i class="fas fa-redo text-dark fa-lg mr-3"></i>
-                                    Zuletzt bearbeitet
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
-                                    <i class="far fa-file-alt text-dark fa-lg mr-3"></i>
-                                    Dokumentation
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
-                                    <i class="far fa-question-circle text-dark fa-lg mr-3"></i>
-                                    Hilfe
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link" data-toggle="modal"
-                                    data-target="#sign-out"">
-                                    <i class=" fas fa-sign-out-alt text-dark fa-lg mr-3"></i>
-                                    Ausloggen
-                                </a>
-                            </li>
-                        </ul>
                     </div>
-                    <!-- end of sidebar -->
-
-                    <!-- test bar -->
-                    <div class="navbar d-block d-lg-none d-xl-none">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link current">
-                                    <i class="far fa-user text-light fa-lg mr-3"></i>
-                                    Benutzerkonto
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link">
-                                    <i class="fas fa-redo text-light fa-lg mr-3"></i>
-                                    Zuletzt bearbeitet
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link">
-                                    <i class="far fa-file-alt text-light fa-lg mr-3"></i>
-                                    Dokumentation
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link">
-                                    <i class="far fa-question-circle text-light fa-lg mr-3"></i>
-                                    Hilfe
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link" data-toggle="modal"
-                                    data-target="#sign-out"">
-                                    <i class=" fas fa-sign-out-alt text-light fa-lg mr-3"></i>
-                                    Ausloggen
-                                </a>
-                            </li>
-                        </ul>
-                      </div>
-                    <!-- end of test bar -->                
                 </div>
+
+                <ul class="navbar-nav flex-column mt-4">
+                    <li class="nav-item bottom-border pt-4">
+                        <a href="#" class="nav-link p-3 mb-2">
+                            <i class="fas fa-exclamation fa-lg mr-3"></i>
+                            <b class="text-dark">Icon</b>
+                        </a>
+                        <select id="IconSelect" class="browser-default custom-select mb-4"
+                            onchange="Sidebar.botIcon(1)">
+                            <option selected>---</option>
+                            <option value="1">Ausrufezeichen</option>
+                            <option value="2">Smiley</option>
+                            <option value="3">Mond</option>
+                            <option value="4">Haus</option>
+                            <option value="5">Besteck</option>
+                            <option value="6">Profil</option>
+                            <option value="7">Brief</option>
+                        </select>
+                    </li>
+                    <li class="text-center nav-item pt-4">
+                        <a href="./topics.html">
+                            <button type="button" class="btn btn-lg btn-block btn-info mb-4">
+                                Chatbot ansehen
+                            </button>
+                        </a>
+                    </li>
+                    <li class="text-center nav-item pt-4">
+                        <button type="button" class="btn btn-lg btn-danger mb-4" data-toggle="modal"
+                            data-target="#delete">
+                            Löschen
+                        </button>
+                        <button type="button" class="btn btn-lg btn-success mb-4">
+                            Speichern
+                        </button>
+                    </li>
+                </ul>
             </div>
+            <!-- end of sidebar -->
         </div>
-    </nav>
+    </div>
+    </div>
     <!-- End of Navbar-->
 
     <!-- Log out modal -->
@@ -127,39 +99,98 @@
             </div>
         </div>
     </div>
-    <!-- end of modal -->
+    <!-- end of log out modal -->
+
+    <!-- Delete modal -->
+    <div class="modal" tabindex="-1" role="dialog" id="delete">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Chatbot <b>Studierfähigkeit</b> löschen?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Die daten gehen unwiderruflich verloren!</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger">Löschen</button>
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Abbrechen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of delete modal -->
 
     <!-- cards-->
 
     <section>
         <div class="container-fluid">
+            <!-- Topnav -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
+                                <i class="far fa-user text-dark fa-lg mr-3"></i>
+                                Benutzerkonto
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
+                                <i class="far fa-file-alt text-dark fa-lg mr-3"></i>
+                                Dokumentation
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
+                                <i class="far fa-question-circle text-dark fa-lg mr-3"></i>
+                                Hilfe
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link" data-toggle="modal"
+                                data-target="#sign-out"">
+                                    <i class=" fas fa-sign-out-alt text-dark fa-lg mr-3"></i>
+                                Ausloggen
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- End of topnav -->
             <div class="row">
-                <div class="col-xl-10 col-lg-9 col-md-12 ml-auto">
+                <div class="col-xl-10 col-lg-9 col-md-12 ml-auto" id="botWrapper">
                     <div class="row pt-md-5 mt-md-3 mb-5">
                         <div class="col-xl-3 col-sm-4 p-2">
                             <a href="topics.html" style="text-decoration:none;">
-                            <div class="card card-common">
-                                <div class="card-body">
-                                    <div class="display-flex justify-content-between">
-                                        <i class="fas fa-graduation-cap fa-3x text-info"></i>
-                                        <div class="text-right text-secondary">
-                                            <h5>Studierfähigkeit</h5>
-                                            <h6>4 Konversationen</h6>
+                                <div id="Bot_1" class="card card-common">
+                                    <div class="card-body">
+                                        <div class="display-flex justify-content-between">
+                                            <i class="fas fa-graduation-cap fa-3x"></i>
+                                            <div class="text-right text-secondary">
+                                                <h5>Studierfähigkeit</h5>
+                                                <h6>4 Konversationen</h6>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="card-footer text-secondary">
+                                        <i class="fas fa-eye mr-3"></i>
+                                        <span>135</span>
+                                    </div>
                                 </div>
-                                <div class="card-footer text-secondary">
-                                    <i class="fas fa-eye mr-3"></i>
-                                    <span>135</span>
-                                </div>
-                            </div>
-                        </a>
+                            </a>
                         </div>
                         <div class="col-xl-3 col-sm-4 p-2">
                             <div class="card card-common">
                                 <div class="card-body">
                                     <div class="display-flex justify-content-between">
-                                        <i class="fas fa-graduation-cap fa-3x text-info"></i>
+                                        <i class="fas fa-graduation-cap fa-3x"></i>
                                         <div class="text-right text-secondary">
                                             <h5>Studiumsevaluation</h5>
                                             <h6>10 Konversationen</h6>
@@ -176,7 +207,7 @@
                             <div class="card card-common">
                                 <div class="card-body">
                                     <div class="display-flex justify-content-between">
-                                        <i class="fas fa-exclamation fa-3x text-danger"></i>
+                                        <i class="fas fa-exclamation fa-3x"></i>
                                         <div class="text-right text-secondary">
                                             <h5>Rückmeldung</h5>
                                             <h6>1 Konversationen</h6>
@@ -193,7 +224,7 @@
                             <div class="card card-common">
                                 <div class="card-body">
                                     <div class="display-flex justify-content-between">
-                                        <i class="fas fa-poll fa-3x text-success"></i>
+                                        <i class="fas fa-poll fa-3x"></i>
                                         <div class="text-right text-secondary">
                                             <h5>Umfrage BayernMint</h5>
                                             <h6>15 Konversationen</h6>
@@ -210,7 +241,7 @@
                             <div class="card card-common">
                                 <div class="card-body">
                                     <div class="display-flex justify-content-between">
-                                        <i class="fas fa-shield-alt fa-3x text-info"></i>
+                                        <i class="fas fa-shield-alt fa-3x"></i>
                                         <div class="text-right text-secondary">
                                             <h5>Sicherheitsunterweisung</h5>
                                             <h6>8 Konversationen</h6>
@@ -223,7 +254,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-sm-4 p-2">
+                        <div id="botPlus" class="col-xl-3 col-sm-4 p-2" onclick="BotFactory.add()">
                             <div class="card card-common bg-warning">
                                 <div class="card-body">
                                     <div class="display-flex text-center">
@@ -253,8 +284,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-        <script src="script.js"></script>
-
+    <script src="script.js"></script>
+    <script src="js/sideBar.js"></script>
+    <script src="js/addBlocks.js"></script>
+    <script src="js/entities.js"></script>
 </body>
 
 </html>

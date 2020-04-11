@@ -1,4 +1,9 @@
+/** Class responsible for creating new topic cards */
 class TopicFactory {
+    /**
+     * Prepares the HTML for a new plus button
+     * @returns {String} HTML structure
+     */
     static drawPlus() {
         return '<div id="topicPlus" class="col-xl-2 col-sm-2 p-5 m-auto" onclick="TopicFactory.add()">'
         + '<div class="card card-common pb-5 pt-5">'
@@ -7,6 +12,10 @@ class TopicFactory {
         + '</div></div></div>';
     }
 
+    /**
+     * Prepares the HTML for a new topic card
+     * @returns {String} HTML structure
+     */
     static drawCard() {
         return '<div class="topic-card col-xl-12 col-sm-12 p-2">'
         + '<div class= "card card-common">'
@@ -22,6 +31,9 @@ class TopicFactory {
         + '</div></div><div/>';
     }
 
+    /**
+     * Adds a new topic card
+     */
     static add() {
         let row = $('#topicsWrapper .row');
         $('#topicPlus').remove();
@@ -32,7 +44,12 @@ class TopicFactory {
     }
 }
 
+/** Class responsible for creating new bot cards */
 class BotFactory {
+    /**
+     * Prepares the HTML for a new plus button
+     * @returns {String} HTML structure
+     */
     static drawPlus() {
         return '<div id="botPlus" class="col-xl-3 col-sm-4 p-2" onclick="BotFactory.add()">'
         + '<div class="card card-common bg-warning">'
@@ -47,6 +64,10 @@ class BotFactory {
         + '</div></div></div>';
     }
 
+    /**
+     * Prepares the HTML for a new cot card
+     * @returns {String} HTML structure
+     */
     static drawCard() {
         return '<div class="bot-card col-xl-3 col-sm-4 p-2" onclick="BotFactory.add()">'
         + '<div class="card card-common">'
@@ -63,6 +84,9 @@ class BotFactory {
         + '</div></div></div>';
     }
 
+    /**
+     * Adds a new bot card
+     */
     static add() {
         let row = $('#botWrapper .row');
         $('#botPlus').remove();

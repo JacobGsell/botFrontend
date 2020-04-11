@@ -1,5 +1,11 @@
+/** Class that contains functions to control the sidebar */
 class Sidebar {
     // Changes the icon of the active topic:
+    
+    /**
+     * Changes the topic's icons.
+     * @param  {Number} id The icon's id
+     */
     static topicIcon(id) {
         // ToBeChanged:
         id = 1;
@@ -8,6 +14,11 @@ class Sidebar {
         $('#Topic_' + id + ' .card-body .display-flex').prepend(this.getIcon());
     }
 
+    
+    /**
+     * Changes the bot's icons.
+     * @param  {Number} id The bot's id
+     */
     static botIcon(id) {
         // ToBeChanged:
         id = 1;
@@ -16,7 +27,11 @@ class Sidebar {
         $('#Bot_' + id + ' .card-body .display-flex').prepend(this.getIcon());
     }
 
-    // Returns icons HTML for FontAwesome-Icons:
+    
+    /**
+     * Gets HTML of the FontAwesome-icons
+     * @returns {String} The selected icon's HTML
+     */
     static getIcon() {
         let icon = '';
         let value = parseInt($('#IconSelect').val());
@@ -55,7 +70,10 @@ class Sidebar {
         }
         return icon;
     }
-
+    /**
+     * Toggles whether the selected topic's slots are active or not
+     * @param  {Number} id Topic's id
+     */
     static ToggleTopicSlots(id) {
         // ToBeChanged:
         id = 1;
@@ -74,34 +92,51 @@ class Sidebar {
             $('#Topic_' + id + ' .text-secondary, #Topic_' + id + ' .col-7 .card, #Topic_' + id + ' .card-body').removeClass('text-light');
         }
     }
-
+    /**
+     * Toggles whether the selected topic is active or not
+     * @param  {Number} id Topic's id
+     */
     static ToggleTopic(id) {
         // ToBeChanged:
         id = 1;
 
         $('#Topic_' + id).css('opacity', $('#deActivateTopic').is(':checked') ? 0.3 : 1);
     }
-
+    /**
+     * Replaces the topic title by the edit field.
+     */
     static EditTopicTitle() {
         $('#topic-title').css('display', 'none');
         $('#topic-title-edit').css('display', 'flex');
     }
-
+    /**
+     * Replaces the edit field by the topic title
+     */
     static CloseTopicEdit() {
         $('#topic-title').css('display', 'block');
         $('#topic-title-edit').css('display', 'none');
     }
 
+    /**
+     * Replaces the bot title by the edit field 
+     */
     static EditBotTitle() {
         $('#bot-title').css('display', 'none');
         $('#bot-title-edit').css('display', 'flex');
     }
 
+    /**
+     * Replaces the edit field by the bot title
+     */
     static CloseBotEdit() {
         $('#bot-title').css('display', 'block');
         $('#bot-title-edit').css('display', 'none');
     }
 
+    /**
+     * Saves the created topic title and closes the edit field.
+     * @param {Number} id Topic's id
+     */
     static SaveTopicTitle(id) {
         // ToBeChanged:
         id = 1;
@@ -115,7 +150,10 @@ class Sidebar {
 
         this.CloseTopicEdit();
     }
-
+    /**
+     * Saves the created bot title and closes the edit field.
+     * @param  {Number} id Bot's id
+     */
     static SaveBotTitle(id) {
         // ToBeChanged:
         id = 1;

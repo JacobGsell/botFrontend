@@ -90,26 +90,65 @@ a {
     cursor: pointer;
 }
 
+
+.card-footer b {
+    margin-left: 1%;
+}
+
 /* end of cards*/
 
 /* Topic */
+
 .topic-card-wrapper {
     width: 100%;
 }
 
-/* Initially disabled */
-#topic-title-edit, #bot-title-edit {
-    display: none;
-}
+/* Successors */
 
-#topic-title .badge, #bot-title .badge {
+#SuccessorPlus svg{
     cursor: pointer;
 }
 
-#topic-title .badge:hover {
-    background-color: #ffa107;;
+#SuccessorPlus svg:hover {
+    color: #ffa107;    
 }
 
+#SuccessorWrapper .list-group-item .i
+{
+    float: right;
+}
+
+#SuccessorWrapper .list-group-item svg
+{
+    cursor: pointer;
+}
+
+/* Text pools */
+#TextPoolPlus svg {
+    cursor: pointer;
+}
+
+#TextPoolPlus svg:hover {
+    color: #ffa107;    
+}
+
+/* Initially disabled */
+
+#topic-title-edit, #bot-title-edit, #detail-title-edit {
+    display: none;
+}
+
+#topic-title.badge, #bot-title.badge, #detail-title > .badge {
+    cursor: pointer;
+}
+
+#topic-title.badge:hover, #bot-title.badge:hover, #detail-title > .badge:hover {
+    background-color: #ffa107;    
+}
+
+#JumpWrapper {
+    display: none;
+}
 
 /* End of topic */
 
@@ -120,6 +159,18 @@ a {
 }
 
 .bot-card {
+    animation: createBox .25s;
+}
+
+.successor-card {
+    animation: createBox .25s;
+}
+
+.textpool-card {
+    animation: createBox .25s;
+}
+
+.topic-detail-card {
     animation: createBox .25s;
 }
 

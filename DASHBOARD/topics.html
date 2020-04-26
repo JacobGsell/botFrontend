@@ -28,14 +28,17 @@
                     </h3>
 
                     <div id="topic-title-edit" class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Neuer Titel..." aria-label="Neuer Titel..." aria-describedby="titel-save">
+                        <input type="text" class="form-control" placeholder="Neuer Titel..." aria-label="Neuer Titel..."
+                            aria-describedby="titel-save">
                         <div class="input-group-append">
-                          <button class="btn btn-outline-success" type="button" onclick="Sidebar.SaveTopicTitle()" id="titel-save"><i class="fas fa-check"></i></button>
-                          <button class="btn btn-outline-danger" type="button" onclick="Sidebar.CloseTopicEdit()" id="titel-cancel"><i class="fas fa-times"></i></button>
+                            <button class="btn btn-outline-success" type="button" onclick="Sidebar.SaveTopicTitle()"
+                                id="titel-save"><i class="fas fa-check"></i></button>
+                            <button class="btn btn-outline-danger" type="button" onclick="Sidebar.CloseTopicEdit()"
+                                id="titel-cancel"><i class="fas fa-times"></i></button>
                         </div>
-                      </div>
+                    </div>
                 </div>
-                
+
                 <ul class="navbar-nav flex-column mt-4">
                     <li class="nav-item bottom-border pt-4">
                         <a href="#" class="nav-link p-3 mb-2">
@@ -106,7 +109,7 @@
                     </li>
                     <li class="text-center nav-item pt-4">
                         <button type="button" class="btn btn-lg btn-danger mb-4" data-toggle="modal"
-                        data-target="#delete">
+                            data-target="#delete">
                             Löschen
                         </button>
                         <button type="button" class="btn btn-lg btn-success mb-4">
@@ -253,12 +256,14 @@
             <div class="row">
                 <div id="topicsWrapper" class="col-xl-10 col-lg-9 col-md-12 ml-auto">
                     <div class="row pt-md-5 mt-md-3 mb-5">
-                        <div id="Topic_1" class="topic-card-wrapper">
+                        <div class="topic-card-wrapper">
+                            <div id="Topic_1">
                             <!-- Email accordion -->
                             <div class="accordion col-xl-12 col-sm-12 p-0" id="accordionExample">
                                 <div class="col-xl-12 col-sm-12 p-2">
                                     <div class="card card-common" type="button" id="heading_1" data-toggle="collapse"
                                         data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        <span class="badge badge-info">1</span>
                                         <div class="card-body">
                                             <div class="display-flex justify-content-between">
                                                 <i class="fas fa-envelope fa-3x"></i>
@@ -368,96 +373,107 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <div id="topicDetailPlus" class="card card-common col-3 p-4 ml-auto mr-auto mb-3 text-center"
+                                            onclick="TopicDetailFactory.add(this)">
+                                            <div class="text-center">
+                                                <i class="fas fa-plus fa-2x text-info"></i>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- End of email accordion -->
-                        </div>
+                                <!-- End of email accordion -->
+                            </div>
 
-                        <div class="col-xl-12 col-sm-12 p-2">
-                            <div class="card card-common">
-                                <div class="card-body">
-                                    <div class="display-flex justify-content-between">
-                                        <i class="fas fa-utensils fa-3x"></i>
-                                        <div class="text-right text-secondary">
-                                            <h5>Name</h5>
-                                            <h6>1 Dialoge</h6>
+                            <div class="col-xl-12 col-sm-12 p-2">
+                                <div class="card card-common">
+                                    <span class="badge badge-info">2</span>
+                                    <div class="card-body">
+                                        <div class="display-flex justify-content-between">
+                                            <i class="fas fa-utensils fa-3x"></i>
+                                            <div class="text-right text-secondary">
+                                                <h5>Name</h5>
+                                                <h6>1 Dialoge</h6>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="card-footer text-secondary">
-                                    <i class="far fa-circle mr-3"></i>
-                                    <span>2 Slots</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-12 col-sm-12 p-2">
-                            <div class="card card-common bg-dark">
-                                <div class="card-body">
-                                    <div class="display-flex justify-content-between">
-                                        <i class="fas fa-smile fa-3x text-light"></i>
-                                        <div class="text-right text-secondary text-light">
-                                            <h5>Generelle zufriedenheit</h5>
-                                            <h6>1 Dialog</h6>
-                                        </div>
+                                    <div class="card-footer text-secondary">
+                                        <i class="far fa-circle mr-3"></i>
+                                        <span>2 Slots</span>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-12 col-sm-12 p-2">
-                            <div class="card card-common bg-dark">
-                                <div class="card-body">
-                                    <div class="display-flex justify-content-between">
-                                        <i class="fas fa-moon fa-3x text-light"></i>
-                                        <div class="text-right text-secondary text-light">
-                                            <h5>Schlafverhalten</h5>
-                                            <h6>1 Dialog</h6>
+                            <div class="col-xl-12 col-sm-12 p-2">
+                                <div class="card card-common bg-dark">
+                                    <span class="badge badge-info">3</span>
+                                    <div class="card-body">
+                                        <div class="display-flex justify-content-between">
+                                            <i class="fas fa-smile fa-3x text-light"></i>
+                                            <div class="text-right text-secondary text-light">
+                                                <h5>Generelle zufriedenheit</h5>
+                                                <h6>1 Dialog</h6>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-12 col-sm-12 p-2">
-                            <div class="card card-common">
-                                <div class="card-body">
-                                    <div class="display-flex justify-content-between">
-                                        <i class="fas fa-home fa-3x"></i>
-                                        <div class="text-right text-secondary">
-                                            <h5>Wohnort</h5>
-                                            <h6>4 Dialoge</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card-footer text-secondary">
-                                    <i class="far fa-circle mr-3"></i>
-                                    <span>2 Slots</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-xl-12 col-sm-12 p-2">
-                            <div class="card card-common bg-dark">
-                                <div class="card-body">
-                                    <div class="display-flex justify-content-between">
-                                        <i class="fas fa-user fa-3x text-light"></i>
-                                        <div class="text-right text-secondary text-light">
-                                            <h5>Selbsteinschätzung</h5>
-                                            <h6>15 Dialoge</h6>
+                            <div class="col-xl-12 col-sm-12 p-2">
+                                <div class="card card-common bg-dark">
+                                    <span class="badge badge-info">4</span>
+                                    <div class="card-body">
+                                        <div class="display-flex justify-content-between">
+                                            <i class="fas fa-moon fa-3x text-light"></i>
+                                            <div class="text-right text-secondary text-light">
+                                                <h5>Schlafverhalten</h5>
+                                                <h6>1 Dialog</h6>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div id="topicPlus" class="col-xl-2 col-sm-2 p-5 m-auto" onclick="TopicFactory.add()">
-                            <div class="card card-common pb-5 pt-5">
-                                <div class="text-center">
-                                    <i class="fas fa-plus fa-2x text-success"></i>
+                            <div class="col-xl-12 col-sm-12 p-2">
+                                <div class="card card-common">
+                                    <span class="badge badge-info">5</span>
+                                    <div class="card-body">
+                                        <div class="display-flex justify-content-between">
+                                            <i class="fas fa-home fa-3x"></i>
+                                            <div class="text-right text-secondary">
+                                                <h5>Wohnort</h5>
+                                                <h6>4 Dialoge</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card-footer text-secondary">
+                                        <i class="far fa-circle mr-3"></i>
+                                        <span>2 Slots</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-12 col-sm-12 p-2">
+                                <div class="card card-common bg-dark">
+                                    <span class="badge badge-info">6</span>
+                                    <div class="card-body">
+                                        <div class="display-flex justify-content-between">
+                                            <i class="fas fa-user fa-3x text-light"></i>
+                                            <div class="text-right text-secondary text-light">
+                                                <h5>Selbsteinschätzung</h5>
+                                                <h6>15 Dialoge</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="topicPlus" class="col-xl-2 col-sm-2 p-5 m-auto" onclick="TopicFactory.add()">
+                                <div class="card card-common pb-5 pt-5">
+                                    <div class="text-center">
+                                        <i class="fas fa-plus fa-2x text-success"></i>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
     <!-- end of cards -->

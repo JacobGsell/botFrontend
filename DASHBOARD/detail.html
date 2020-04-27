@@ -95,8 +95,10 @@
 
               <div id="condition-linker" class="mb-4">
                 <div class="col-12 text-center m-auto">
-                  <button onclick="ConditionFactory.addAnd()" class="btn btn-secondary float-left" type="button">Und</button>
-                  <button onclick="ConditionFactory.addOr()" class="btn btn-secondary float-right" type="button">Oder</button>
+                  <button onclick="ConditionFactory.addAnd()" class="btn btn-secondary float-left"
+                    type="button">Und</button>
+                  <button onclick="ConditionFactory.addOr()" class="btn btn-secondary float-right mb-4"
+                    type="button">Oder</button>
                 </div>
               </div>
 
@@ -113,7 +115,7 @@
                       id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1 - O
                       Also.</div>
                     <div style="display: inline;" class="col-6">
-                        <i class="fas fa-trash-alt text-danger float-right" onclick="SuccessorFactory.delete(this)"></i>
+                      <i class="fas fa-trash-alt text-danger float-right" onclick="SuccessorFactory.delete(this)"></i>
                     </div>
                     <div id="successor-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                       <a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">1 - Ja</a>
@@ -126,15 +128,16 @@
                 <li id="successor_2" class="list-group-item">
                   <div class="dropdown">
                     <div style="display: inline-block;" class="col-6 display-inline dropdown-toggle" type="button"
-                      id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2 - Alles klar.</div>
+                      id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2 -
+                      Alles klar.</div>
                     <div style="display: inline;" class="col-6">
-                        <i class="fas fa-trash-alt text-danger float-right"  onclick="SuccessorFactory.delete(this)""></i>
+                      <i class="fas fa-trash-alt text-danger float-right" onclick="SuccessorFactory.delete(this)""></i>
                     </div>
-                    <div id="successor-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">1 - Ja</a>
-                      <a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">2 - Nein</a>
-                      <a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">3 - Vielleicht</a>
-                      <a href="#" class="dropdown-item" onclick="Sidebar.ChangeSuccessor(this)">4 - Niemals</a>
+                    <div id=" successor-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">1 - Ja</a>
+                        <a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">2 - Nein</a>
+                        <a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">3 - Vielleicht</a>
+                        <a href="#" class="dropdown-item" onclick="Sidebar.ChangeSuccessor(this)">4 - Niemals</a>
                     </div>
                   </div>
                 </li>
@@ -148,18 +151,47 @@
                 <i class="fas fa-comment fa-lg mr-3"></i>
                 <b class="text-dark">Text-Pool</b>
               </a>
-              <div id="PoolScrollWrapper" class="list-group-wrapper">
 
-                <ul id="TextPoolWrapper" class="list-group list-group-flush">
-                  <li class="list-group-item">Kann ich sie haben?</li>
-                  <li class="list-group-item">Kriege ich deine adresse?</li>
-                  <li class="list-group-item">Willst du mir deine Email-Adresse geben?</li>
-                  <li class="list-group-item">Dürfte ich um deine Email-Adresse bitten?</li>
-                  <li id="TextPoolPlus" class="list-group-item text-center">
-                    <i class="fas fa-plus-square fa-lg text-warning" onclick="TextPoolFactory.add()"></i>
-                  </li>
-                </ul>
-              </div>
+              <ul id="TextPoolWrapper" class="list-group list-group-flush">
+                <li class="list-group-item">
+                  <span style="display: inline;" class="small font-weight-bold">
+                    Kann ich sie haben?
+                  </span>
+                  <div style="display: inline;" class="col-6">
+                    <i class="fas fa-trash-alt text-danger float-right" onclick="TextPoolFactory.delete(this)"></i>
+                    <i class="fas fa-pen rounded text-secondary mr-2 float-right" onclick="Sidebar.EditPoolText(this)"></i>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <span style="display: inline;" class="small font-weight-bold">
+                    Kriege ich deine Adresse?
+                  </span>
+                  <div style="display: inline;" class="col-6">
+                    <i class="fas fa-trash-alt text-danger float-right" onclick="TextPoolFactory.delete(this)"></i>
+                    <i class="fas fa-pen rounded text-secondary mr-2 float-right" onclick="Sidebar.EditPoolText(this)"></i>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <span style="display: inline;" class="small font-weight-bold">
+                    Willst du mir deine Email-Adresse geben?
+                  </span>
+                  <div style="display: inline;" class="col-6">
+                    <i class="fas fa-trash-alt text-danger float-right" onclick="TextPoolFactory.delete(this)"></i>
+                    <i class="fas fa-pen rounded text-secondary mr-2 float-right" onclick="Sidebar.EditPoolText(this)"></i>
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <span style="display: inline;" class="small font-weight-bold">
+                    Dürfte ich um deine Email-Adresse bitten?
+                  </span>
+                  <div style="display: inline;" class="col-6">
+                    <i class="fas fa-trash-alt text-danger float-right" onclick="TextPoolFactory.delete(this)"></i>
+                    <i class="fas fa-pen rounded text-secondary mr-2 float-right" onclick="Sidebar.EditPoolText(this)"></i>
+                  </div>
+                <li id="TextPoolPlus" class="list-group-item text-center">
+                  <i class="fas fa-plus-square fa-lg text-warning" onclick="TextPoolFactory.add()"></i>
+                </li>
+              </ul>
             </li>
             <li class="text-center nav-item pt-4">
               <button type="button" class="btn btn-lg btn-danger mb-4">
@@ -264,7 +296,7 @@
                 <span class="badge badge-dark">4</span>
                 <div class="card-header">
                   <div class="focus-operator badge badge-light">=</div>
-                  <div class="focus-value badge badge-light">0</div>                                    
+                  <div class="focus-value badge badge-light">0</div>
                 </div>
                 <div class="card-body">
                   <b class="text-left">Kann ich sie haben?</b>

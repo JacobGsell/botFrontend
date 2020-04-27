@@ -138,14 +138,19 @@ class TextPoolFactory {
             + '</li>';
     }
 
-
     /**
      * Prepares the HTML for a new text block
      * @returns {String} HTML structure
      */
     static drawText() {
         return '<li class="list-group-item">'
+            + '<span style="display: inline;" class="small font-weight-bold">'
             + 'Pooliger Text'
+            + '</span>'
+            + '<div style="display: inline;" class="col-6">'
+            + '<i class="fas fa-trash-alt text-danger float-right" onclick="TextPoolFactory.delete(this)"></i>'
+            + '<i class="fas fa-pen rounded text-secondary mr-2 float-right"></i>'
+            + '</div>'
             + '</li>';
     }
 
@@ -158,7 +163,11 @@ class TextPoolFactory {
         row.append(this.drawText());
         row.append(this.drawPlus());
 
-        document.querySelector('#PoolScrollWrapper').scrollTo(0, document.body.scrollHeight);
+        //document.querySelector('#PoolScrollWrapper').scrollTo(0, document.body.scrollHeight);
+    }
+
+    static delete(self) {
+        $(self).parent().parent().remove();
     }
 }
 
@@ -217,7 +226,7 @@ class ConditionFactory {
             + '<div class="col-12 text-center m-auto">'
             + '<button onclick="ConditionFactory.addAnd()" class="btn btn-secondary float-left" type="button">Und</button>'
             + '<button onclick="ConditionFactory.delete(this)" class="btn btn-danger text-center" type="button"><i class="fas fa-trash"></i></button>'
-            + '<button onclick="ConditionFactory.addOr()" class="btn btn-secondary float-right" type="button">Oder</button>'
+            + '<button onclick="ConditionFactory.addOr()" class="btn btn-secondary float-right mb-4" type="button">Oder</button>'
             + '</div></div>';
     }
 

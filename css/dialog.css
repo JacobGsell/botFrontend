@@ -137,6 +137,10 @@ main {
     width: 79%;
 }
 
+#TextPoolWrapper .list-group-item svg{
+    cursor: pointer;
+}
+
 .convo_block {
     margin: auto;
     width: 55%;

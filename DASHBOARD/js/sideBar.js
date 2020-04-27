@@ -321,8 +321,36 @@ class Sidebar {
     /**
      * Replaces the text field by the editor field
      */
-    static EditTextPoolText() {
+    static EditPoolText(self) {       
+        $(self).parent().parent().append(this.drawPoolEdit())
+        $(self).parent().hide();
+        $(self).parent().prev().hide();
+    }
 
+    static SavePoolEdit(self) {
+        let newText = $('#pool-edit input').val();
+        $(self).parent().parent().prev().prev().html(newText);
+        this.ClosePoolEdit(self);
+    }
+
+    static ClosePoolEdit(self) {
+        $(self).parent().parent().prev().prev().show();
+        $(self).parent().parent().prev().show();
+        $(self).parent().parent().remove();
+    }
+
+    static drawPoolEdit() {
+        return '<div id="pool-edit" class="input-group mb-3">'
+            + '<input type="text" class="form-control" placeholder="Neuer Text..." '
+            + ' aria-label="Neuer Text..." aria-describedby="titel-save">'
+            + '<div class="input-group-append">'
+            + '<button class="btn btn-outline-success" type="button" onclick="Sidebar.SavePoolEdit(this)" id="titel-save">'
+            + '<i class="fas fa-check"></i>'
+            + '</button>'
+            + '<button class="btn btn-outline-danger" type="button" onclick="Sidebar.ClosePoolEdit(this)" id="titel-cancel">'
+            + '<i class="fas fa-times"></i>'
+            + '</button>'
+            + '</div></div>';
     }
 
     /**

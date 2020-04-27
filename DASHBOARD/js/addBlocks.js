@@ -253,15 +253,15 @@ class ConditionFactory {
     static drawConditionWrapper() {
         return '<div class="ConditionWrapper text-center mb-2">'
             + '<div style="display: inline;" class="col-4">Antwort</div>'
-            + '<select id="ConditionSelect" onchange="Sidebar.ChangeConditionOperator()" style="display: inline;"'
-            + 'class="col-3 broswer-default custom-select">'
+            + '<select onchange="Sidebar.ChangeConditionOperator(this)" style="display: inline;"'
+            + 'class="ConditionSelect col-3 broswer-default custom-select">'
             + '<option selected="">---</option>'
             + '<option value="1"> > </option>'
             + '<option value="2"> < </option>'
             + '<option value="3"> = </option>'
             + '<option value="4"> != </option>'
             + '</select>'
-            + '<input style="display: inline;" type="text" onchange="Sidebar.ChangeConditionValue()"'
+            + '<input style="display: inline;" type="text" onchange="Sidebar.ChangeConditionValue(this)"'
             + 'class="col-4 form-control" placeholder="Wert" aria-label="Username" aria-describedby="basic-addon1"'
             + 'style="display: flex;">'
             + '</div>';

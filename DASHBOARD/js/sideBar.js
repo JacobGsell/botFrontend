@@ -280,24 +280,32 @@ class Sidebar {
     }
 
     static ChangeSuccessor(self) {
-        $('#successor_1 .dropdown-toggle').html($(self).html());
+        $(self).parent().prev().prev().html($(self).html());
     }
 
-    static ChangeConditionValue() {
-        $('#focus-value').html(this.getConditionValue())
+    static ChangeConditionValue(self) {
+        let index = parseInt(($(self).parent().index() / 2) - 1);
+        let operator = this.getConditionValue(self);
+        
+        $('.focus-value')[index].innerHTML = operator;
     }
 
-    static getConditionValue() {
-        return $('#ConditionWrapper input').val();
+    static getConditionValue(self) {
+        return $(self).val();
     }
 
-    static ChangeConditionOperator() {
-        $('#focus-operator').html(this.getConditionOperator());
+    static ChangeConditionOperator(self) {
+        let index = parseInt(($(self).parent().index() / 2) - 1);
+
+        let val = parseInt($(self).children("option:selected").val())
+        let operator = this.getConditionOperator(val);
+
+        $('.focus-operator')[index].innerHTML = operator;
     }
 
-    static getConditionOperator() {
+    static getConditionOperator(value) {
         let operator = '';
-        let value = parseInt($('#ConditionSelect').val());
+
         switch (value) {
             case 1:
                 operator = '>';
@@ -321,7 +329,7 @@ class Sidebar {
     /**
      * Replaces the text field by the editor field
      */
-    static EditPoolText(self) {       
+    static EditPoolText(self) {
         $(self).parent().parent().append(this.drawPoolEdit())
         $(self).parent().hide();
         $(self).parent().prev().hide();

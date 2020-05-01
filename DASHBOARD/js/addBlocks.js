@@ -1,5 +1,9 @@
 /** Class responsible for creating new topic cards */
 class TopicFactory {
+    static show(self) {
+        alert($(self).find('h5').html());
+    }
+
     /**
      * Prepares the HTML for a new plus button
      * @returns {String} HTML structure
@@ -18,7 +22,7 @@ class TopicFactory {
      */
     static drawCard() {
         return '<div class="topic-card col-xl-12 col-sm-12 p-2">'
-            + '<div class= "card card-common">'
+            + '<div class= "card card-common" onclick="TopicFactory.show(this)">'
             + '<div class="card-body">'
             + '<div class="display-flex justify-content-between">'
             + '<i class="far fa-square fa-3x"></i>'
@@ -77,6 +81,11 @@ class TopicDetailFactory {
 
 /** Class responsible for creating new bot cards */
 class BotFactory {
+    
+    static show(self) {
+        alert($(self).find('h5').html());
+    }
+
     /**
      * Prepares the HTML for a new plus button
      * @returns {String} HTML structure
@@ -101,7 +110,7 @@ class BotFactory {
      */
     static drawCard() {
         return '<div class="bot-card col-xl-3 col-sm-4 p-2">'
-            + '<div class="card card-common">'
+            + '<div class="card card-common" onclick="BotFactory.show(this)">'
             + '<div class="card-body">'
             + '<div class="display-flex justify-content-between">'
             + '<i class="far fa-square fa-3x"></i>'
@@ -305,5 +314,11 @@ class ConditionFactory {
         if(parent.parent().children().length == 4) {
            parent.children().children()[1].remove();       
         }
+    }
+}
+
+class DetailFactory {
+    static show(self) {
+        alert($(self).find('.card-body>b').html());
     }
 }

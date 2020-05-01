@@ -63,8 +63,8 @@
                             <div class="custom-control custom-checkbox  mb-4">
                                 <input type="checkbox" class="custom-control-input" id="deActivateTopic"
                                     onclick="Sidebar.ToggleTopic()">
-                                <label class="custom-control-label text-dark" for="deActivateTopic"><b>Thema
-                                        deaktivieren</b></label>
+                                <label class="custom-control-label text-dark small font-weight-bold" for="deActivateTopic">Thema
+                                        deaktivieren</label>
                             </div>
                         </a>
                     </li>
@@ -73,8 +73,8 @@
 
                             <div class="custom-control custom-checkbox  mb-4" onclick="Sidebar.ToggleTopicSlots()">
                                 <input type="checkbox" class="custom-control-input" id="deActivateTopicSlots">
-                                <label class="custom-control-label text-dark" for="deActivateTopicSlots"><b>Slots
-                                        deaktivieren</b></label>
+                                <label class="custom-control-label text-dark small font-weight-bold" for="deActivateTopicSlots">Slots
+                                        deaktivieren</label>
                             </div>
                         </a>
                     </li>
@@ -102,17 +102,17 @@
                             </li> -->
                     <li class="text-center nav-item pt-4">
                         <a href="./detail.html">
-                            <button type="button" class="btn btn-lg btn-block btn-info mb-4">
+                            <button type="button" class="btn btn-sm btn-block btn-info mb-4">
                                 Detail-Ansicht
                             </button>
                         </a>
                     </li>
                     <li class="text-center nav-item pt-4">
-                        <button type="button" class="btn btn-lg btn-danger mb-4" data-toggle="modal"
+                        <button type="button" class="btn btn-sm btn-danger mb-4" data-toggle="modal"
                             data-target="#delete">
                             Löschen
                         </button>
-                        <button type="button" class="btn btn-lg btn-success mb-4">
+                        <button type="button" class="btn btn-sm btn-success mb-4">
                             Speichern
                         </button>
                     </li>
@@ -261,7 +261,7 @@
                             <!-- Email accordion -->
                             <div class="accordion col-xl-12 col-sm-12 p-0" id="accordionExample">
                                 <div class="col-xl-12 col-sm-12 p-2">
-                                    <div class="card card-common" type="button" id="heading_1" data-toggle="collapse"
+                                    <div onclick="TopicFactory.show(this)" class="card card-common" type="button" id="heading_1" data-toggle="collapse"
                                         data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                                         <span class="badge badge-info">1</span>
                                         <div class="card-body">
@@ -386,7 +386,7 @@
                             </div>
 
                             <div class="col-xl-12 col-sm-12 p-2">
-                                <div class="card card-common">
+                                <div onclick="TopicFactory.show(this)" class="card card-common">
                                     <span class="badge badge-info">2</span>
                                     <div class="card-body">
                                         <div class="display-flex justify-content-between">
@@ -404,7 +404,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-12 col-sm-12 p-2">
-                                <div class="card card-common bg-dark">
+                                <div onclick="TopicFactory.show(this)" class="card card-common bg-dark">
                                     <span class="badge badge-info">3</span>
                                     <div class="card-body">
                                         <div class="display-flex justify-content-between">
@@ -418,7 +418,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-12 col-sm-12 p-2">
-                                <div class="card card-common bg-dark">
+                                <div onclick="TopicFactory.show(this)" class="card card-common bg-dark">
                                     <span class="badge badge-info">4</span>
                                     <div class="card-body">
                                         <div class="display-flex justify-content-between">
@@ -432,7 +432,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-12 col-sm-12 p-2">
-                                <div class="card card-common">
+                                <div onclick="TopicFactory.show(this)" class="card card-common">
                                     <span class="badge badge-info">5</span>
                                     <div class="card-body">
                                         <div class="display-flex justify-content-between">
@@ -450,7 +450,7 @@
                                 </div>
                             </div>
                             <div class="col-xl-12 col-sm-12 p-2">
-                                <div class="card card-common bg-dark">
+                                <div onclick="TopicFactory.show(this)" class="card card-common bg-dark">
                                     <span class="badge badge-info">6</span>
                                     <div class="card-body">
                                         <div class="display-flex justify-content-between">

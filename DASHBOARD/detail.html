@@ -23,10 +23,10 @@
         style="overflow-y: scroll;">
         <div class="bottom-border pt-4">
           <div class="bottom-border pt-4">
-            <h3 href=#" id="detail-title" class="text-dark" onclick="Sidebar.EditDetailTitle()">
+            <h5 href=#" id="detail-title" class="text-dark" onclick="Sidebar.EditDetailTitle()">
               Kann ich sie haben?
               <span class="badge badge-warning float-right"><i class="fas fa-pen"></i></span>
-            </h3>
+            </h5>
 
             <div id="detail-title-edit" class="input-group mb-3">
               <input type="text" class="form-control" placeholder="Neuer Titel..." aria-label="Neuer Titel..."
@@ -71,16 +71,16 @@
               <div class="custom-control custom-checkbox  mb-4">
                 <input type="checkbox" class="custom-control-input" id="deActivateTopic"
                   onclick="Sidebar.ToggleCondition()">
-                <label class="custom-control-label text-dark" for="deActivateTopic"><b>Bedingung
-                    deaktivieren</b></label>
+                <label class="custom-control-label text-dark small font-weight-bold" for="deActivateTopic">Bedingung
+                  deaktivieren</label>
               </div>
 
               <div class="ConditionWrapper text-center mb-2">
-                <div style="display: inline;" class="col-4">
+                <div style="display: inline;" class="col-4 small font-weight-bold">
                   Antwort
                 </div>
                 <select onchange="Sidebar.ChangeConditionOperator(this)" style="display: inline;"
-                  class="ConditionSelect col-3 broswer-default custom-select">
+                  class="ConditionSelect col-3 broswer-default custom-select small font-weight-bold">
                   <option selected="">---</option>
                   <option value="1"> > </option>
                   <option value="2">
@@ -95,9 +95,9 @@
 
               <div id="condition-linker" class="mb-4">
                 <div class="col-12 text-center m-auto">
-                  <button onclick="ConditionFactory.addAnd()" class="btn btn-secondary float-left"
+                  <button onclick="ConditionFactory.addAnd()" class="btn btn-sm btn-secondary float-left"
                     type="button">Und</button>
-                  <button onclick="ConditionFactory.addOr()" class="btn btn-secondary float-right mb-4"
+                  <button onclick="ConditionFactory.addOr()" class="btn btn-sm btn-secondary float-right mb-4"
                     type="button">Oder</button>
                 </div>
               </div>
@@ -110,7 +110,7 @@
               </a>
               <ul id="SuccessorWrapper" class="list-group list-group-flush">
                 <li id="successor_1" class="list-group-item">
-                  <div class="dropdown">
+                  <div class="dropdown  small font-weight-bold">
                     <div style="display: inline-block;" class="col-6 display-inline dropdown-toggle" type="button"
                       id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1 - O
                       Also.</div>
@@ -118,26 +118,35 @@
                       <i class="fas fa-trash-alt text-danger float-right" onclick="SuccessorFactory.delete(this)"></i>
                     </div>
                     <div id="successor-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                      <a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">1 - Ja</a>
-                      <a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">2 - Nein</a>
-                      <a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">3 - Vielleicht</a>
-                      <a href="#" class="dropdown-item" onclick="Sidebar.ChangeSuccessor(this)">4 - Niemals</a>
+                      <a class="dropdown-item small font-weight-bold" href="#" onclick="Sidebar.ChangeSuccessor(this)">1
+                        - Ja</a>
+                      <a class="dropdown-item small font-weight-bold" href="#" onclick="Sidebar.ChangeSuccessor(this)">2
+                        - Nein</a>
+                      <a class="dropdown-item small font-weight-bold" href="#" onclick="Sidebar.ChangeSuccessor(this)">3
+                        - Vielleicht</a>
+                      <a href="#" class="dropdown-item small font-weight-bold" onclick="Sidebar.ChangeSuccessor(this)">4
+                        - Niemals</a>
                     </div>
                   </div>
                 </li>
                 <li id="successor_2" class="list-group-item">
-                  <div class="dropdown">
+                  <div class="dropdown  small font-weight-bold">
                     <div style="display: inline-block;" class="col-6 display-inline dropdown-toggle" type="button"
                       id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2 -
                       Alles klar.</div>
                     <div style="display: inline;" class="col-6">
                       <i class="fas fa-trash-alt text-danger float-right" onclick="SuccessorFactory.delete(this)""></i>
                     </div>
-                    <div id=" successor-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">1 - Ja</a>
-                        <a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">2 - Nein</a>
-                        <a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">3 - Vielleicht</a>
-                        <a href="#" class="dropdown-item" onclick="Sidebar.ChangeSuccessor(this)">4 - Niemals</a>
+                    <div id=" successor-menu" class="dropdown-menu small font-weight-bold"
+                        aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item small font-weight-bold" href="#"
+                          onclick="Sidebar.ChangeSuccessor(this)">1 - Ja</a>
+                        <a class="dropdown-item small font-weight-bold" href="#"
+                          onclick="Sidebar.ChangeSuccessor(this)">2 - Nein</a>
+                        <a class="dropdown-item small font-weight-bold" href="#"
+                          onclick="Sidebar.ChangeSuccessor(this)">3 - Vielleicht</a>
+                        <a href="#" class="dropdown-item small font-weight-bold"
+                          onclick="Sidebar.ChangeSuccessor(this)">4 - Niemals</a>
                     </div>
                   </div>
                 </li>
@@ -159,7 +168,8 @@
                   </span>
                   <div style="display: inline;" class="col-6">
                     <i class="fas fa-trash-alt text-danger float-right" onclick="TextPoolFactory.delete(this)"></i>
-                    <i class="fas fa-pen rounded text-secondary mr-2 float-right" onclick="Sidebar.EditPoolText(this)"></i>
+                    <i class="fas fa-pen rounded text-secondary mr-2 float-right"
+                      onclick="Sidebar.EditPoolText(this)"></i>
                   </div>
                 </li>
                 <li class="list-group-item">
@@ -168,7 +178,8 @@
                   </span>
                   <div style="display: inline;" class="col-6">
                     <i class="fas fa-trash-alt text-danger float-right" onclick="TextPoolFactory.delete(this)"></i>
-                    <i class="fas fa-pen rounded text-secondary mr-2 float-right" onclick="Sidebar.EditPoolText(this)"></i>
+                    <i class="fas fa-pen rounded text-secondary mr-2 float-right"
+                      onclick="Sidebar.EditPoolText(this)"></i>
                   </div>
                 </li>
                 <li class="list-group-item">
@@ -177,7 +188,8 @@
                   </span>
                   <div style="display: inline;" class="col-6">
                     <i class="fas fa-trash-alt text-danger float-right" onclick="TextPoolFactory.delete(this)"></i>
-                    <i class="fas fa-pen rounded text-secondary mr-2 float-right" onclick="Sidebar.EditPoolText(this)"></i>
+                    <i class="fas fa-pen rounded text-secondary mr-2 float-right"
+                      onclick="Sidebar.EditPoolText(this)"></i>
                   </div>
                 </li>
                 <li class="list-group-item">
@@ -186,7 +198,8 @@
                   </span>
                   <div style="display: inline;" class="col-6">
                     <i class="fas fa-trash-alt text-danger float-right" onclick="TextPoolFactory.delete(this)"></i>
-                    <i class="fas fa-pen rounded text-secondary mr-2 float-right" onclick="Sidebar.EditPoolText(this)"></i>
+                    <i class="fas fa-pen rounded text-secondary mr-2 float-right"
+                      onclick="Sidebar.EditPoolText(this)"></i>
                   </div>
                 <li id="TextPoolPlus" class="list-group-item text-center">
                   <i class="fas fa-plus-square fa-lg text-warning" onclick="TextPoolFactory.add()"></i>
@@ -194,10 +207,10 @@
               </ul>
             </li>
             <li class="text-center nav-item pt-4">
-              <button type="button" class="btn btn-lg btn-danger mb-4">
+              <button type="button" class="btn btn-sm btn-danger mb-4">
                 Löschen
               </button>
-              <button type="button" class="btn btn-lg btn-success mb-4">
+              <button type="button" class="btn btn-sm btn-success mb-4">
                 Speichern
               </button>
             </li>
@@ -281,7 +294,7 @@
               </div>
             </div>
             <div class="col-xl-12 col-sm-12 p-2">
-              <div class="card card-common">
+              <div onclick="DetailFactory.show(this)" class="card card-common">
                 <span class="badge badge-dark">3</span>
                 <div class="card-body">
                   <b class="text-left">Dafür brauche ich aber deine Email-Adresse.</b>
@@ -292,7 +305,8 @@
               </div>
             </div>
             <div class="col-xl-12 col-sm-12 p-2 mb-5 mt-5">
-              <div id="focus" class="card card-common" style="background-color: #fff494;">
+              <div onclick="DetailFactory.show(this)" id="focus" class="card card-common"
+                style="background-color: #fff494;">
                 <span class="badge badge-dark">4</span>
                 <div class="card-header">
                   <div class="focus-operator badge badge-light">=</div>
@@ -315,16 +329,17 @@
               </div>
             </div>
             <div class="col-xl-6 col-sm-6 p-2">
-              <div class="card card-common">
+              <div onclick="DetailFactory.show(this)" class="card card-common">
                 <span class="badge badge-dark">5</span>
                 <div class="card-header">
                   <div class="unfocus-operator badge badge-light"> == </div>
                   <div class="unfocus-value badge badge-light"> Ja </div>
                 </div>
                 <div class="card-body">
+                  <!-- <i class="far fa-circle text-success"></i> -->
+                  <!-- &nbsp; -->
                   <b class="text-left">
-                    <i class="far fa-circle text-success"></i>
-                    &nbsp; also.
+                    {{ Slot_1 }} also.
                   </b>
                 </div>
                 <div class="card-footer">
@@ -333,7 +348,7 @@
               </div>
             </div>
             <div class="col-xl-6 col-sm-6 p-2">
-              <div class="card card-common">
+              <div onclick="DetailFactory.show(this)" class="card card-common">
                 <span class="badge badge-dark">6</span>
                 <div class="card-header">
                   <div class="unfocus-operator badge badge-light"> == </div>

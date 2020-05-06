@@ -9,6 +9,14 @@ a {
 
 /* navbar */
 
+.breadcrumb-item a {
+    color: #007bff;
+}
+
+.breadcrumb-item {
+    font-weight: bold;
+}
+
 .sidebar {
     height: 100vh;
     background-color: #fff;
@@ -82,6 +90,12 @@ a {
 .card-common {
     box-shadow: 1px 2px 5px #999;
     transition: all .4s;
+    /* border-radius: 0 !important; */
+    /* border: 0 !important; */
+}
+
+.card-common .badge {
+    /* border-radius: 0 !important; */
 }
 
 .card-common:hover {
@@ -146,7 +160,11 @@ a {
     background-color: #ffa107;    
 }
 
-#JumpWrapper {
+#JumpWrapper, #NoticeWrapper, #UploadWrapper, #QuestionTypeWrapper, #ButtonList {
+    display: none;
+}
+
+#focus .card-body img {
     display: none;
 }
 
@@ -167,6 +185,10 @@ a {
 }
 
 .textpool-card {
+    animation: createBox .25s;
+}
+
+.buttonpool-card {
     animation: createBox .25s;
 }
 

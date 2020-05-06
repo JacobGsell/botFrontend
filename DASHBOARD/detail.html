@@ -47,20 +47,87 @@
               </a>
               <select id="TypeSelect" class="browser-default custom-select mb-4" onchange="Sidebar.changeType()">
                 <option selected="">---</option>
-                <option value="1">Antwort</option>
+                <option value="1">Notiz</option>
                 <option value="2">Frage</option>
                 <option value="3">Weiterleitung</option>
               </select>
 
+              <!-- Notice -->
+              <div id="NoticeWrapper">
+                <h6 class="text-secondary text-center">Medium</h6>
+                <select id="NoticeSelect" class="browser-default custom-select mb-4" onchange="Sidebar.changeMedium()">
+                  <option selected="">---</option>
+                  <option value="1">Text</option>
+                  <option value="2">Bild</option>
+                </select>
+
+                <!-- Upload image -->
+                <div id="UploadWrapper" class="mb-4">
+                  <form runat="server">
+                    <div class="form-group text-center">
+                      <label for="exampleFormControlFile1">Dateiupload</label>
+                      <input type="file" id="FileInput" class="form-control-file" id="exampleFormControlFile1"
+                        style="border: 1px solid #d2d2d2;box-shadow: 0px 0px 1px 0px darkgrey;border-radius: 5px;">
+                    </div>
+                  </form>
+
+                  <div id="UploadPreview">
+                    <img src="#" alt="Mein Bild" style="max-width: 200px;" class="img-preview img-thumbnail rounded">
+                  </div>
+                </div>
+                <!-- End of upload image  -->
+              </div>
+              <!-- End of notice -->
+
+              <!-- Question type -->
+              <div id="QuestionTypeWrapper">
+                <h6 class="text-secondary text-center">Fragentyp</h6>
+                <select id="QuestionTypeSelect" class="browser-default custom-select mb-4" onchange="Sidebar.changeQuestionType()">
+                  <option selected="">---</option>
+                  <option value="1">Text</option>
+                  <option value="2">Buttons</option>
+                </select>
+
+                <div id="ButtonList">
+                  <h6 class="text-secondary text-center">Buttons</h6>
+                  <ul id="ButtonPoolWrapper" class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <span style="display: inline;" class="small font-weight-bold">
+                        Liefern
+                      </span>
+                      <div style="display: inline;" class="col-6">
+                        <i class="fas fa-trash-alt text-danger float-right" onclick="ButtonPoolFactory.delete(this)"></i>
+                        <i class="fas fa-pen rounded text-secondary mr-2 float-right" onclick="Sidebar.EditButtonPoolText(this)"></i>
+                      </div>
+                    </li>
+                    <li class="list-group-item">
+                      <span style="display: inline;" class="small font-weight-bold">
+                        Abholen
+                      </span>
+                      <div style="display: inline;" class="col-6">
+                        <i class="fas fa-trash-alt text-danger float-right" onclick="ButtonPoolFactory.delete(this)"></i>
+                        <i class="fas fa-pen rounded text-secondary mr-2 float-right"
+                          onclick="Sidebar.EditButtonPoolText(this)"></i>
+                      </div>
+                    </li>
+                    <li id="ButtonPoolPlus" class="list-group-item text-center">
+                      <i class="fas fa-plus-square fa-lg text-warning" onclick="ButtonPoolFactory.add()"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <!-- End of question type -->
+
+              <!-- GoTo -->
               <div id="JumpWrapper">
                 <h6 class="text-secondary text-center">Weiterleitung nach:</h6>
-
                 <select id="JumpSelect" class="browser-default custom-select mb-4" onchange="Sidebar.changeJump()">
                   <option selected="">---</option>
                   <option value="1">Name</option>
                   <option value="2">Generelle Zufriedenheit</option>
                 </select>
               </div>
+              <!-- End of GoTo -->
             </li>
             <li class="nav-item bottom-border pt-4">
               <a href="#" class="nav-link p-3 mb-2">
@@ -253,6 +320,15 @@
           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
+        <!-- Breadcrumbs -->
+        <nav aria-label="breadcrumb">
+          <ol class="ml-5 breadcrumb">
+            <li class="breadcrumb-item"><a href="./dashboard.html">Dashboard</a></li>
+            <li class="breadcrumb-item"><a href="./topics.html">Themen</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Detail</li>
+          </ol>
+        </nav>
+        <!-- End of breadcrumbs -->
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item">
@@ -314,6 +390,7 @@
                 </div>
                 <div class="card-body">
                   <b class="text-left">Kann ich sie haben?</b>
+                  <img src="#" alt="Mein Bild" style="max-width: 200px;" class="img-preview img-thumbnail rounded">
                 </div>
                 <div class="card-footer">
                   <i class="fas fa-question text-success fa-lg"></i>
@@ -370,8 +447,7 @@
   </section>
 
   <!-- end of cards -->
-  <script src="js/sideBar.js"></script>
-  <script src="js/addBlocks.js"></script>
+
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
@@ -383,7 +459,14 @@
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
   <script src="script.js"></script>
+  <script src="js/sideBar.js"></script>
+  <script src="js/addBlocks.js"></script>
 
+  <script>
+    $("#FileInput").change(function () {
+      Sidebar.readURL(this);
+    });
+  </script>
 </body>
 
 </html>

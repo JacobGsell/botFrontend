@@ -243,9 +243,82 @@ class Sidebar {
         return jump;
     }
 
+    static readURL(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function (e) {
+                $('.img-preview').attr('src', e.target.result);
+                let newSrc = $('.img-preview').attr('src');
+                $('#focus .card-body img').attr('src', newSrc);
+            }
+
+            reader.readAsDataURL(input.files[0]); // convert to base64 string
+        }
+    }
+
+    static changeQuestionType() {
+        let questionType = parseInt($('#QuestionTypeSelect').val());
+
+        if (questionType <= 1) {
+            $('#ButtonList').hide();
+            $('#TextPoolWrapper').parent().show();
+        }
+        
+        else {
+            this.updateButton();
+            $('#ButtonList').show();
+            $('#TextPoolWrapper').parent().hide();
+        }
+    }
+
+    static updateButton() {
+        let firstButton = $('#ButtonPoolWrapper li').children('span')[0].innerHTML;
+        $('#focus .card-body b').html(firstButton);
+    }
+
+    static changeMedium() {
+        let medium = parseInt($('#NoticeSelect').val());
+
+        if (medium > 1) {
+            $('#focus .card-body img').show();
+            $('#focus .card-body b').hide();
+            $('#UploadWrapper').show();
+            $('#TextPoolWrapper').parent().hide();
+        }
+        else {
+            $('#focus .card-body img').hide();
+            $('#focus .card-body b').show();
+            $('#UploadWrapper').hide();
+            $('#TextPoolWrapper').parent().show();
+        }
+    }
+
     static changeType() {
+        let type = this.getType();
+
         $('#focus .card-footer svg').remove();
-        $('#focus .card-footer').prepend(this.getType());
+        $('#focus .card-footer').prepend(type);
+
+        if (type.includes('ellipsis')) {
+            $('#QuestionTypeWrapper').hide();
+            $('#NoticeWrapper').show();
+            $('#JumpWrapper').hide();
+        }
+
+        else if (type.includes('question')) {
+            $('#QuestionTypeWrapper').show();
+            $('#NoticeWrapper').hide();
+            $('#JumpWrapper').hide();
+            $('#focus .card-body img').hide();
+            $('#focus .card-body b').show();
+        }
+
+        else if (type.includes('arrow')) {
+            $('#QuestionTypeWrapper').hide();
+            $('#NoticeWrapper').hide();
+            $('#JumpWrapper').show();
+        }
     }
 
     static getType() {
@@ -286,7 +359,7 @@ class Sidebar {
     static ChangeConditionValue(self) {
         let index = parseInt(($(self).parent().index() / 2) - 1);
         let operator = this.getConditionValue(self);
-        
+
         $('.focus-value')[index].innerHTML = operator;
     }
 
@@ -326,6 +399,47 @@ class Sidebar {
         return operator;
     }
 
+    static EditButtonPoolText(self) {
+        $(self).parent().parent().append(this.drawButtonPoolEdit())
+        $(self).parent().hide();
+        $(self).parent().prev().hide();
+    }
+
+    static SaveButtonPoolEdit(self) {
+        let newText = $('#button-pool-edit input').val();
+
+        if (!newText) {
+            this.updateButton();
+            this.CloseButtonPoolEdit(self);
+            return
+        }
+
+        $(self).parent().parent().prev().prev().html(newText);
+        this.updateButton();
+        this.ClosePoolEdit(self);
+    }
+
+    static CloseButtonPoolEdit(self) {
+        this.updateButton();
+        $(self).parent().parent().prev().prev().show();
+        $(self).parent().parent().prev().show();
+        $(self).parent().parent().remove();
+    }
+
+    static drawButtonPoolEdit() {
+        return '<div id="button-pool-edit" class="input-group mb-3">'
+            + '<input type="text" class="form-control" placeholder="Neuer Text..." '
+            + ' aria-label="Neuer Text..." aria-describedby="titel-save">'
+            + '<div class="input-group-append">'
+            + '<button class="btn btn-outline-success" type="button" onclick="Sidebar.SaveButtonPoolEdit(this)" id="titel-save">'
+            + '<i class="fas fa-check"></i>'
+            + '</button>'
+            + '<button class="btn btn-outline-danger" type="button" onclick="Sidebar.CloseButtonPoolEdit(this)" id="titel-cancel">'
+            + '<i class="fas fa-times"></i>'
+            + '</button>'
+            + '</div></div>';
+    }
+
     /**
      * Replaces the text field by the editor field
      */
@@ -337,6 +451,12 @@ class Sidebar {
 
     static SavePoolEdit(self) {
         let newText = $('#pool-edit input').val();
+
+        if (!newText) {
+            this.ClosePoolEdit(self);
+            return
+        }
+
         $(self).parent().parent().prev().prev().html(newText);
         this.ClosePoolEdit(self);
     }

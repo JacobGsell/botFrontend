@@ -136,6 +136,52 @@ class BotFactory {
 }
 
 /** Class responsible for creating new text pools in detail view */
+class ButtonPoolFactory {
+    /**
+     * Prepares the HTML for a new plus button
+     * @returns {String} HTML structure
+     */
+    static drawPlus() {
+        return '<li id="ButtonPoolPlus" class="buttonpool-card list-group-item text-center">'
+            + '<i class="fas fa-plus-square fa-lg text-warning" onclick="ButtonPoolFactory.add()">'
+            + '</li>';
+    }
+
+    /**
+     * Prepares the HTML for a new text block
+     * @returns {String} HTML structure
+     */
+    static drawText() {
+        return '<li class="list-group-item">'
+            + '<span style="display: inline;" class="small font-weight-bold">'
+            + 'Pooliger Text'
+            + '</span>'
+            + '<div style="display: inline;" class="col-6">'
+            + '<i class="fas fa-trash-alt text-danger float-right" onclick="ButtonPoolFactory.delete(this)"></i>'
+            + '<i class="fas fa-pen rounded text-secondary mr-2 float-right" onclick="Sidebar.EditButtonPoolText(this)"></i>'
+            + '</div>'
+            + '</li>';
+    }
+
+    /**
+     * Adds a new text block to the text pool
+     */
+    static add() {
+        let row = $('#ButtonPoolWrapper');
+        $('#ButtonPoolPlus').remove();
+        row.append(this.drawText());
+        row.append(this.drawPlus());
+
+        Sidebar.updateButton();
+    }
+
+    static delete(self) {
+        $(self).parent().parent().remove();
+        Sidebar.updateButton();
+    }
+}
+
+/** Class responsible for creating new text pools in detail view */
 class TextPoolFactory {
     /**
      * Prepares the HTML for a new plus button
@@ -158,7 +204,7 @@ class TextPoolFactory {
             + '</span>'
             + '<div style="display: inline;" class="col-6">'
             + '<i class="fas fa-trash-alt text-danger float-right" onclick="TextPoolFactory.delete(this)"></i>'
-            + '<i class="fas fa-pen rounded text-secondary mr-2 float-right"></i>'
+            + '<i class="fas fa-pen rounded text-secondary mr-2 float-right" onclick="Sidebar.EditPoolText(this)"></i>'
             + '</div>'
             + '</li>';
     }

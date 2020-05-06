@@ -63,8 +63,9 @@
                             <div class="custom-control custom-checkbox  mb-4">
                                 <input type="checkbox" class="custom-control-input" id="deActivateTopic"
                                     onclick="Sidebar.ToggleTopic()">
-                                <label class="custom-control-label text-dark small font-weight-bold" for="deActivateTopic">Thema
-                                        deaktivieren</label>
+                                <label class="custom-control-label text-dark small font-weight-bold"
+                                    for="deActivateTopic">Thema
+                                    deaktivieren</label>
                             </div>
                         </a>
                     </li>
@@ -73,8 +74,9 @@
 
                             <div class="custom-control custom-checkbox  mb-4" onclick="Sidebar.ToggleTopicSlots()">
                                 <input type="checkbox" class="custom-control-input" id="deActivateTopicSlots">
-                                <label class="custom-control-label text-dark small font-weight-bold" for="deActivateTopicSlots">Slots
-                                        deaktivieren</label>
+                                <label class="custom-control-label text-dark small font-weight-bold"
+                                    for="deActivateTopicSlots">Slots
+                                    deaktivieren</label>
                             </div>
                         </a>
                     </li>
@@ -215,173 +217,183 @@
     <!-- cards-->
 
     <section>
-        <div class="container-fluid">
+        <div class="container-fluid float-right col-10 pl-0 pr-0">
             <!-- Topnav -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                  aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
                 </button>
+                <!-- Breadcrumbs -->
+                <nav aria-label="breadcrumb">
+                  <ol class="ml-5 breadcrumb">
+                    <li class="breadcrumb-item"><a href="./dashboard.html">Dashboard</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Themen</li>
+                  </ol>
+                </nav>
+                <!-- End of breadcrumbs -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
-                                <i class="far fa-user text-dark fa-lg mr-3"></i>
-                                Benutzerkonto
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
-                                <i class="far fa-file-alt text-dark fa-lg mr-3"></i>
-                                Dokumentation
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
-                                <i class="far fa-question-circle text-dark fa-lg mr-3"></i>
-                                Hilfe
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link" data-toggle="modal"
-                                data-target="#sign-out"">
+                  <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                      <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
+                        <i class="far fa-user text-dark fa-lg mr-3"></i>
+                        Benutzerkonto
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
+                        <i class="far fa-file-alt text-dark fa-lg mr-3"></i>
+                        Dokumentation
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
+                        <i class="far fa-question-circle text-dark fa-lg mr-3"></i>
+                        Hilfe
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link" data-toggle="modal" data-target="#sign-out"">
                         <i class=" fas fa-sign-out-alt text-dark fa-lg mr-3"></i>
-                                Ausloggen
-                            </a>
-                        </li>
-                    </ul>
+                        Ausloggen
+                      </a>
+                    </li>
+                  </ul>
                 </div>
-            </nav>
+              </nav>
             <!-- End of topnav -->
             <div class="row">
-                <div id="topicsWrapper" class="col-xl-10 col-lg-9 col-md-12 ml-auto">
+                <div id="topicsWrapper" class="col-xl-10 col-lg-9 col-md-12 m-auto">
                     <div class="row pt-md-5 mt-md-3 mb-5">
                         <div class="topic-card-wrapper">
                             <div id="Topic_1">
-                            <!-- Email accordion -->
-                            <div class="accordion col-xl-12 col-sm-12 p-0" id="accordionExample">
-                                <div class="col-xl-12 col-sm-12 p-2">
-                                    <div onclick="TopicFactory.show(this)" class="card card-common" type="button" id="heading_1" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                        <span class="badge badge-info">1</span>
-                                        <div class="card-body">
-                                            <div class="display-flex justify-content-between">
-                                                <i class="fas fa-envelope fa-3x"></i>
-                                                <div class="text-right text-secondary">
-                                                    <h5>Email</h5>
-                                                    <h6>7 Dialoge</h6>
+                                <!-- Email accordion -->
+                                <div class="accordion col-xl-12 col-sm-12 p-0" id="accordionExample">
+                                    <div class="col-xl-12 col-sm-12 p-2">
+                                        <div onclick="TopicFactory.show(this)" class="card card-common" type="button"
+                                            id="heading_1" data-toggle="collapse" data-target="#collapseOne"
+                                            aria-expanded="true" aria-controls="collapseOne">
+                                            <span class="badge badge-info">1</span>
+                                            <div class="card-body">
+                                                <div class="display-flex justify-content-between">
+                                                    <i class="fas fa-envelope fa-3x"></i>
+                                                    <div class="text-right text-secondary">
+                                                        <h5>Email</h5>
+                                                        <h6>7 Dialoge</h6>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="card-footer text-secondary">
-                                            <i class="far fa-circle mr-3"></i>
-                                            <span>1 Slot</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div id="collapseOne" class="collapse show" aria-labelledby="heading_1">
-                                    <div class="col-7 m-auto">
-                                        <div class="col-xl-12 col-sm-12 p-2">
-                                            <div class="card card-common">
-                                                <span class="badge badge-dark">1</span>
-                                                <div class="card-body">
-                                                    <b class="text-left">Guten Tag, ich bin ein Chatbot.</b>
-                                                </div>
-                                                <div class="card-footer">
-                                                    <i class="fas fa-ellipsis-h text-info fa-lg"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12 col-sm-12 p-2">
-                                            <div class="card card-common">
-                                                <span class="badge badge-dark">2</span>
-                                                <div class="card-body">
-                                                    <b class="text-left">Ich möchte dir gerne schreiben :-)</b>
-                                                </div>
-                                                <div class="card-footer">
-                                                    <i class="fas fa-ellipsis-h text-info fa-lg"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12 col-sm-12 p-2">
-                                            <div class="card card-common">
-                                                <span class="badge badge-dark">3</span>
-                                                <div class="card-body">
-                                                    <b class="text-left">Dafür brauche ich aber deine Email-Adresse.</b>
-                                                </div>
-                                                <div class="card-footer">
-                                                    <i class="fas fa-ellipsis-h text-info fa-lg"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12 col-sm-12 p-2">
-                                            <div class="card card-common">
-                                                <span class="badge badge-dark">4</span>
-                                                <div class="card-body">
-                                                    <b class="text-left">Kann ich sie haben?</b>
-                                                </div>
-                                                <div class="card-footer">
-                                                    <i class="fas fa-question text-success fa-lg"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12 col-sm-12 p-2">
-                                            <div class="card card-common">
-                                                <span class="badge badge-dark">5</span>
-                                                <div class="card-header">
-                                                    <i class="fas fa-exclamation text-danger"></i>
-                                                    Ja
-                                                </div>
-                                                <div class="card-body">
-                                                    <b class="text-left">
-                                                        <i class="far fa-circle text-success"></i>
-                                                        &nbsp; also.
-                                                    </b>
-                                                </div>
-                                                <div class="card-footer">
-                                                    <i class="fas fa-ellipsis-h text-info fa-lg"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12 col-sm-12 p-2">
-                                            <div class="card card-common">
-                                                <span class="badge badge-dark">6</span>
-                                                <div class="card-header">
-                                                    <i class="fas fa-exclamation text-danger"></i>
-                                                    Nein
-                                                </div>
-                                                <div class="card-body">
-                                                    <b class="text-left">Alles klar. Dann ab zur nächsten Frage!</b>
-                                                </div>
-                                                <div class="card-footer text-info">
-                                                    <i class="fas fa-arrow-right"></i>
-                                                    <b>[NAME]</b>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-xl-12 col-sm-12 p-2">
-                                            <div class="card card-common">
-                                                <span class="badge badge-dark">7</span>
-                                                <div class="card-body">
-                                                    <b class="text-left">
-                                                        Dann hab ich alles, was ich brauche. Weiter im Text!
-                                                    </b>
-                                                </div>
-                                                <div class="card-footer text-info">
-                                                    <i class="fas fa-arrow-right"></i>
-                                                    <b>[NAME]</b>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div id="topicDetailPlus" class="card card-common col-3 p-4 ml-auto mr-auto mb-3 text-center"
-                                            onclick="TopicDetailFactory.add(this)">
-                                            <div class="text-center">
-                                                <i class="fas fa-plus fa-2x text-info"></i>
+                                            <div class="card-footer text-secondary">
+                                                <i class="far fa-circle mr-3"></i>
+                                                <span>1 Slot</span>
                                             </div>
                                         </div>
                                     </div>
+                                    <div id="collapseOne" class="collapse show" aria-labelledby="heading_1">
+                                        <div class="col-7 m-auto">
+                                            <div class="col-xl-12 col-sm-12 p-2">
+                                                <div class="card card-common">
+                                                    <span class="badge badge-dark">1</span>
+                                                    <div class="card-body">
+                                                        <b class="text-left">Guten Tag, ich bin ein Chatbot.</b>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-sm-12 p-2">
+                                                <div class="card card-common">
+                                                    <span class="badge badge-dark">2</span>
+                                                    <div class="card-body">
+                                                        <b class="text-left">Ich möchte dir gerne schreiben :-)</b>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-sm-12 p-2">
+                                                <div class="card card-common">
+                                                    <span class="badge badge-dark">3</span>
+                                                    <div class="card-body">
+                                                        <b class="text-left">Dafür brauche ich aber deine
+                                                            Email-Adresse.</b>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-sm-12 p-2">
+                                                <div class="card card-common">
+                                                    <span class="badge badge-dark">4</span>
+                                                    <div class="card-body">
+                                                        <b class="text-left">Kann ich sie haben?</b>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <i class="fas fa-question text-success fa-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-sm-12 p-2">
+                                                <div class="card card-common">
+                                                    <span class="badge badge-dark">5</span>
+                                                    <div class="card-header">
+                                                        <i class="fas fa-exclamation text-danger"></i>
+                                                        Ja
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <b class="text-left">
+                                                            <i class="far fa-circle text-success"></i>
+                                                            &nbsp; also.
+                                                        </b>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-sm-12 p-2">
+                                                <div class="card card-common">
+                                                    <span class="badge badge-dark">6</span>
+                                                    <div class="card-header">
+                                                        <i class="fas fa-exclamation text-danger"></i>
+                                                        Nein
+                                                    </div>
+                                                    <div class="card-body">
+                                                        <b class="text-left">Alles klar. Dann ab zur nächsten Frage!</b>
+                                                    </div>
+                                                    <div class="card-footer text-info">
+                                                        <i class="fas fa-arrow-right"></i>
+                                                        <b>[NAME]</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-12 col-sm-12 p-2">
+                                                <div class="card card-common">
+                                                    <span class="badge badge-dark">7</span>
+                                                    <div class="card-body">
+                                                        <b class="text-left">
+                                                            Dann hab ich alles, was ich brauche. Weiter im Text!
+                                                        </b>
+                                                    </div>
+                                                    <div class="card-footer text-info">
+                                                        <i class="fas fa-arrow-right"></i>
+                                                        <b>[NAME]</b>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div id="topicDetailPlus"
+                                                class="card card-common col-3 p-4 ml-auto mr-auto mb-3 text-center"
+                                                onclick="TopicDetailFactory.add(this)">
+                                                <div class="text-center">
+                                                    <i class="fas fa-plus fa-2x text-info"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
                                 <!-- End of email accordion -->
                             </div>
 

@@ -494,4 +494,8 @@ class Sidebar {
     static CloseTextPoolText() {
 
     }
+
+    static ChangeDelay(self) {
+        $('#focus .card-delay b').html($(self).val());
+    }
 }

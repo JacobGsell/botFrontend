@@ -40,6 +40,23 @@
             </div>
           </div>
           <ul class="navbar-nav flex-column mt-4">
+            <!-- Timer -->
+            <li class="nav-item bottom-border pt-4">
+              <a href="#" class="nav-link p-3 mb-2">
+                <i class="far fa-clock fa-lg mr-3"></i>
+                <b class="text-dark">Delay</b>
+              </a>
+              <div class="form-group row">
+                <div class="col-4">
+                  <input onchange="Sidebar.ChangeDelay(this)" class="form-control text-left delay-input" type="number" value="0" min="0"
+                    id="example-number-input">
+                </div>
+                <div class="col-5 border rounded text-center">
+                  <label for="example-number-input" class="col-form-label">Sekunden</label>
+                </div>
+            </li>
+            <!-- End of timer -->
+
             <li class="nav-item bottom-border pt-4">
               <a href="#" class="nav-link p-3 mb-2">
                 <i class="fas fa-square-full fa-lg mr-3"></i>
@@ -82,7 +99,8 @@
               <!-- Question type -->
               <div id="QuestionTypeWrapper">
                 <h6 class="text-secondary text-center">Fragentyp</h6>
-                <select id="QuestionTypeSelect" class="browser-default custom-select mb-4" onchange="Sidebar.changeQuestionType()">
+                <select id="QuestionTypeSelect" class="browser-default custom-select mb-4"
+                  onchange="Sidebar.changeQuestionType()">
                   <option selected="">---</option>
                   <option value="1">Text</option>
                   <option value="2">Buttons</option>
@@ -96,8 +114,10 @@
                         Liefern
                       </span>
                       <div style="display: inline;" class="col-6">
-                        <i class="fas fa-trash-alt text-danger float-right" onclick="ButtonPoolFactory.delete(this)"></i>
-                        <i class="fas fa-pen rounded text-secondary mr-2 float-right" onclick="Sidebar.EditButtonPoolText(this)"></i>
+                        <i class="fas fa-trash-alt text-danger float-right"
+                          onclick="ButtonPoolFactory.delete(this)"></i>
+                        <i class="fas fa-pen rounded text-secondary mr-2 float-right"
+                          onclick="Sidebar.EditButtonPoolText(this)"></i>
                       </div>
                     </li>
                     <li class="list-group-item">
@@ -105,7 +125,8 @@
                         Abholen
                       </span>
                       <div style="display: inline;" class="col-6">
-                        <i class="fas fa-trash-alt text-danger float-right" onclick="ButtonPoolFactory.delete(this)"></i>
+                        <i class="fas fa-trash-alt text-danger float-right"
+                          onclick="ButtonPoolFactory.delete(this)"></i>
                         <i class="fas fa-pen rounded text-secondary mr-2 float-right"
                           onclick="Sidebar.EditButtonPoolText(this)"></i>
                       </div>
@@ -372,6 +393,12 @@
             <div class="col-xl-12 col-sm-12 p-2">
               <div onclick="DetailFactory.show(this)" class="card card-common">
                 <span class="badge badge-dark">3</span>
+                <div class="card-header">
+                  <div class="float-right">
+                    <span class="card-delay"><b>0</b></span>
+                    <i class="far fa-clock"></i>
+                  </div>
+                </div>
                 <div class="card-body">
                   <b class="text-left">Dafür brauche ich aber deine Email-Adresse.</b>
                 </div>
@@ -387,6 +414,10 @@
                 <div class="card-header">
                   <div class="focus-operator badge badge-light">=</div>
                   <div class="focus-value badge badge-light">0</div>
+                  <div class="float-right">
+                    <span class="card-delay"><b>2</b></span>
+                    <i class="far fa-clock"></i>
+                  </div>
                 </div>
                 <div class="card-body">
                   <b class="text-left">Kann ich sie haben?</b>
@@ -411,6 +442,10 @@
                 <div class="card-header">
                   <div class="unfocus-operator badge badge-light"> == </div>
                   <div class="unfocus-value badge badge-light"> Ja </div>
+                  <div class="float-right">
+                    <span class="card-delay"><b>0</b></span>
+                    <i class="far fa-clock"></i>
+                  </div>
                 </div>
                 <div class="card-body">
                   <!-- <i class="far fa-circle text-success"></i> -->
@@ -430,6 +465,10 @@
                 <div class="card-header">
                   <div class="unfocus-operator badge badge-light"> == </div>
                   <div class="unfocus-value badge badge-light"> Nein </div>
+                  <div class="float-right">
+                    <span class="card-delay"><b>1</b></span>
+                    <i class="far fa-clock"></i>
+                  </div>
                 </div>
                 <div class="card-body">
                   <b class="text-left">Alles klar. Dann ab zur nächsten Frage!</b>

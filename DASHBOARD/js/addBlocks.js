@@ -312,10 +312,10 @@ class ConditionFactory {
     }
 
     static delete(self) {
-        let headerLength = $('#focus .card-header').children().length;
-        headerLength = headerLength > 2 ? headerLength : 1;
-
-        $('#focus .header-slot-container').children()[headerLength - 1].remove();
+        let headerLength = $('#focus .header-slot-container').children().length;
+        //headerLength = headerLength > 2 ? headerLength : 1;
+        //alert(headerLength-1)
+        $('#focus .header-slot-container').children()[headerLength-1].remove();
 
         let parent = $(self).parent().parent();
         parent.prev().remove();

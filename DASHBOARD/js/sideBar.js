@@ -206,8 +206,9 @@ class Sidebar {
      * Toggles whether the selected dialog needs a condition to be reached.
      */
     static ToggleCondition() {
-        $('#ConditionWrapper').toggle();
-        $('#focus .card-header').toggle();
+        $('#condition-linker').toggle();
+        $('.ConditionWrapper').toggle();
+        $('.focus-value').toggle();
     }
 
     static hideJump() {
@@ -357,46 +358,13 @@ class Sidebar {
     }
 
     static ChangeConditionValue(self) {
-        let index = parseInt(($(self).parent().index() / 2) - 1);
+        let index = parseInt(($(self).parent().index()) - 2);
         let operator = this.getConditionValue(self);
-
-        $('.focus-value')[index].innerHTML = operator;
+        $('.focus-value')[index].innerHTML = '{{ ' + operator + ' }}';
     }
 
     static getConditionValue(self) {
         return $(self).val();
-    }
-
-    static ChangeConditionOperator(self) {
-        let index = parseInt(($(self).parent().index() / 2) - 1);
-
-        let val = parseInt($(self).children("option:selected").val())
-        let operator = this.getConditionOperator(val);
-
-        $('.focus-operator')[index].innerHTML = operator;
-    }
-
-    static getConditionOperator(value) {
-        let operator = '';
-
-        switch (value) {
-            case 1:
-                operator = '>';
-                break;
-
-            case 2:
-                operator = '<';
-                break;
-
-            case 3:
-                operator = '=';
-                break;
-
-            default:
-                operator = '!=';
-                break;
-        }
-        return operator;
     }
 
     static EditButtonPoolText(self) {

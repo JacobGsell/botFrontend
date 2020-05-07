@@ -1,7 +1,7 @@
 /** Class responsible for creating new topic cards */
 class TopicFactory {
     static show(self) {
-        alert($(self).find('h5').html());
+        //alert($(self).find('h5').html());
     }
 
     /**
@@ -81,7 +81,7 @@ class TopicDetailFactory {
 
 /** Class responsible for creating new bot cards */
 class BotFactory {
-    
+
     static show(self) {
         alert($(self).find('h5').html());
     }
@@ -276,12 +276,22 @@ class SuccessorFactory {
 }
 
 class ConditionFactory {
+    static drawSlotContainer() {
+        return '<div class="ConditionWrapper shadow p-1 rounded text-center mb-2">'
+            + '<input style="display: inline;" type="text" onchange="Sidebar.ChangeConditionValue(this)" '
+            + 'class="col-6 form-control ml-auto mr-auto mb-1" placeholder="Slotname" aria-label="Username" aria-describedby="basic-addon1"'
+            + 'style="display: flex;">  '
+            + '<input style="display: inline;" type="text"'
+            + 'class="col-12 form-control" placeholder="Kommentar" aria-label="Username" aria-describedby="basic-addon1"'
+            + 'style="display: flex;">'
+            + '</div>'
+    }
+
     static drawConditionLinker() {
         return '<div id="condition-linker" class="mb-4">'
-            + '<div class="col-12 text-center m-auto">'
-            + '<button onclick="ConditionFactory.addAnd()" class="btn btn-secondary float-left" type="button">Und</button>'
-            + '<button onclick="ConditionFactory.delete(this)" class="btn btn-danger text-center" type="button"><i class="fas fa-trash"></i></button>'
-            + '<button onclick="ConditionFactory.addOr()" class="btn btn-secondary float-right mb-4" type="button">Oder</button>'
+            + '<div class="col-12 text-center ml-auto mr-auto">'
+            + '<button onclick="ConditionFactory.addAnd()" class="btn btn-secondary float-left mb-2" type="button">Und</button>'
+            + '<button onclick="ConditionFactory.delete(this)" class="btn btn-danger float-right" type="button"><i class="fas fa-trash"></i></button>'
             + '</div></div>';
     }
 
@@ -289,76 +299,29 @@ class ConditionFactory {
         return '<div id="peaceful-linker" class="mb-4">'
             + '<div class="col-12 text-center m-auto">'
             + '<button onclick="ConditionFactory.addAnd()" class="btn btn-secondary float-left" type="button">Und</button>'
-            + '<button onclick="ConditionFactory.addOr()" class="btn btn-secondary float-right" type="button">Oder</button>'
             + '</div></div>';
-    }
-
-    static drawAnd() {
-        return '<div class="linker-text text-center">'
-            + '<span class="text-secondary text-center">Und</span>'
-            + '</div>';
-    }
-
-    static drawOr() {
-        return '<div class="linker-text text-center">'
-            + '<span class="text-secondary text-center">Oder</span>'
-            + '</div>';
-    }
-
-    static drawConditionWrapper() {
-        return '<div class="ConditionWrapper text-center mb-2">'
-            + '<div style="display: inline;" class="col-4">Antwort</div>'
-            + '<select onchange="Sidebar.ChangeConditionOperator(this)" style="display: inline;"'
-            + 'class="ConditionSelect col-3 broswer-default custom-select">'
-            + '<option selected="">---</option>'
-            + '<option value="1"> > </option>'
-            + '<option value="2"> < </option>'
-            + '<option value="3"> = </option>'
-            + '<option value="4"> != </option>'
-            + '</select>'
-            + '<input style="display: inline;" type="text" onchange="Sidebar.ChangeConditionValue(this)"'
-            + 'class="col-4 form-control" placeholder="Wert" aria-label="Username" aria-describedby="basic-addon1"'
-            + 'style="display: flex;">'
-            + '</div>';
     }
 
     static addAnd() {
         let row = $('#condition-linker').parent();
         $('#condition-linker').remove();
-        row.append(this.drawAnd());
-        row.append(this.drawConditionWrapper());
+        row.append(this.drawSlotContainer());
         row.append(this.drawConditionLinker());
 
-        $('#focus .card-header').append('<div class="focus-and badge badge-secondary">und</div>');
-        $('#focus .card-header').append('<div class="focus-operator badge badge-light"> = </div>')
-        $('#focus .card-header').append('<div class="focus-value badge badge-light">0</div>')
-    }
-
-    static addOr() {
-        let row = $('#condition-linker').parent();
-        $('#condition-linker').remove();
-        row.append(this.drawOr());
-        row.append(this.drawConditionWrapper());
-        row.append(this.drawConditionLinker());
-
-        $('#focus .card-header').append('<div class="focus-or badge badge-secondary">oder</div>');
-        $('#focus .card-header').append('<div class="focus-operator badge badge-light"> = </div>')
-        $('#focus .card-header').append('<div class="focus-value badge badge-light">0</div>')
+        $('#focus .header-slot-container').append('<div class="focus-value ml-1 badge badge-light">{{}}</div>')
     }
 
     static delete(self) {
         let headerLength = $('#focus .card-header').children().length;
-        
-        for (let index = 0; index < 3; index++) {            
-            $('#focus .card-header').children()[headerLength-1-index].remove();
-        }
+        headerLength = headerLength > 2 ? headerLength : 1;
+
+        $('#focus .header-slot-container').children()[headerLength - 1].remove();
 
         let parent = $(self).parent().parent();
-        parent.prev().prev().remove();
         parent.prev().remove();
 
-        if(parent.parent().children().length == 4) {
-           parent.children().children()[1].remove();       
+        if (parent.parent().children().length == 3) {
+            parent.children().children()[1].remove();
         }
     }
 }

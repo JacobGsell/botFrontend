@@ -221,51 +221,52 @@
             <!-- Topnav -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-                  aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
                 <!-- Breadcrumbs -->
                 <nav aria-label="breadcrumb">
-                  <ol class="ml-5 breadcrumb">
-                    <li class="breadcrumb-item"><a href="./dashboard.html">Dashboard</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Themen</li>
-                  </ol>
+                    <ol class="ml-5 breadcrumb">
+                        <li class="breadcrumb-item"><a href="./dashboard.html">Dashboard</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Themen</li>
+                    </ol>
                 </nav>
                 <!-- End of breadcrumbs -->
                 <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
-                    <li class="nav-item">
-                      <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
-                        <i class="far fa-user text-dark fa-lg mr-3"></i>
-                        Benutzerkonto
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
-                        <i class="far fa-file-alt text-dark fa-lg mr-3"></i>
-                        Dokumentation
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
-                        <i class="far fa-question-circle text-dark fa-lg mr-3"></i>
-                        Hilfe
-                      </a>
-                    </li>
-                    <li class="nav-item">
-                      <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link" data-toggle="modal" data-target="#sign-out"">
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
+                                <i class="far fa-user text-dark fa-lg mr-3"></i>
+                                Benutzerkonto
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
+                                <i class="far fa-file-alt text-dark fa-lg mr-3"></i>
+                                Dokumentation
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
+                                <i class="far fa-question-circle text-dark fa-lg mr-3"></i>
+                                Hilfe
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link" data-toggle="modal"
+                                data-target="#sign-out"">
                         <i class=" fas fa-sign-out-alt text-dark fa-lg mr-3"></i>
-                        Ausloggen
-                      </a>
-                    </li>
-                  </ul>
+                                Ausloggen
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-              </nav>
+            </nav>
             <!-- End of topnav -->
             <div class="row">
                 <div id="topicsWrapper" class="col-xl-10 col-lg-9 col-md-12 m-auto">
                     <div class="row pt-md-5 mt-md-3 mb-5">
-                        <div class="topic-card-wrapper">
+                        <div id="topicList" class="topic-card-wrapper">
                             <div id="Topic_1">
                                 <!-- Email accordion -->
                                 <div class="accordion col-xl-12 col-sm-12 p-0" id="accordionExample">
@@ -498,6 +499,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@latest/jquery-sortable.js"></script>
+    <script>
+        Sortable.create(topicList, { /* options */ });
+    </script>
+
     <script src="script.js"></script>
     <script src="js/sideBar.js"></script>
     <script src="js/addBlocks.js"></script>

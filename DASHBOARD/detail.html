@@ -152,41 +152,30 @@
             </li>
             <li class="nav-item bottom-border pt-4">
               <a href="#" class="nav-link p-3 mb-2">
-                <i class="fas fa-random fa-lg mr-3"></i>
-                <b class="text-dark">Bedingung</b>
+                <i class="far fa-circle fa-lg mr-3"></i>
+                <b class="text-dark">Slots</b>
               </a>
 
               <div class="custom-control custom-checkbox  mb-4">
                 <input type="checkbox" class="custom-control-input" id="deActivateTopic"
                   onclick="Sidebar.ToggleCondition()">
-                <label class="custom-control-label text-dark small font-weight-bold" for="deActivateTopic">Bedingung
+                <label class="custom-control-label text-dark small font-weight-bold" for="deActivateTopic">Slots
                   deaktivieren</label>
               </div>
 
-              <div class="ConditionWrapper text-center mb-2">
-                <div style="display: inline;" class="col-4 small font-weight-bold">
-                  Antwort
-                </div>
-                <select onchange="Sidebar.ChangeConditionOperator(this)" style="display: inline;"
-                  class="ConditionSelect col-3 broswer-default custom-select small font-weight-bold">
-                  <option selected="">---</option>
-                  <option value="1"> > </option>
-                  <option value="2">
-                    < </option>
-                  <option value="3"> = </option>
-                  <option value="4"> != </option>
-                </select>
+              <!-- <div class="ConditionWrapper shadow p-1 rounded text-center mb-2">
                 <input style="display: inline;" type="text" onchange="Sidebar.ChangeConditionValue(this)"
-                  class="col-4 form-control" placeholder="Wert" aria-label="Username" aria-describedby="basic-addon1"
-                  style="display: flex;">
-              </div>
+                  class="col-6 form-control ml-auto mr-auto mb-1" placeholder="Slotname" aria-label="Username" aria-describedby="basic-addon1"
+                  style="display: flex;">          
+                  <input style="display: inline;" type="text"
+                  class="col-12 form-control" placeholder="Kommentar" aria-label="Username" aria-describedby="basic-addon1"
+                  style="display: flex;">          
+              </div> -->
 
-              <div id="condition-linker" class="mb-4">
+              <div id="condition-linker" class="mb-2">
                 <div class="col-12 text-center m-auto">
-                  <button onclick="ConditionFactory.addAnd()" class="btn btn-sm btn-secondary float-left"
-                    type="button">Und</button>
-                  <button onclick="ConditionFactory.addOr()" class="btn btn-sm btn-secondary float-right mb-4"
-                    type="button">Oder</button>
+                  <button onclick="ConditionFactory.addAnd()" class="btn btn-secondary float-left mb-2" type="button">Und</button>'
+                  <!-- <button onclick="ConditionFactory.delete(this)" class="btn btn-danger float-right" type="button"><i class="fas fa-trash"></i></button> -->
                 </div>
               </div>
 
@@ -412,8 +401,8 @@
                 style="background-color: #fff494;">
                 <span class="badge badge-dark">4</span>
                 <div class="card-header">
-                  <div class="focus-operator badge badge-light">=</div>
-                  <div class="focus-value badge badge-light">0</div>
+                  <div class="header-slot-container float-left">
+                  </div>
                   <div class="float-right">
                     <span class="card-delay"><b>2</b></span>
                     <i class="far fa-clock"></i>

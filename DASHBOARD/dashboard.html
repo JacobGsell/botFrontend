@@ -173,7 +173,7 @@
             <!-- End of topnav -->
             <div class="row">
                 <div class="col-xl-10 col-lg-9 col-md-12 m-auto" id="botWrapper">
-                    <div class="row pt-md-5 mt-md-3 mb-5">
+                    <div id="botList" class="row pt-md-5 mt-md-3 mb-5">
                         <div class="col-xl-3 col-sm-4 p-2">
                             <a style="text-decoration:none;">
                                 <div id="Bot_1" class="card card-common" onclick="BotFactory.show(this)">
@@ -291,6 +291,12 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@latest/jquery-sortable.js"></script>
+    <script>
+        Sortable.create(botList, { /* options */ });
+    </script>
+
     <script src="script.js"></script>
     <script src="js/sideBar.js"></script>
     <script src="js/addBlocks.js"></script>

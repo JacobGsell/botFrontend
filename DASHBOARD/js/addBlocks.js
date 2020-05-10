@@ -16,16 +16,35 @@ class TopicFactory {
             + '</div></div></div>';
     }
 
+    static drawAccordion() {
+        return '<!-- New accordion -->'
+        + '<div class="accordion col-xl-12 col-sm-12 p-0" id="Topic_arsch">'
+        + this.drawCard()
+        // + '<div id="collapseArsch" class="collapse" aria-labelledby="#headingArsch">'
+        // + '<div class="col-7 m-auto">'
+        // + TopicDetailFactory.drawPlus()
+        + '</div>'
+        + '<div id="collapseArsch" class="collapse" aria-labelledby="#headingArsch">'
+        + '<div class="col-7 m-auto">'
+        + TopicDetailFactory.drawPlus()
+        + '</div></div>'
+        + '<!-- check -->'
+        + '<!-- End of new accordion -->';
+    }
+
+
     /**
      * Prepares the HTML for a new topic card
      * @returns {String} HTML structure
      */
     static drawCard() {
         return '<div class="topic-card col-xl-12 col-sm-12 p-2">'
-            + '<div class= "card card-common" onclick="TopicFactory.show(this)">'
+            + '<div class="card card-common" onclick="TopicFactory.show(this)" '
+            + 'type="button" id="headingArsch" data-toggle="collapse" data-target="#collapseArsch"'
+            + 'aria-expanded="true" aria-controls="collapse-1">'
+            + '<span class="badge badge-info">-1</span>'
             + '<div class="card-body">'
             + '<div class="display-flex justify-content-between">'
-            + '<i class="far fa-square fa-3x"></i>'
             + '<div class="text-right text-secondary">'
             + '<h5>Titel</h5>'
             + '<h6> 0 Dialoge </h6>'
@@ -39,9 +58,9 @@ class TopicFactory {
      * Adds a new topic card
      */
     static add() {
-        let row = $('#topicsWrapper .row');
+        let row = $('#topicWrapper');
         $('#topicPlus').remove();
-        row.append(this.drawCard());
+        row.append(this.drawAccordion());
         row.append(this.drawPlus());
 
         window.scrollTo(0, document.body.scrollHeight);
@@ -73,7 +92,7 @@ class TopicDetailFactory {
 
     static add(self) {
         let row = $(self).parent();
-        $('#topicDetailPlus').remove();
+        $(self).remove();
         row.append(this.drawCard());
         row.append(this.drawPlus());
     }
@@ -253,10 +272,11 @@ class SuccessorFactory {
             + '<i class="fas fa-trash-alt text-danger float-right" onclick="SuccessorFactory.delete(this)"></i>'
             + '</div>'
             + '<div id="successor-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">'
-            + '<a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">1 - Ja</a>'
-            + '<a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">2 - Nein</a>'
-            + '<a class="dropdown-item" href="#" onclick="Sidebar.ChangeSuccessor(this)">3 - Vielleicht</a>'
-            + '<a href="#" class="dropdown-item" onclick="Sidebar.ChangeSuccessor(this)">4 - Niemals</a>'
+            + '<a class="dropdown-item small font-weight-bold" href="#" onclick="Sidebar.ChangeSuccessor(this)">1 - Hervorr...</a>'
+            + '<a class="dropdown-item small font-weight-bold" href="#" onclick="Sidebar.ChangeSuccessor(this)">2 - Was möc...</a>'
+            + '<a class="dropdown-item small font-weight-bold" href="#" onclick="Sidebar.ChangeSuccessor(this)">3 - Bild</a>'
+            + '<a href="#" class="dropdown-item small font-weight-bold" onclick="Sidebar.ChangeSuccessor(this)">4 - Ihre be...</a>'
+            + '<a href="#" class="dropdown-item small font-weight-bold" onclick="Sidebar.ChangeSuccessor(this)">5 - Möchten...</a>'
             + '</div></div></li>'
     }
 

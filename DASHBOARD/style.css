@@ -9,6 +9,10 @@ a {
 
 /* navbar */
 
+#navbarNav {
+    background: #eeeeee;
+}
+
 .breadcrumb-item a {
     color: #007bff;
 }
@@ -144,6 +148,11 @@ a {
 
 #TextPoolPlus svg:hover {
     color: #ffa107;    
+}
+
+/* Topic detail */
+.topicDetailPlus {
+    min-width: 100px;
 }
 
 /* Initially disabled */

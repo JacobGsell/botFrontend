@@ -20,7 +20,7 @@
     <div class="container-fluid">
         <div class="row">
             <!-- sidebar -->
-            <div class="col-xl-2 col-lg-3 sidebar fixed-top d-none d-sm-none d-lg-block" id="navbarNav">
+            <div class="col-2 sidebar fixed-top d-none d-sm-none d-lg-block" id="navbarNav">
                 <div class="bottom-border pt-4">
                     <h3 href=#" id="topic-title" class="text-dark" onclick="Sidebar.EditTopicTitle()">
                         Email
@@ -40,7 +40,7 @@
                 </div>
 
                 <ul class="navbar-nav flex-column mt-4">
-                    <li class="nav-item bottom-border pt-4">
+                    <li class="nav-item p-2 bg-white shadow rounded mb-3">
                         <a href="#" class="nav-link p-3 mb-2">
                             <i class="fas fa-exclamation fa-lg mr-3"></i>
                             <b class="text-dark">Icon</b>
@@ -57,7 +57,7 @@
                             <option value="7">Brief</option>
                         </select>
                     </li>
-                    <li class="nav-item bottom-border pt-4">
+                    <li class="nav-item p-2 bg-white shadow rounded mb-3">
                         <a href="#" class="nav-link p-3 mb-2">
 
                             <div class="custom-control custom-checkbox  mb-4">
@@ -69,7 +69,7 @@
                             </div>
                         </a>
                     </li>
-                    <li class="nav-item bottom-border pt-4">
+                    <li class="nav-item p-2 bg-white shadow rounded mb-3">
                         <a href="#" class="nav-link p-3 mb-2">
 
                             <div class="custom-control custom-checkbox  mb-4" onclick="Sidebar.ToggleTopicSlots()">
@@ -118,53 +118,9 @@
                             Speichern
                         </button>
                     </li>
-                    <li class="nav-item fixed-bottom mb-2">
-                        <a href="./dashboard.html" class="p-3 mb-2">
-                            <i class=" fas fa-arrow-left fa-lg mr-3 text-danger"></i>
-                            <b class="text-dark">Zurück</b>
-                        </a>
-                    </li>
                 </ul>
             </div>
             <!-- end of sidebar -->
-
-            <!-- test bar -->
-            <div class="navbar d-block d-lg-none d-xl-none">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link current">
-                            <i class="far fa-user text-light fa-lg mr-3"></i>
-                            Benutzerkonto
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link">
-                            <i class="fas fa-redo text-light fa-lg mr-3"></i>
-                            Zuletzt bearbeitet
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link">
-                            <i class="far fa-file-alt text-light fa-lg mr-3"></i>
-                            Dokumentation
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link">
-                            <i class="far fa-question-circle text-light fa-lg mr-3"></i>
-                            Hilfe
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#" class="nav-link text-white p-3 mb-2 sidebar-link" data-toggle="modal"
-                            data-target="#sign-out">
-                            <i class=" fas fa-sign-out-alt text-light fa-lg mr-3"></i>
-                            Ausloggen
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <!-- end of test bar -->
         </div>
     </div>
     </div>
@@ -217,7 +173,7 @@
     <!-- cards-->
 
     <section>
-        <div class="container-fluid float-right col-10 pl-0 pr-0">
+        <div class="container-fluid float-right col-lg-10 col-12 pl-0 pr-0">
             <!-- Topnav -->
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
@@ -265,128 +221,187 @@
             <!-- End of topnav -->
             <div class="row">
                 <div id="topicsWrapper" class="col-xl-10 col-lg-9 col-md-12 m-auto">
+                    <div class="col-12 p-2">
+                        <div class="shadow rounded mb-4 bg-light p-2" id="FallbackWrapper">
+                            <!-- Fallback title -->
+                            <div class="alert alert-dark mb-0 col-lg-2 col-6 m-auto text-center" role="alert">
+                                <b>
+                                    Fallback
+                                </b>
+                            </div>
+                            <!-- End of fallback title -->
+
+                            <!-- Fallback accordion -->
+                            <div class="accordion col-xl-12 col-sm-12 p-0" id="accordionExampleFallback">
+                                <div class="col-xl-12 col-sm-12 p-2">
+                                    <div onclick="TopicFactory.show(this)" class="card card-common"
+                                        style="background-color: #ff6c34;" type="button" id="heading_fallback"
+                                        data-toggle="collapse" data-target="#collapseFallback" aria-expanded="true"
+                                        aria-controls="collapseFallback">
+                                        <span class="badge badge-info">0</span>
+                                        <div class="card-body">
+                                            <div class="display-flex justify-content-between">
+                                                <i class="fas fa-ban text-light fa-3x"></i>
+                                                <div class="text-right text-light">
+                                                    <h5>Fallback</h5>
+                                                    <h6>3 Dialoge</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-light">
+                                            <i class="far fa-circle mr-3"></i>
+                                            <span>1 Slot</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="collapseFallback" class="collapse" aria-labelledby="heading_fallback">
+                                    <div class="col-7 m-auto">
+                                        <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
+                                            <div class="card card-common">
+                                                <span class="badge badge-dark">1</span>
+                                                <div class="card-body">
+                                                    <b class="text-left">Das habe ich leider nicht verstanden. Könnten
+                                                        Sie
+                                                        das wiederholen?</b>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="topicDetailPlus card card-common col-3 p-4 ml-auto mr-auto mb-3 text-center"
+                                            onclick="TopicDetailFactory.add(this)">
+                                            <div class="text-center">
+                                                <i class="fas fa-plus fa-2x text-info"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of Fallback accordion -->
+                        </div>
+
+                        <div class="shadow rounded mb-2 bg-light p-2" id="GlobalsWrapper">
+                            <!-- Globals title -->
+                            <div class="alert alert-dark mb-0 col-lg-2 col-6 m-auto text-center" role="alert">
+                                <b>
+                                    Globals
+                                </b>
+                            </div>
+                            <!-- End of globals title -->
+
+                            <!-- Globals accordion -->
+                            <div class="accordion col-xl-12 col-sm-12 p-0" id="accordionExampleGlobals">
+                                <div class="col-xl-12 col-sm-12 p-2">
+                                    <div onclick="TopicFactory.show(this)" class="card card-common"
+                                        style="background: #00d691;" type="button" id="heading_globals"
+                                        data-toggle="collapse" data-target="#collapseGlobals" aria-expanded="true"
+                                        aria-controls="collapseGlobals">
+                                        <span class="badge badge-info">1</span>
+                                        <div class="card-body">
+                                            <div class="display-flex justify-content-between">
+                                                <i class="fas fa-globe fa-3x text-light"></i>
+                                                <div class="text-right text-light">
+                                                    <h5>Globals</h5>
+                                                    <h6>5 Dialoge</h6>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer text-light">
+                                            <i class="far fa-circle mr-3"></i>
+                                            <span>1 Slot</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="collapseGlobals" class="collapse" aria-labelledby="heading_globals">
+                                    <div class="col-7 m-auto">
+                                        <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
+                                            <div class="card card-common">
+                                                <span class="badge badge-dark">1</span>
+                                                <div class="card-body">
+                                                    <b class="text-left">Wie kann ich dir helfen?</b>
+                                                </div>
+                                                <div class="card-footer">
+                                                    <i class="fas fa-question text-success fa-lg"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="topicDetailPlus card card-common col-3 p-4 ml-auto mr-auto mb-3 text-center"
+                                            onclick="TopicDetailFactory.add(this)">
+                                            <div class="text-center">
+                                                <i class="fas fa-plus fa-2x text-info"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- End of globals accordion -->
+                        </div>
+                    </div>
                     <div class="row pt-md-5 mt-md-3 mb-5">
                         <div id="topicList" class="topic-card-wrapper">
-                            <div id="Topic_1">
+                            <div id="topicWrapper">
                                 <!-- Email accordion -->
-                                <div class="accordion col-xl-12 col-sm-12 p-0" id="accordionExample">
+                                <div class="accordion col-xl-12 col-sm-12 p-0" id="Topic_1">
                                     <div class="col-xl-12 col-sm-12 p-2">
                                         <div onclick="TopicFactory.show(this)" class="card card-common" type="button"
                                             id="heading_1" data-toggle="collapse" data-target="#collapseOne"
-                                            aria-expanded="true" aria-controls="collapseOne">
-                                            <span class="badge badge-info">1</span>
+                                            aria-expanded="false" aria-controls="collapseOne">
+                                            <span class="badge badge-info">2</span>
                                             <div class="card-body">
                                                 <div class="display-flex justify-content-between">
-                                                    <i class="fas fa-envelope fa-3x"></i>
+                                                    <!-- <i class="fas fa-envelope fa-3x"></i> -->
                                                     <div class="text-right text-secondary">
-                                                        <h5>Email</h5>
-                                                        <h6>7 Dialoge</h6>
+                                                        <h5>Willkommen</h5>
+                                                        <h6>3 Dialoge</h6>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="card-footer text-secondary">
                                                 <i class="far fa-circle mr-3"></i>
-                                                <span>1 Slot</span>
+                                                <span>3 Slots</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="collapseOne" class="collapse show" aria-labelledby="heading_1">
+                                    <div id="collapseOne" class="collapse" aria-labelledby="heading_1">
                                         <div class="col-7 m-auto">
-                                            <div class="col-xl-12 col-sm-12 p-2">
+                                            <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
                                                 <div class="card card-common">
                                                     <span class="badge badge-dark">1</span>
                                                     <div class="card-body">
-                                                        <b class="text-left">Guten Tag, ich bin ein Chatbot.</b>
+                                                        <b class="text-left">Herzlich willkommen zu Panucci's Pizza! Wie
+                                                            können wir Ihnen helfen?</b>
                                                     </div>
                                                     <div class="card-footer">
                                                         <i class="fas fa-ellipsis-h text-info fa-lg"></i>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-12 col-sm-12 p-2">
+                                            <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
                                                 <div class="card card-common">
                                                     <span class="badge badge-dark">2</span>
                                                     <div class="card-body">
-                                                        <b class="text-left">Ich möchte dir gerne schreiben :-)</b>
+                                                        <b class="text-left">Sie möchten gerne etwas bestellen. Würden
+                                                            Sie mir Ihre lieferadresse nennen?</b>
                                                     </div>
                                                     <div class="card-footer">
                                                         <i class="fas fa-ellipsis-h text-info fa-lg"></i>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-12 col-sm-12 p-2">
+                                            <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
                                                 <div class="card card-common">
                                                     <span class="badge badge-dark">3</span>
                                                     <div class="card-body">
-                                                        <b class="text-left">Dafür brauche ich aber deine
-                                                            Email-Adresse.</b>
+                                                        <b class="text-left">Ihre Straße ist {{ Straße }}. Ich bräuchte
+                                                            noch Ihre Postleitzahl</b>
                                                     </div>
                                                     <div class="card-footer">
                                                         <i class="fas fa-ellipsis-h text-info fa-lg"></i>
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-xl-12 col-sm-12 p-2">
-                                                <div class="card card-common">
-                                                    <span class="badge badge-dark">4</span>
-                                                    <div class="card-body">
-                                                        <b class="text-left">Kann ich sie haben?</b>
-                                                    </div>
-                                                    <div class="card-footer">
-                                                        <i class="fas fa-question text-success fa-lg"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-12 col-sm-12 p-2">
-                                                <div class="card card-common">
-                                                    <span class="badge badge-dark">5</span>
-                                                    <div class="card-header">
-                                                        <i class="fas fa-exclamation text-danger"></i>
-                                                        Ja
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <b class="text-left">
-                                                            <i class="far fa-circle text-success"></i>
-                                                            &nbsp; also.
-                                                        </b>
-                                                    </div>
-                                                    <div class="card-footer">
-                                                        <i class="fas fa-ellipsis-h text-info fa-lg"></i>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-12 col-sm-12 p-2">
-                                                <div class="card card-common">
-                                                    <span class="badge badge-dark">6</span>
-                                                    <div class="card-header">
-                                                        <i class="fas fa-exclamation text-danger"></i>
-                                                        Nein
-                                                    </div>
-                                                    <div class="card-body">
-                                                        <b class="text-left">Alles klar. Dann ab zur nächsten Frage!</b>
-                                                    </div>
-                                                    <div class="card-footer text-info">
-                                                        <i class="fas fa-arrow-right"></i>
-                                                        <b>[NAME]</b>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-xl-12 col-sm-12 p-2">
-                                                <div class="card card-common">
-                                                    <span class="badge badge-dark">7</span>
-                                                    <div class="card-body">
-                                                        <b class="text-left">
-                                                            Dann hab ich alles, was ich brauche. Weiter im Text!
-                                                        </b>
-                                                    </div>
-                                                    <div class="card-footer text-info">
-                                                        <i class="fas fa-arrow-right"></i>
-                                                        <b>[NAME]</b>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div id="topicDetailPlus"
-                                                class="card card-common col-3 p-4 ml-auto mr-auto mb-3 text-center"
+                                            <div class="topicDetailPlus card card-common col-3 p-4 ml-auto mr-auto mb-3 text-center"
                                                 onclick="TopicDetailFactory.add(this)">
                                                 <div class="text-center">
                                                     <i class="fas fa-plus fa-2x text-info"></i>
@@ -396,97 +411,169 @@
                                     </div>
                                 </div>
                                 <!-- End of email accordion -->
-                            </div>
 
-                            <div class="col-xl-12 col-sm-12 p-2">
-                                <div onclick="TopicFactory.show(this)" class="card card-common">
-                                    <span class="badge badge-info">2</span>
-                                    <div class="card-body">
-                                        <div class="display-flex justify-content-between">
-                                            <i class="fas fa-utensils fa-3x"></i>
-                                            <div class="text-right text-secondary">
-                                                <h5>Name</h5>
-                                                <h6>1 Dialoge</h6>
+                                <!-- Order accordion -->
+                                <div class="accordion col-xl-12 col-sm-12 p-0" id="accordionExample2">
+                                    <div class="col-xl-12 col-sm-12 p-2">
+                                        <div onclick="TopicFactory.show(this)" class="card card-common" type="button"
+                                            id="heading_2" data-toggle="collapse" data-target="#collapseTwo"
+                                            aria-expanded="true" aria-controls="collapseTwo">
+                                            <span class="badge badge-info">3</span>
+                                            <div class="card-body">
+                                                <div class="display-flex justify-content-between">
+                                                    <!-- <i class="fas fa-envelope fa-3x"></i> -->
+                                                    <div class="text-right text-secondary">
+                                                        <h5>Bestellung</h5>
+                                                        <h6>5 Dialoge</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer text-secondary">
+                                                <i class="far fa-circle mr-3"></i>
+                                                <span>3 Slots</span>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card-footer text-secondary">
-                                        <i class="far fa-circle mr-3"></i>
-                                        <span>2 Slots</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-sm-12 p-2">
-                                <div onclick="TopicFactory.show(this)" class="card card-common bg-dark">
-                                    <span class="badge badge-info">3</span>
-                                    <div class="card-body">
-                                        <div class="display-flex justify-content-between">
-                                            <i class="fas fa-smile fa-3x text-light"></i>
-                                            <div class="text-right text-secondary text-light">
-                                                <h5>Generelle zufriedenheit</h5>
-                                                <h6>1 Dialog</h6>
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="heading_2">
+                                        <div class="col-7 m-auto">
+                                            <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
+                                                <div class="card card-common">
+                                                    <span class="badge badge-dark">1</span>
+                                                    <div class="card-body">
+                                                        <b class="text-left">Hervorragend! Ihre Lieferadresse befindet
+                                                            sich in unserem Lieferradius.</b>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
+                                                <div class="card card-common">
+                                                    <span class="badge badge-dark">2</span>
+                                                    <div class="card-body">
+                                                        <b class="text-left">Was möchten Sie bestellen? Hier nochmal
+                                                            unsere Speisekarte</b>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
+                                                <div class="card card-common">
+                                                    <span class="badge badge-dark">3</span>
+                                                    <div class="card-body">
+                                                        <b class="text-left">Bild</b>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
+                                                <div class="card card-common">
+                                                    <span class="badge badge-dark">4</span>
+                                                    <div class="card-body">
+                                                        <b class="text-left">Ihre bestellung lautet: {{ Anzahl }} mal
+                                                            die Pizza {{ Sorte }}</b>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
+                                                <div class="card card-common">
+                                                    <span class="badge badge-dark">5</span>
+                                                    <div class="card-body">
+                                                        <b class="text-left">Möchten Sie noch etwas bestellen?</b>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="topicDetailPlus card card-common col-3 p-4 ml-auto mr-auto mb-3 text-center"
+                                                onclick="TopicDetailFactory.add(this)">
+                                                <div class="text-center">
+                                                    <i class="fas fa-plus fa-2x text-info"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-12 col-sm-12 p-2">
-                                <div onclick="TopicFactory.show(this)" class="card card-common bg-dark">
-                                    <span class="badge badge-info">4</span>
-                                    <div class="card-body">
-                                        <div class="display-flex justify-content-between">
-                                            <i class="fas fa-moon fa-3x text-light"></i>
-                                            <div class="text-right text-secondary text-light">
-                                                <h5>Schlafverhalten</h5>
-                                                <h6>1 Dialog</h6>
+                                <!-- End of order accordion -->
+
+                                <!-- Goodbye accordion -->
+                                <div class="accordion col-xl-12 col-sm-12 p-0" id="accordionExample2">
+                                    <div class="col-xl-12 col-sm-12 p-2">
+                                        <div onclick="TopicFactory.show(this)" class="card card-common" type="button"
+                                            id="heading_3" data-toggle="collapse" data-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            <span class="badge badge-info">4</span>
+                                            <div class="card-body">
+                                                <div class="display-flex justify-content-between">
+                                                    <!-- <i class="fas fa-envelope fa-3x"></i> -->
+                                                    <div class="text-right text-secondary">
+                                                        <h5>Abschied nehmen</h5>
+                                                        <h6>2 Dialoge</h6>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer text-secondary">
+                                                <i class="far fa-circle mr-3"></i>
+                                                <span>0 Slots</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="collapseThree" class="collapse" aria-labelledby="heading_3">
+                                        <div class="col-7 m-auto">
+                                            <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
+                                                <div class="card card-common">
+                                                    <span class="badge badge-dark">1</span>
+                                                    <div class="card-body">
+                                                        <b class="text-left">Gut, ihr Essen ist unterwegs. in der Regel
+                                                            dauert die Lieferung 40 Minuten.</b>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
+                                                <div class="card card-common">
+                                                    <span class="badge badge-dark">2</span>
+                                                    <div class="card-body">
+                                                        <b class="text-left">Guten Appetit und bis bald!</b>
+                                                    </div>
+                                                    <div class="card-footer">
+                                                        <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="topicDetailPlus card card-common col-3 p-4 ml-auto mr-auto mb-3 text-center"
+                                                onclick="TopicDetailFactory.add(this)">
+                                                <div class="text-center">
+                                                    <i class="fas fa-plus fa-2x text-info"></i>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-12 col-sm-12 p-2">
-                                <div onclick="TopicFactory.show(this)" class="card card-common">
-                                    <span class="badge badge-info">5</span>
-                                    <div class="card-body">
-                                        <div class="display-flex justify-content-between">
-                                            <i class="fas fa-home fa-3x"></i>
-                                            <div class="text-right text-secondary">
-                                                <h5>Wohnort</h5>
-                                                <h6>4 Dialoge</h6>
-                                            </div>
+                                <!-- End of goodbye accordion -->
+
+                                <div id="topicPlus" class="col-xl-2 col-sm-2 p-5 m-auto" onclick="TopicFactory.add()">
+                                    <div class="card card-common pb-5 pt-5">
+                                        <div class="text-center">
+                                            <i class="fas fa-plus fa-2x text-success"></i>
                                         </div>
-                                    </div>
-                                    <div class="card-footer text-secondary">
-                                        <i class="far fa-circle mr-3"></i>
-                                        <span>2 Slots</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-12 col-sm-12 p-2">
-                                <div onclick="TopicFactory.show(this)" class="card card-common bg-dark">
-                                    <span class="badge badge-info">6</span>
-                                    <div class="card-body">
-                                        <div class="display-flex justify-content-between">
-                                            <i class="fas fa-user fa-3x text-light"></i>
-                                            <div class="text-right text-secondary text-light">
-                                                <h5>Selbsteinschätzung</h5>
-                                                <h6>15 Dialoge</h6>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div id="topicPlus" class="col-xl-2 col-sm-2 p-5 m-auto" onclick="TopicFactory.add()">
-                                <div class="card card-common pb-5 pt-5">
-                                    <div class="text-center">
-                                        <i class="fas fa-plus fa-2x text-success"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
     </section>
 
     <!-- end of cards -->
@@ -502,7 +589,7 @@
     <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@latest/jquery-sortable.js"></script>
     <script>
-        Sortable.create(topicList, { /* options */ });
+        Sortable.create(topicWrapper, {});
     </script>
 
     <script src="script.js"></script>

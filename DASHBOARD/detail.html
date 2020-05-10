@@ -19,10 +19,12 @@
   <div class="container-fluid">
     <div class="row">
       <!-- sidebar -->
-      <div class="col-xl-2 col-lg-3 sidebar fixed-top d-none d-sm-none d-lg-block" id="navbarNav"
-        style="overflow-y: scroll;">
+      <div class="col-2 sidebar fixed-top d-none d-sm-none d-lg-block" id="navbarNav" style="overflow-y: scroll;">
         <div class="bottom-border pt-4">
-          <div class="bottom-border pt-4">
+
+          <!-- Disabled for now... -->
+
+          <!-- <div class="bottom-border pt-4">
             <h5 href=#" id="detail-title" class="text-dark" onclick="Sidebar.EditDetailTitle()">
               Kann ich sie haben?
               <span class="badge badge-warning float-right"><i class="fas fa-pen"></i></span>
@@ -38,18 +40,19 @@
                   id="titel-cancel"><i class="fas fa-times"></i></button>
               </div>
             </div>
-          </div>
+          </div> -->
+
           <ul class="navbar-nav flex-column mt-4">
             <!-- Timer -->
-            <li class="nav-item bottom-border pt-4">
+            <li class="nav-item p-2 bg-white shadow rounded mb-3">
               <a href="#" class="nav-link p-3 mb-2">
                 <i class="far fa-clock fa-lg mr-3"></i>
                 <b class="text-dark">Delay</b>
               </a>
               <div class="form-group row">
                 <div class="col-4">
-                  <input onchange="Sidebar.ChangeDelay(this)" class="form-control text-left delay-input" type="number" value="0" min="0"
-                    id="example-number-input">
+                  <input onchange="Sidebar.ChangeDelay(this)" class="form-control text-left delay-input" type="number"
+                    value="0" min="0" id="example-number-input">
                 </div>
                 <div class="col-5 border rounded text-center">
                   <label for="example-number-input" class="col-form-label">Sekunden</label>
@@ -57,7 +60,7 @@
             </li>
             <!-- End of timer -->
 
-            <li class="nav-item bottom-border pt-4">
+            <li class="nav-item p-2 bg-white shadow rounded mb-3">
               <a href="#" class="nav-link p-3 mb-2">
                 <i class="fas fa-square-full fa-lg mr-3"></i>
                 <b class="text-dark">Typ</b>
@@ -150,7 +153,7 @@
               </div>
               <!-- End of GoTo -->
             </li>
-            <li class="nav-item bottom-border pt-4">
+            <li class="nav-item p-2 bg-white shadow rounded mb-3">
               <a href="#" class="nav-link p-3 mb-2">
                 <i class="far fa-circle fa-lg mr-3"></i>
                 <b class="text-dark">Slots</b>
@@ -174,13 +177,14 @@
 
               <div id="condition-linker" class="mb-2">
                 <div class="col-12 text-center m-auto">
-                  <button onclick="ConditionFactory.addAnd()" class="btn btn-secondary float-left mb-2" type="button">Und</button>'
+                  <button onclick="ConditionFactory.addAnd()" class="btn btn-secondary float-left mb-2"
+                    type="button">Und</button>'
                   <!-- <button onclick="ConditionFactory.delete(this)" class="btn btn-danger float-right" type="button"><i class="fas fa-trash"></i></button> -->
                 </div>
               </div>
 
             </li>
-            <li class="nav-item bottom-border pt-4">
+            <li class="nav-item p-2 bg-white shadow rounded mb-3">
               <a href="#" class="nav-link p-3 mb-2">
                 <i class="fas fa-forward fa-lg mr-3"></i>
                 <b class="text-dark">Mögliche Nachfolger</b>
@@ -189,20 +193,22 @@
                 <li id="successor_1" class="list-group-item">
                   <div class="dropdown  small font-weight-bold">
                     <div style="display: inline-block;" class="col-6 display-inline dropdown-toggle" type="button"
-                      id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">1 - O
-                      Also.</div>
+                      id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">5 - Ihre
+                      be...</div>
                     <div style="display: inline;" class="col-6">
                       <i class="fas fa-trash-alt text-danger float-right" onclick="SuccessorFactory.delete(this)"></i>
                     </div>
                     <div id="successor-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                       <a class="dropdown-item small font-weight-bold" href="#" onclick="Sidebar.ChangeSuccessor(this)">1
-                        - Ja</a>
+                        - Hervorr...</a>
                       <a class="dropdown-item small font-weight-bold" href="#" onclick="Sidebar.ChangeSuccessor(this)">2
-                        - Nein</a>
+                        - Was möc...</a>
                       <a class="dropdown-item small font-weight-bold" href="#" onclick="Sidebar.ChangeSuccessor(this)">3
-                        - Vielleicht</a>
+                        - Bild</a>
                       <a href="#" class="dropdown-item small font-weight-bold" onclick="Sidebar.ChangeSuccessor(this)">4
-                        - Niemals</a>
+                        - Ihre be...</a>
+                      <a href="#" class="dropdown-item small font-weight-bold" onclick="Sidebar.ChangeSuccessor(this)">5
+                        - Möchten...</a>
                     </div>
                   </div>
                 </li>
@@ -214,16 +220,17 @@
                     <div style="display: inline;" class="col-6">
                       <i class="fas fa-trash-alt text-danger float-right" onclick="SuccessorFactory.delete(this)""></i>
                     </div>
-                    <div id=" successor-menu" class="dropdown-menu small font-weight-bold"
-                        aria-labelledby="dropdownMenuButton">
+                    <div id=" successor-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                         <a class="dropdown-item small font-weight-bold" href="#"
-                          onclick="Sidebar.ChangeSuccessor(this)">1 - Ja</a>
+                          onclick="Sidebar.ChangeSuccessor(this)">1 - Hervorr...</a>
                         <a class="dropdown-item small font-weight-bold" href="#"
-                          onclick="Sidebar.ChangeSuccessor(this)">2 - Nein</a>
+                          onclick="Sidebar.ChangeSuccessor(this)">2 - Was möc...</a>
                         <a class="dropdown-item small font-weight-bold" href="#"
-                          onclick="Sidebar.ChangeSuccessor(this)">3 - Vielleicht</a>
+                          onclick="Sidebar.ChangeSuccessor(this)">3 - Bild</a>
                         <a href="#" class="dropdown-item small font-weight-bold"
-                          onclick="Sidebar.ChangeSuccessor(this)">4 - Niemals</a>
+                          onclick="Sidebar.ChangeSuccessor(this)">4 - Ihre be...</a>
+                        <a href="#" class="dropdown-item small font-weight-bold"
+                          onclick="Sidebar.ChangeSuccessor(this)">5 - Möchten...</a>
                     </div>
                   </div>
                 </li>
@@ -232,7 +239,7 @@
                 </li>
               </ul>
             </li>
-            <li class="nav-item bottom-border pt-4">
+            <li class="nav-item p-2 bg-white shadow rounded mb-3">
               <a href="#" class="nav-link p-3 mb-2">
                 <i class="fas fa-comment fa-lg mr-3"></i>
                 <b class="text-dark">Text-Pool</b>
@@ -324,7 +331,7 @@
   <!-- cards-->
 
   <section>
-    <div class="container-fluid float-right col-10 pl-0 pr-0">
+    <div class="container-fluid float-right col-lg-10 col-12 pl-0 pr-0">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
           aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -373,26 +380,30 @@
           <div class="row pt-md-5 mt-md-3 mb-5">
 
             <div class="col-12 p-2">
-              <div class="alert alert-dark mb-0 col-2 m-auto text-center" role="alert">
+              <div class="alert alert-dark mb-0 col-lg-2 col-6 m-auto text-center" role="alert">
                 <b>
                   Vorgänger
                 </b>
               </div>
             </div>
-            <div class="col-xl-12 col-sm-12 p-2">
+            <div class="col-xl-6 col-sm-6 p-2 m-auto">
               <div onclick="DetailFactory.show(this)" class="card card-common">
                 <span class="badge badge-dark">3</span>
                 <div class="card-header">
+                  <div class="header-slot-container float-left">
+                    <div class="focus-value ml-1 badge badge-light">{{ Sorte }}</div>
+                    <div class="focus-value ml-1 badge badge-light">{{ Anzahl }}</div>
+                  </div>
                   <div class="float-right">
                     <span class="card-delay"><b>0</b></span>
                     <i class="far fa-clock"></i>
                   </div>
                 </div>
                 <div class="card-body">
-                  <b class="text-left">Dafür brauche ich aber deine Email-Adresse.</b>
+                  <b class="text-left">Was möchten Sie bestellen? Hier nochmal unsere Speisekarte</b>
                 </div>
                 <div class="card-footer">
-                  <i class="fas fa-ellipsis-h text-info fa-lg"></i>
+                  <i class="fas fa-question text-success fa-lg"></i>
                 </div>
               </div>
             </div>
@@ -409,28 +420,25 @@
                   </div>
                 </div>
                 <div class="card-body">
-                  <b class="text-left">Kann ich sie haben?</b>
+                  <b class="text-left">Bild</b>
                   <img src="#" alt="Mein Bild" style="max-width: 200px;" class="img-preview img-thumbnail rounded">
                 </div>
                 <div class="card-footer">
-                  <i class="fas fa-question text-success fa-lg"></i>
+                  <i class="fas fa-ellipsis-h text-info fa-lg"></i>
                 </div>
               </div>
-
             </div>
             <div class="col-12 p-2">
-              <div class="alert alert-dark mb-0 col-2 m-auto text-center" role="alert">
+              <div class="alert alert-dark mb-0 col-lg-2 col-6 m-auto text-center" role="alert">
                 <b>
                   Nachfolger
                 </b>
               </div>
             </div>
-            <div class="col-xl-6 col-sm-6 p-2">
+            <div class="col-xl-6 col-sm-6 p-2 m-auto">
               <div onclick="DetailFactory.show(this)" class="card card-common">
                 <span class="badge badge-dark">5</span>
                 <div class="card-header">
-                  <div class="unfocus-operator badge badge-light"> == </div>
-                  <div class="unfocus-value badge badge-light"> Ja </div>
                   <div class="float-right">
                     <span class="card-delay"><b>0</b></span>
                     <i class="far fa-clock"></i>
@@ -440,7 +448,7 @@
                   <!-- <i class="far fa-circle text-success"></i> -->
                   <!-- &nbsp; -->
                   <b class="text-left">
-                    {{ Slot_1 }} also.
+                    Ihre Bestellung lautet: {{ Anzahl }} mal die Pizza {{ Sorte }}
                   </b>
                 </div>
                 <div class="card-footer">
@@ -448,26 +456,25 @@
                 </div>
               </div>
             </div>
-            <div class="col-xl-6 col-sm-6 p-2">
-              <div onclick="DetailFactory.show(this)" class="card card-common">
+            <!-- <div class="col-xl-6 col-sm-6 p-2"> -->
+            <!-- <div onclick="DetailFactory.show(this)" class="card card-common">
                 <span class="badge badge-dark">6</span>
                 <div class="card-header">
-                  <div class="unfocus-operator badge badge-light"> == </div>
-                  <div class="unfocus-value badge badge-light"> Nein </div>
+
                   <div class="float-right">
                     <span class="card-delay"><b>1</b></span>
                     <i class="far fa-clock"></i>
                   </div>
                 </div>
                 <div class="card-body">
-                  <b class="text-left">Alles klar. Dann ab zur nächsten Frage!</b>
+                  <b class="text-left">Sie haben abgebrochen. Bis zum nächsten mal!</b>
                 </div>
                 <div class="card-footer text-info">
                   <i class="fas fa-arrow-right"></i>
-                  <b>[NAME]</b>
+                  <b>[Abschied nehmen]</b>
                 </div>
-              </div>
-            </div>
+              </div> -->
+            <!-- </div> -->
           </div>
         </div>
       </div>

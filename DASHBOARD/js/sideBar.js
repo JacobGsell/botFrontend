@@ -360,7 +360,7 @@ class Sidebar {
     static ChangeConditionValue(self) {
         let index = parseInt(($(self).parent().index()) - 2);
         let operator = this.getConditionValue(self);
-        $('.focus-value')[index].innerHTML = '{{ ' + operator + ' }}';
+        $('#focus .focus-value')[index].innerHTML = '{{ ' + operator + ' }}';
     }
 
     static getConditionValue(self) {

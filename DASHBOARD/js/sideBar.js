@@ -252,6 +252,11 @@ class Sidebar {
                 $('.img-preview').attr('src', e.target.result);
                 let newSrc = $('.img-preview').attr('src');
                 $('#focus .card-body img').attr('src', newSrc);
+
+                let dataType = e.target.result;
+                dataType = dataType.split('/').shift().split(':').pop()
+
+                alert(dataType); 
             }
 
             reader.readAsDataURL(input.files[0]); // convert to base64 string
@@ -265,7 +270,7 @@ class Sidebar {
             $('#ButtonList').hide();
             $('#TextPoolWrapper').parent().show();
         }
-        
+
         else {
             this.updateButton();
             $('#ButtonList').show();
@@ -465,5 +470,25 @@ class Sidebar {
 
     static ChangeDelay(self) {
         $('#focus .card-delay b').html($(self).val());
+    }
+
+    static getFileExtension(filename) {
+        let parts = filename;
+        return parts.pop().toLower();
+    }
+
+    static showImage(fileType) {
+
+        return false;
+    }
+
+    static showVideo(fileType) {
+
+        return false;
+    }
+
+    static showAudion(fileType) {
+
+        return false;
     }
 }

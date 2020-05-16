@@ -18,18 +18,18 @@ class TopicFactory {
 
     static drawAccordion() {
         return '<!-- New accordion -->'
-        + '<div class="accordion col-xl-12 col-sm-12 p-0" id="Topic_arsch">'
-        + this.drawCard()
-        // + '<div id="collapseArsch" class="collapse" aria-labelledby="#headingArsch">'
-        // + '<div class="col-7 m-auto">'
-        // + TopicDetailFactory.drawPlus()
-        + '</div>'
-        + '<div id="collapseArsch" class="collapse" aria-labelledby="#headingArsch">'
-        + '<div class="col-7 m-auto">'
-        + TopicDetailFactory.drawPlus()
-        + '</div></div>'
-        + '<!-- check -->'
-        + '<!-- End of new accordion -->';
+            + '<div class="accordion col-xl-12 col-sm-12 p-0" id="Topic_arsch">'
+            + this.drawCard()
+            // + '<div id="collapseArsch" class="collapse" aria-labelledby="#headingArsch">'
+            // + '<div class="col-7 m-auto">'
+            // + TopicDetailFactory.drawPlus()
+            + '</div>'
+            + '<div id="collapseArsch" class="collapse" aria-labelledby="#headingArsch">'
+            + '<div class="col-7 m-auto">'
+            + TopicDetailFactory.drawPlus()
+            + '</div></div>'
+            + '<!-- check -->'
+            + '<!-- End of new accordion -->';
     }
 
 
@@ -297,10 +297,11 @@ class SuccessorFactory {
 
 class ConditionFactory {
     static drawSlotContainer() {
-        return '<div class="ConditionWrapper shadow p-1 rounded text-center mb-2">'
+        return '<div class="ConditionWrapper shadow p-1 rounded text-center mb-3">'
             + '<input style="display: inline;" type="text" onchange="Sidebar.ChangeConditionValue(this)" '
-            + 'class="col-6 form-control ml-auto mr-auto mb-1" placeholder="Slotname" aria-label="Username" aria-describedby="basic-addon1"'
-            + 'style="display: flex;">  '
+            + 'class="float-left col-6 form-control ml-auto mr-auto mb-1" placeholder="Slotname" aria-label="Username" aria-describedby="basic-addon1"'
+            + 'style="display: flex;"> '
+            + this.drawCheckbox()
             + '<input style="display: inline;" type="text"'
             + 'class="col-12 form-control" placeholder="Kommentar" aria-label="Username" aria-describedby="basic-addon1"'
             + 'style="display: flex;">'
@@ -322,6 +323,16 @@ class ConditionFactory {
             + '</div></div>';
     }
 
+    static drawCheckbox() {     
+        let randy = Math.floor(Math.random() * 10)   
+        return '<div class="rounded float-right col-6 mt-1">'
+            + '<div class="custom-control custom-checkbox mb-4">'
+            + '<input type="checkbox" class="custom-control-input" id="req_' + randy + '"'
+            + 'onclick="">'
+            + '<label class="custom-control-label text-dark small font-weight-bold" for="req_' + randy + '">Erforderlich</label>'
+            + '</div></div>'
+    }
+
     static addAnd() {
         let row = $('#condition-linker').parent();
         $('#condition-linker').remove();
@@ -335,7 +346,7 @@ class ConditionFactory {
         let headerLength = $('#focus .header-slot-container').children().length;
         //headerLength = headerLength > 2 ? headerLength : 1;
         //alert(headerLength-1)
-        $('#focus .header-slot-container').children()[headerLength-1].remove();
+        $('#focus .header-slot-container').children()[headerLength - 1].remove();
 
         let parent = $(self).parent().parent();
         parent.prev().remove();

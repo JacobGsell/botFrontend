@@ -208,7 +208,7 @@ class Sidebar {
     static ToggleCondition() {
         $('#condition-linker').toggle();
         $('.ConditionWrapper').toggle();
-        $('.focus-value').toggle();
+        $('#focus .focus-value').toggle();
     }
 
     static hideJump() {
@@ -248,15 +248,62 @@ class Sidebar {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
-            reader.onload = function (e) {
-                $('.img-preview').attr('src', e.target.result);
-                let newSrc = $('.img-preview').attr('src');
-                $('#focus .card-body img').attr('src', newSrc);
-
-                let dataType = e.target.result;
+            reader.onload = function (src) {
+                let dataType = src.target.result;
                 dataType = dataType.split('/').shift().split(':').pop()
 
-                alert(dataType); 
+                let text = $('#focus .card-body b');
+                let img = $('#focus .card-body img');
+                let audio = $('#focus audio');
+                let video = $('#focus video');
+
+                switch (dataType) {
+                    case 'image':
+                        audio.attr('src', '');
+                        audio.hide()
+
+                        video.attr('src', '');
+                        video.hide()
+
+                        text.attr('src', '');
+                        text.hide()
+
+                        img.attr('src', src.target.result);
+                        img.show();
+                        break;
+
+                    case 'audio':
+                        img.attr('src', '');
+                        img.hide()
+
+                        video.attr('src', '');
+                        video.hide()
+
+                        text.attr('src', '');
+                        text.hide()
+
+                        audio.attr('src', src.target.result);
+                        audio.show();
+                        break;
+
+                    case 'video':
+                        audio.attr('src', '');
+                        audio.hide()
+
+                        img.attr('src', '');
+                        img.hide()
+
+                        text.attr('src', '');
+                        text.hide()
+
+                        video.attr('src', src.target.result);
+                        video.show();
+                        break;
+
+                    default:
+                     alert('Bitte nur Bilder, Audio oder Video hochladen!');    
+                    break;
+                }
             }
 
             reader.readAsDataURL(input.files[0]); // convert to base64 string
@@ -286,17 +333,32 @@ class Sidebar {
     static changeMedium() {
         let medium = parseInt($('#NoticeSelect').val());
 
-        if (medium > 1) {
-            $('#focus .card-body img').show();
-            $('#focus .card-body b').hide();
-            $('#UploadWrapper').show();
-            $('#TextPoolWrapper').parent().hide();
-        }
-        else {
-            $('#focus .card-body img').hide();
-            $('#focus .card-body b').show();
+        let text = $('#focus .card-body b');
+        let img = $('#focus .card-body img');
+        let audio = $('#focus audio');
+        let video = $('#focus video');
+
+        // Hide media, show text:
+        if (medium <= 1) {
+            img.attr('src', '');
+            img.hide()
+
+            audio.attr('src', '');
+            audio.hide()
+
+            video.attr('src', '');
+            video.hide()
+
+            text.show();
+
             $('#UploadWrapper').hide();
             $('#TextPoolWrapper').parent().show();
+        }
+        // Show current media, hide text:
+        else {
+            $('#UploadWrapper').show();
+            $('#TextPoolWrapper').parent().hide();
+
         }
     }
 
@@ -475,20 +537,5 @@ class Sidebar {
     static getFileExtension(filename) {
         let parts = filename;
         return parts.pop().toLower();
-    }
-
-    static showImage(fileType) {
-
-        return false;
-    }
-
-    static showVideo(fileType) {
-
-        return false;
-    }
-
-    static showAudion(fileType) {
-
-        return false;
     }
 }

@@ -173,7 +173,7 @@ a {
     display: none;
 }
 
-#focus .card-body img {
+#focus .card-body img, #focus audio, #focus video {
     display: none;
 }
 

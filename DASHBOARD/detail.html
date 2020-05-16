@@ -78,7 +78,7 @@
                 <select id="NoticeSelect" class="browser-default custom-select mb-4" onchange="Sidebar.changeMedium()">
                   <option selected="">---</option>
                   <option value="1">Text</option>
-                  <option value="2">Bild</option>
+                  <option value="2">Multimedia</option>
                 </select>
 
                 <!-- Upload image -->
@@ -90,10 +90,10 @@
                         style="border: 1px solid #d2d2d2;box-shadow: 0px 0px 1px 0px darkgrey;border-radius: 5px;">
                     </div>
                   </form>
-
+<!-- 
                   <div id="UploadPreview">
                     <img src="#" alt="Mein Bild" style="max-width: 200px;" class="img-preview img-thumbnail rounded">
-                  </div>
+                  </div> -->
                 </div>
                 <!-- End of upload image  -->
               </div>
@@ -422,6 +422,12 @@
                 <div class="card-body">
                   <b class="text-left">Bild</b>
                   <img src="#" alt="Mein Bild" style="max-width: 200px;" class="img-preview img-thumbnail rounded">
+                  <audio controls class="audio-preview">
+                    <source src="horse.mp3" type="audio/mpeg">
+                  </audio>
+                  <video controls style="max-width: 200px;" class="video-preview">
+                    <source src="movie.mp4" type="video/mp4">
+                  </video>
                 </div>
                 <div class="card-footer">
                   <i class="fas fa-ellipsis-h text-info fa-lg"></i>

@@ -252,7 +252,7 @@ class Sidebar {
                 let dataType = src.target.result;
                 dataType = dataType.split('/').shift().split(':').pop()
 
-                let text = $('#focus .card-body b');
+                let text = $('#focus .card-body #notice-text');
                 let img = $('#focus .card-body img');
                 let audio = $('#focus audio');
                 let video = $('#focus video');
@@ -301,8 +301,8 @@ class Sidebar {
                         break;
 
                     default:
-                     alert('Bitte nur Bilder, Audio oder Video hochladen!');    
-                    break;
+                        alert('Bitte nur Bilder, Audio oder Video hochladen!');
+                        break;
                 }
             }
 
@@ -313,11 +313,14 @@ class Sidebar {
     static changeQuestionType() {
         let questionType = parseInt($('#QuestionTypeSelect').val());
 
+        // Question is text:
         if (questionType <= 1) {
+            this.updateQuestionText();
             $('#ButtonList').hide();
             $('#TextPoolWrapper').parent().show();
         }
 
+        // Question is button:
         else {
             this.updateButton();
             $('#ButtonList').show();
@@ -326,28 +329,47 @@ class Sidebar {
     }
 
     static updateButton() {
-        let firstButton = $('#ButtonPoolWrapper li').children('span')[0].innerHTML;
-        $('#focus .card-body b').html(firstButton);
+        let firstButton = $('#ButtonList span')[0].innerHTML;
+        $('#focus #question-contents b').html(firstButton);
+    }
+
+    static updateQuestionText() {
+        let firstQuestionText = $('#text-pool span')[0].innerHTML;
+        $('#focus #question-contents b').html(firstQuestionText);
+
+    }
+
+    static updateNoticeText() {
+        try {
+            let firstNoticeText = $('#text-pool span')[0].innerHTML;
+            $('#focus #notice-contents b').html(firstNoticeText)
+        } catch (error) {
+            $('#focus #notice-contents b').html('')
+        }
     }
 
     static changeMedium() {
         let medium = parseInt($('#NoticeSelect').val());
 
-        let text = $('#focus .card-body b');
+        let text = $('#focus .card-body #notice-text');
         let img = $('#focus .card-body img');
         let audio = $('#focus audio');
         let video = $('#focus video');
 
         // Hide media, show text:
         if (medium <= 1) {
-            img.attr('src', '');
-            img.hide()
+            // img.attr('src', '');
+            // img.hide()
 
-            audio.attr('src', '');
-            audio.hide()
+            // audio.attr('src', '');
+            // audio.hide()
 
-            video.attr('src', '');
-            video.hide()
+            // video.attr('src', '');
+            // video.hide()
+
+            this.updateNoticeText();
+
+            $('#notice-multimedia').hide();
 
             text.show();
 
@@ -356,6 +378,10 @@ class Sidebar {
         }
         // Show current media, hide text:
         else {
+            $('#notice-multimedia').show()
+
+            text.hide();
+
             $('#UploadWrapper').show();
             $('#TextPoolWrapper').parent().hide();
 
@@ -368,20 +394,27 @@ class Sidebar {
         $('#focus .card-footer svg').remove();
         $('#focus .card-footer').prepend(type);
 
+        // Type note:
         if (type.includes('ellipsis')) {
             $('#QuestionTypeWrapper').hide();
             $('#NoticeWrapper').show();
             $('#JumpWrapper').hide();
+
+            $('#notice-contents').css('display', 'block');
+            $('#question-contents').css('display', 'none');
         }
 
+        // Type question:
         else if (type.includes('question')) {
             $('#QuestionTypeWrapper').show();
             $('#NoticeWrapper').hide();
             $('#JumpWrapper').hide();
-            $('#focus .card-body img').hide();
-            $('#focus .card-body b').show();
+
+            $('#focus #notice-contents').css('display', 'none');
+            $('#focus #question-contents').css('display', 'block');
         }
 
+        // Type redirect:
         else if (type.includes('arrow')) {
             $('#QuestionTypeWrapper').hide();
             $('#NoticeWrapper').hide();
@@ -420,6 +453,29 @@ class Sidebar {
         return icon;
     }
 
+    static ChangeConnection(self) {
+        let hiddenInput = $(self).parent().prev();
+        let connectionValue = hiddenInput.val();
+
+        let successor = $('#Successor_' + connectionValue);
+
+        let inputText = $(self).val();
+
+        let successorText = successor.find('.card-header .card-successor b');
+
+        // Was successorText empty before?
+        if (inputText.length > 0 && successorText.html().length <= 0) {
+            successor.find('.fa-arrow-down').removeClass('text-secondary')
+        }
+
+        // Is successorText going to be empty now?
+        if (inputText.length <= 0) {
+            successor.find('.fa-arrow-down').addClass('text-secondary')
+        }
+
+        successorText.html(inputText);
+    }
+
     static ChangeSuccessor(self) {
         $(self).parent().prev().prev().html($(self).html());
     }
@@ -437,7 +493,7 @@ class Sidebar {
     static EditButtonPoolText(self) {
         $(self).parent().parent().append(this.drawButtonPoolEdit())
         $(self).parent().hide();
-        $(self).parent().prev().hide();
+        $(self).parent().prev().hide();        
     }
 
     static SaveButtonPoolEdit(self) {
@@ -452,6 +508,8 @@ class Sidebar {
         $(self).parent().parent().prev().prev().html(newText);
         this.updateButton();
         this.ClosePoolEdit(self);
+
+        this.updateButton();
     }
 
     static CloseButtonPoolEdit(self) {
@@ -494,6 +552,9 @@ class Sidebar {
 
         $(self).parent().parent().prev().prev().html(newText);
         this.ClosePoolEdit(self);
+
+        this.updateNoticeText();
+        this.updateQuestionText();
     }
 
     static ClosePoolEdit(self) {
@@ -516,22 +577,12 @@ class Sidebar {
             + '</div></div>';
     }
 
-    /**
-     * Saves the edited input as the new text
-     */
-    static SaveTextPoolText() {
-
-    }
-
-    /**
-     * Replaces the editor field by the text field
-     */
-    static CloseTextPoolText() {
-
-    }
-
     static ChangeDelay(self) {
         $('#focus .card-delay b').html($(self).val());
+    }
+
+    static ChangeRepeat(self) {
+        $('#focus .card-repeat b').html($(self).val());
     }
 
     static getFileExtension(filename) {

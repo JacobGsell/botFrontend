@@ -237,11 +237,15 @@ class TextPoolFactory {
         row.append(this.drawText());
         row.append(this.drawPlus());
 
-        //document.querySelector('#PoolScrollWrapper').scrollTo(0, document.body.scrollHeight);
+        Sidebar.updateNoticeText();
+        Sidebar.updateQuestionText();
     }
 
     static delete(self) {
         $(self).parent().parent().remove();
+
+        Sidebar.updateNoticeText();
+        Sidebar.updateQuestionText();        
     }
 }
 
@@ -263,6 +267,7 @@ class SuccessorFactory {
      */
     static drawText() {
         return '<li id="successor_n" class="list-group-item">'
+            + '<input type="hidden" id="s_d_n" name="s_d" value="n">'
             + '<div class="dropdown">'
             + '<div style="display: inline-block;" class="col-6 display-inline dropdown-toggle" type="button" '
             + 'id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">'
@@ -271,6 +276,7 @@ class SuccessorFactory {
             + '<div style="display: inline;" class="col-6">'
             + '<i class="fas fa-trash-alt text-danger float-right" onclick="SuccessorFactory.delete(this)"></i>'
             + '</div>'
+            + '<input type="text" class="form-control form-control-sm" placeholder="Text">'
             + '<div id="successor-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">'
             + '<a class="dropdown-item small font-weight-bold" href="#" onclick="Sidebar.ChangeSuccessor(this)">1 - Hervorr...</a>'
             + '<a class="dropdown-item small font-weight-bold" href="#" onclick="Sidebar.ChangeSuccessor(this)">2 - Was möc...</a>'

@@ -114,7 +114,6 @@ class BotFactory {
             + '<div class="card card-common bg-warning">'
             + '<div class="card-body">'
             + '<div class="display-flex text-center">'
-            + '<h5>&nbsp;</h5>'
             + '<i class="fas fa-plus fa-3x" style="color: #eee;"></i>'
             + '<h6>&nbsp;</h6>'
             + '</div></div>'
@@ -130,9 +129,9 @@ class BotFactory {
     static drawCard() {
         return '<div class="bot-card col-xl-3 col-sm-4 p-2">'
             + '<div class="card card-common" onclick="BotFactory.show(this)">'
+            + '<span class="badge badge-info">-1</span>'
             + '<div class="card-body">'
             + '<div class="display-flex justify-content-between">'
-            + '<i class="far fa-square fa-3x"></i>'
             + '<div class="text-right text-secondary">'
             + '<h5>Titel</h5>'
             + '<h6>0 Konversationen</h6>'

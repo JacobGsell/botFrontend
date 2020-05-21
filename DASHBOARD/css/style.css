@@ -29,6 +29,15 @@ a {
     border-right: 2px solid #0046a0;
 }
 
+/* File input */
+#IconUploadWrapper label , #UploadWrapper label{
+    margin-top: 2em;
+    cursor: pointer;
+    padding: 1rem;
+    border: dotted blue;
+}
+/* End of file input */
+
 .bottom-border {
     border-bottom: 1px groove #eee;
 }

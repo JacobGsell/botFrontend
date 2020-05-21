@@ -10,7 +10,7 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Dashboard</title>
 </head>
 
@@ -39,11 +39,25 @@
 
                 <ul class="navbar-nav flex-column mt-4">
                     <li class="nav-item p-2 bg-white shadow rounded">
-                        <a href="#" class="nav-link p-3 mb-2">
+                        <div class="nav-link p-3 mb-2">
                             <i class="fas fa-exclamation fa-lg mr-3"></i>
                             <b class="text-dark">Icon</b>
-                        </a>
-                        <select id="IconSelect" class="browser-default custom-select mb-4"
+                            <!-- Upload image -->
+                            <div id="IconUploadWrapper" class="mb-4">
+                               <form runat="server" class="dropzone">
+                                    <div class="form-group text-center">
+                                         <label for="FileInput">
+                                             <i class="fas fa-upload"></i>
+                                             <b>Dateiupload</b>
+                                         </label>
+                                        <input type="file" id="FileInput" class="form-control-file"
+                                            style="display:none; border: 1px solid #d2d2d2;box-shadow: 0px 0px 1px 0px darkgrey;border-radius: 5px;">
+                                    </div>
+                                </form>
+                            </div>
+                            <!-- End of upload image  -->
+                        </div>
+                        <!-- <select id="IconSelect" class="browser-default custom-select mb-4"
                             onchange="Sidebar.botIcon(1)">
                             <option selected>---</option>
                             <option value="1">Ausrufezeichen</option>
@@ -53,7 +67,7 @@
                             <option value="5">Besteck</option>
                             <option value="6">Profil</option>
                             <option value="7">Brief</option>
-                        </select>
+                        </select> -->
                     </li>
                     <li class="text-center nav-item pt-4">
                         <a href="./topics.html">
@@ -177,9 +191,9 @@
                         <div class="col-xl-3 col-sm-4 p-2">
                             <a style="text-decoration:none;">
                                 <div id="Bot_1" class="card card-common" onclick="BotFactory.show(this)">
+                                    <span class="badge badge-info">1</span>
                                     <div class="card-body">
                                         <div class="display-flex justify-content-between">
-                                            <i class="fas fa-pizza-slice fa-3x"></i>
                                             <div class="text-right text-secondary">
                                                 <h5>Pizza Place</h5>
                                                 <h6>5 Konversationen</h6>
@@ -195,9 +209,9 @@
                         </div>
                         <div class="col-xl-3 col-sm-4 p-2">
                             <div class="card card-common" onclick="BotFactory.show(this)">
+                                <span class="badge badge-info">2</span>
                                 <div class="card-body">
                                     <div class="display-flex justify-content-between">
-                                        <i class="fas fa-graduation-cap fa-3x"></i>
                                         <div class="text-right text-secondary">
                                             <h5>Studiumsevaluation</h5>
                                             <h6>10 Konversationen</h6>
@@ -212,9 +226,9 @@
                         </div>
                         <div class="col-xl-3 col-sm-4 p-2">
                             <div class="card card-common" onclick="BotFactory.show(this)">
+                                <span class="badge badge-info">3</span>
                                 <div class="card-body">
                                     <div class="display-flex justify-content-between">
-                                        <i class="fas fa-exclamation fa-3x"></i>
                                         <div class="text-right text-secondary">
                                             <h5>Rückmeldung</h5>
                                             <h6>1 Konversationen</h6>
@@ -229,9 +243,9 @@
                         </div>
                         <div class="col-xl-3 col-sm-4 p-2">
                             <div class="card card-common" onclick="BotFactory.show(this)">
+                                <span class="badge badge-info">4</span>
                                 <div class="card-body">
                                     <div class="display-flex justify-content-between">
-                                        <i class="fas fa-poll fa-3x"></i>
                                         <div class="text-right text-secondary">
                                             <h5>Umfrage BayernMint</h5>
                                             <h6>15 Konversationen</h6>
@@ -246,9 +260,9 @@
                         </div>
                         <div class="col-xl-3 col-sm-4 p-2">
                             <div class="card card-common" onclick="BotFactory.show(this)">
+                                <span class="badge badge-info">5</span>
                                 <div class="card-body">
                                     <div class="display-flex justify-content-between">
-                                        <i class="fas fa-shield-alt fa-3x"></i>
                                         <div class="text-right text-secondary">
                                             <h5>Sicherheitsunterweisung</h5>
                                             <h6>8 Konversationen</h6>
@@ -265,7 +279,6 @@
                             <div class="card card-common bg-warning">
                                 <div class="card-body">
                                     <div class="display-flex text-center">
-                                        <h5>&nbsp;</h5>
                                         <i class="fas fa-plus fa-3x" style="color: #eee;"></i>
                                         <h6>&nbsp;</h6>
                                     </div>

@@ -317,7 +317,7 @@ class ConditionFactory {
     static drawConditionLinker() {
         return '<div id="condition-linker" class="mb-4">'
             + '<div class="col-12 text-center ml-auto mr-auto">'
-            + '<button onclick="ConditionFactory.addAnd()" class="btn btn-secondary float-left mb-2" type="button">Und</button>'
+            + '<button onclick="ConditionFactory.addAnd()" class="btn btn-secondary float-left mb-2" type="button"><i class="fas fa-plus"></i></button>'
             + '<button onclick="ConditionFactory.delete(this)" class="btn btn-danger float-right" type="button"><i class="fas fa-trash"></i></button>'
             + '</div></div>';
     }
@@ -325,7 +325,7 @@ class ConditionFactory {
     static drawPeacefulLinker() {
         return '<div id="peaceful-linker" class="mb-4">'
             + '<div class="col-12 text-center m-auto">'
-            + '<button onclick="ConditionFactory.addAnd()" class="btn btn-secondary float-left" type="button">Und</button>'
+            + '<button onclick="ConditionFactory.addAnd()" class="btn btn-secondary float-left" type="button">+</button>'
             + '</div></div>';
     }
 

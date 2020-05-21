@@ -41,10 +41,10 @@
 
                 <ul class="navbar-nav flex-column mt-4">
                     <li class="nav-item p-2 bg-white shadow rounded mb-3">
-                        <a href="#" class="nav-link p-3 mb-2">
+                        <div class="nav-link p-3 mb-2">
                             <i class="fas fa-exclamation fa-lg mr-3"></i>
                             <b class="text-dark">Icon</b>
-                        </a>
+                        </div>
                         <select id="IconSelect" class="browser-default custom-select mb-4"
                             onchange="Sidebar.topicIcon(1)">
                             <option selected>---</option>
@@ -58,6 +58,14 @@
                         </select>
                     </li>
                     <li class="nav-item p-2 bg-white shadow rounded mb-3">
+                        <div class="nav-link p-3 text-center">
+                            <button type="button" onclick="Sidebar.CloneTopic()" class="btn btn-primary">
+                                <i class="far fa-clone fa-lg mr-3"></i>
+                                <b>Thema klonen</b>
+                            </button>
+                        </div>
+                    </li>
+                    <!-- <li class="nav-item p-2 bg-white shadow rounded mb-3">
                         <a href="#" class="nav-link p-3 mb-2">
 
                             <div class="custom-control custom-checkbox  mb-4">
@@ -79,7 +87,7 @@
                                     deaktivieren</label>
                             </div>
                         </a>
-                    </li>
+                    </li> -->
                     <!-- <li class="nav-item bottom-border pt-4">
                                 <a href="#" class="nav-link p-3 mb-2">
                                     <i class="fas fa-backward fa-lg mr-3"></i>
@@ -342,10 +350,10 @@
                         <div id="topicList" class="topic-card-wrapper">
                             <div id="topicWrapper">
                                 <!-- Email accordion -->
-                                <div class="accordion col-xl-12 col-sm-12 p-0" id="Topic_1">
+                                <div class="accordion col-xl-12 col-sm-12 p-0" id="topic_2">
                                     <div class="col-xl-12 col-sm-12 p-2">
                                         <div onclick="TopicFactory.show(this)" class="card card-common" type="button"
-                                            id="heading_1" data-toggle="collapse" data-target="#collapseOne"
+                                            id="heading_2" data-toggle="collapse" data-target="#collapseOne"
                                             aria-expanded="false" aria-controls="collapseOne">
                                             <span class="badge badge-info">2</span>
                                             <div class="card-body">
@@ -363,7 +371,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="collapseOne" class="collapse" aria-labelledby="heading_1">
+                                    <div id="collapseOne" class="collapse" aria-labelledby="heading_2">
                                         <div class="col-7 m-auto">
                                             <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
                                                 <div class="card card-common">
@@ -413,10 +421,10 @@
                                 <!-- End of email accordion -->
 
                                 <!-- Order accordion -->
-                                <div class="accordion col-xl-12 col-sm-12 p-0" id="accordionExample2">
+                                <div class="accordion col-xl-12 col-sm-12 p-0" id="topic_3">
                                     <div class="col-xl-12 col-sm-12 p-2">
                                         <div onclick="TopicFactory.show(this)" class="card card-common" type="button"
-                                            id="heading_2" data-toggle="collapse" data-target="#collapseTwo"
+                                            id="heading_3" data-toggle="collapse" data-target="#collapseTwo"
                                             aria-expanded="true" aria-controls="collapseTwo">
                                             <span class="badge badge-info">3</span>
                                             <div class="card-body">
@@ -434,7 +442,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="collapseTwo" class="collapse" aria-labelledby="heading_2">
+                                    <div id="collapseTwo" class="collapse" aria-labelledby="heading_3">
                                         <div class="col-7 m-auto">
                                             <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
                                                 <div class="card card-common">
@@ -506,10 +514,10 @@
                                 <!-- End of order accordion -->
 
                                 <!-- Goodbye accordion -->
-                                <div class="accordion col-xl-12 col-sm-12 p-0" id="accordionExample2">
+                                <div class="accordion col-xl-12 col-sm-12 p-0" id="topic_4">
                                     <div class="col-xl-12 col-sm-12 p-2">
                                         <div onclick="TopicFactory.show(this)" class="card card-common" type="button"
-                                            id="heading_3" data-toggle="collapse" data-target="#collapseThree"
+                                            id="heading_4" data-toggle="collapse" data-target="#collapseThree"
                                             aria-expanded="false" aria-controls="collapseThree">
                                             <span class="badge badge-info">4</span>
                                             <div class="card-body">
@@ -527,7 +535,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="collapseThree" class="collapse" aria-labelledby="heading_3">
+                                    <div id="collapseThree" class="collapse" aria-labelledby="heading_4">
                                         <div class="col-7 m-auto">
                                             <div class="topic-detail-card col-xl-12 col-sm-12 p-2">
                                                 <div class="card card-common">

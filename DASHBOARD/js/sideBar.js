@@ -92,6 +92,28 @@ class Sidebar {
         }
     }
 
+    static moveUp(item) {
+        let before = item.prev();
+        item.insertBefore(before);
+    }
+    
+    static moveDown(item) {
+        let after = item.next();
+        item.insertAfter(after);
+    }
+
+    static CloneTopic() {
+        // ToBeChanged:
+        let id = 2;
+
+        let wrapper = $('#topicWrapper');
+
+        let clone = $('#topic_' + id).clone();
+
+        wrapper.append(clone);
+        this.moveUp(clone)
+    }
+
     /**
      * Toggles whether the selected topic is active or not
      * @param  {Number} id Topic's id
@@ -472,8 +494,17 @@ class Sidebar {
         if (inputText.length <= 0) {
             successor.find('.fa-arrow-down').addClass('text-secondary')
         }
+        console.log(inputText.split(','))
 
-        successorText.html(inputText);
+        let inputHTML = '';
+
+        let inputArr = inputText.split(',');
+
+        $.each(inputArr, function (i, d) {
+            inputHTML += '<span class="badge badge-dark ml-1 mr-1" style="font-size:100%;">' + d + '</span>';
+        });
+
+        successorText.html(inputHTML);
     }
 
     static ChangeSuccessor(self) {
@@ -493,7 +524,7 @@ class Sidebar {
     static EditButtonPoolText(self) {
         $(self).parent().parent().append(this.drawButtonPoolEdit())
         $(self).parent().hide();
-        $(self).parent().prev().hide();        
+        $(self).parent().prev().hide();
     }
 
     static SaveButtonPoolEdit(self) {

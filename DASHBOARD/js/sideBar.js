@@ -105,19 +105,32 @@ class Sidebar {
         }
     }
 
-    static moveUp(item) {
-        let before = item.prev();
-        item.insertBefore(before);
+    
+    /**
+     * Moves element up in HTML document
+     * @param  {Object} elem element to be moved
+     */
+    static moveUp(elem) {
+        let before = elem.prev();
+        elem.insertBefore(before);
     }
     
-    static moveDown(item) {
-        let after = item.next();
-        item.insertAfter(after);
+    /**    
+     * Moves element down in HTML document
+     * @param {Object} elem element to be moved
+     */
+    static moveDown(elem) {
+        let after = elem.next();
+        elem.insertAfter(after);
     }
 
-    static CloneTopic() {
+    /**
+     * Duplicates topic and appends it to topic view
+     * @param {Number} id Topic's id
+     */
+    static CloneTopic(id) {
         // ToBeChanged:
-        let id = 2;
+        id = 2;
 
         let wrapper = $('#topicWrapper');
 
@@ -211,6 +224,11 @@ class Sidebar {
         this.CloseBotEdit();
     }
 
+    
+    /**
+     * Saves the edited detail and closes edit view
+     * @param  {Number} id Id of the detail block
+     */
     static SaveDetailTitle(id) {
         // ToBeChanged:
         id = 4;
@@ -227,11 +245,20 @@ class Sidebar {
         this.CloseDetailEdit();
     }
 
+    
+    /**
+     * Shows edit view, hides normal view
+     * @param  {Number} id Id of the detail block
+     */
     static EditDetailTitle(id) {
         $('#detail-title').css('display', 'none');
         $('#detail-title-edit').css('display', 'flex');
     }
 
+    /**
+     * Hides edit view, shows normal view
+     * @param {Number} id Id of the detail block
+     */
     static CloseDetailEdit(id) {
         $('#detail-title').css('display', 'block');
         $('#detail-title-edit').css('display', 'none');
@@ -246,18 +273,30 @@ class Sidebar {
         $('#focus .focus-value').toggle();
     }
 
+    /**
+     * Hides the redirect display
+     */
     static hideJump() {
         $('#focus .card-footer b').remove();
     }
 
+    /**
+     * Shows the redirect display
+     */
     static showJump() {
         $('#focus .card-footer').show();
     }
 
+    /**
+     * Changes redirect
+     */
     static changeJump() {
         $('#focus .card-footer b').html(this.getJump());
     }
 
+    /**
+     * Gets redirect value
+     */
     static getJump() {
         let jump = '';
         let value = parseInt($('#JumpWrapper select').val());
@@ -279,6 +318,11 @@ class Sidebar {
         return jump;
     }
 
+    
+    /**
+     * Reads data loaded into file input
+     * @param  {Object} input File that should be uploaded
+     */
     static readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
@@ -345,6 +389,9 @@ class Sidebar {
         }
     }
 
+    /**
+     * Changes question type
+     */
     static changeQuestionType() {
         let questionType = parseInt($('#QuestionTypeSelect').val());
 
@@ -363,17 +410,26 @@ class Sidebar {
         }
     }
 
+    /**
+     * Updates the display of button values
+     */
     static updateButton() {
         let firstButton = $('#ButtonList span')[0].innerHTML;
         $('#focus #question-contents b').html(firstButton);
     }
 
+    /**
+     * Updates the display of question text values
+     */
     static updateQuestionText() {
         let firstQuestionText = $('#text-pool span')[0].innerHTML;
         $('#focus #question-contents b').html(firstQuestionText);
 
     }
 
+    /**
+     * Updates the display of notice text values
+     */
     static updateNoticeText() {
         try {
             let firstNoticeText = $('#text-pool span')[0].innerHTML;
@@ -383,6 +439,9 @@ class Sidebar {
         }
     }
 
+    /**
+     * Switches between text and multimedia view
+     */
     static changeMedium() {
         let medium = parseInt($('#NoticeSelect').val());
 
@@ -423,6 +482,9 @@ class Sidebar {
         }
     }
 
+    /**
+     * Changes the type of chatbot message
+     */
     static changeType() {
         let type = this.getType();
 
@@ -457,6 +519,9 @@ class Sidebar {
         }
     }
 
+    /**
+     * Gets the icon for the according type
+     */
     static getType() {
         let icon = '';
         let value = parseInt($('#TypeSelect').val());
@@ -488,6 +553,10 @@ class Sidebar {
         return icon;
     }
 
+    /**
+     * Changes text for connection between detail blocks
+     * @param {Object} self  aka this
+     */
     static ChangeConnection(self) {
         let hiddenInput = $(self).parent().prev();
         let connectionValue = hiddenInput.val();
@@ -520,26 +589,46 @@ class Sidebar {
         successorText.html(inputHTML);
     }
 
+    /**
+     * Changes the value for successors
+     * @param {Object} self aka this
+     */
     static ChangeSuccessor(self) {
         $(self).parent().prev().prev().html($(self).html());
     }
 
+    /**
+     * Changes the value of slots in the focus card
+     * @param {Object} self aka this
+     */
     static ChangeConditionValue(self) {
         let index = parseInt(($(self).parent().index()) - 2);
         let operator = this.getConditionValue(self);
         $('#focus .focus-value')[index].innerHTML = '{{ ' + operator + ' }}';
     }
 
+    /**
+     * Gets slot value
+     * @param {Object} self  aka this
+     */
     static getConditionValue(self) {
         return $(self).val();
     }
 
+    /**
+     * Edits the text for buttons
+     * @param {Object} self aka this
+     */
     static EditButtonPoolText(self) {
         $(self).parent().parent().append(this.drawButtonPoolEdit())
         $(self).parent().hide();
         $(self).parent().prev().hide();
     }
 
+    /**
+     * Saves the text for buttons and closes edit view
+     * @param {Object} self aka this
+     */
     static SaveButtonPoolEdit(self) {
         let newText = $('#button-pool-edit input').val();
 
@@ -556,6 +645,10 @@ class Sidebar {
         this.updateButton();
     }
 
+    /**
+     * Closes the edit view for buttons
+     * @param {Object} self aka this
+     */
     static CloseButtonPoolEdit(self) {
         this.updateButton();
         $(self).parent().parent().prev().prev().show();
@@ -563,6 +656,10 @@ class Sidebar {
         $(self).parent().parent().remove();
     }
 
+    /**
+     * Creates the edit field for buttons
+     * @returns {String} HTML structure
+     */
     static drawButtonPoolEdit() {
         return '<div id="button-pool-edit" class="input-group mb-3">'
             + '<input type="text" class="form-control" placeholder="Neuer Text..." '
@@ -579,6 +676,7 @@ class Sidebar {
 
     /**
      * Replaces the text field by the editor field
+     * @param {Object} self aka this
      */
     static EditPoolText(self) {
         $(self).parent().parent().append(this.drawPoolEdit())
@@ -586,6 +684,10 @@ class Sidebar {
         $(self).parent().prev().hide();
     }
 
+    /**
+     * Saves the edited pool text and closes the edit view
+     * @param {Object} self aka this
+     */
     static SavePoolEdit(self) {
         let newText = $('#pool-edit input').val();
 
@@ -601,12 +703,20 @@ class Sidebar {
         this.updateQuestionText();
     }
 
+    /**
+     * Hides edit view, shows normal view
+     * @param {Object} self aka this
+     */
     static ClosePoolEdit(self) {
         $(self).parent().parent().prev().prev().show();
         $(self).parent().parent().prev().show();
         $(self).parent().parent().remove();
     }
 
+    /**
+     * Creates the edit view for text pools
+     * @returns {String} HTML structure
+     */
     static drawPoolEdit() {
         return '<div id="pool-edit" class="input-group mb-3">'
             + '<input type="text" class="form-control" placeholder="Neuer Text..." '
@@ -621,16 +731,56 @@ class Sidebar {
             + '</div></div>';
     }
 
+    /**
+     * Changes amount of delay for detail in focus
+     * @param {Object} self aka this
+     */
     static ChangeDelay(self) {
         $('#focus .card-delay b').html($(self).val());
     }
 
+    /**
+     * Changes amount of max repeats for detail in focus
+     * @param {Object} self aka this
+     */
     static ChangeRepeat(self) {
         $('#focus .card-repeat b').html($(self).val());
     }
-
+    
+    /**
+     * Gets the the name of the filetype for the inputted file
+     * @param  {String} filename Name of the inputted file
+     */
     static getFileExtension(filename) {
         let parts = filename;
         return parts.pop().toLower();
+    }
+
+    /**
+     * Saves changes to json file
+     */
+    static Save() {
+
+    }
+
+    /**
+     * Deletes the selected bot
+     */
+    static DeleteBot() {
+
+    }
+
+    /**
+     * Deletes the selected topic
+     */
+    static DeleteTopic() {
+
+    }
+
+    /**
+     * Deletes the selected Detail block
+     */
+    static DeleteDetail() {
+
     }
 }

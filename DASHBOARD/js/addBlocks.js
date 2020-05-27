@@ -16,6 +16,10 @@ class TopicFactory {
             + '</div></div></div>';
     }
 
+    /**
+     * Creates new accordion element for topic view
+     * @returns {String} HTML structure
+     */
     static drawAccordion() {
         return '<!-- New accordion -->'
             + '<div class="accordion col-xl-12 col-sm-12 p-0" id="Topic_arsch">'
@@ -64,8 +68,14 @@ class TopicFactory {
     }
 }
 
+/** Class responsible for creating detail blocks in topic view */
 class TopicDetailFactory {
 
+    
+    /**
+     * Draws new plus for adding another card
+     * @returns {String} HTML structure
+     */
     static drawPlus() {
         return '<div id="topicDetailPlus" '
             + 'class="card card-common col-3 p-4 ml-auto mr-auto mb-3 text-center" '
@@ -75,6 +85,11 @@ class TopicDetailFactory {
             + '</div></div>';
     }
 
+    
+    /**
+     * Draws new detail cards
+     * @returns {String} HTML structure
+     */
     static drawCard() {
         return '<div class="topic-detail-card col-xl-12 col-sm-12 p-2">'
             + '<div class="card card-common">'
@@ -87,6 +102,11 @@ class TopicDetailFactory {
             + '</div></div></div>';
     }
 
+    
+    /**
+     * @param  {Object} self aka this
+     * Adds the card to the structure.
+     */
     static add(self) {
         let row = $(self).parent();
         $(self).remove();
@@ -237,6 +257,11 @@ class TextPoolFactory {
         Sidebar.updateQuestionText();
     }
 
+    
+    /**
+     * @param  {Object} self aka this
+     * Deletes content of text pool and updates the sidebar
+     */
     static delete(self) {
         $(self).parent().parent().remove();
 
@@ -297,7 +322,13 @@ class SuccessorFactory {
     }
 }
 
+/** Class responsible for creating slot containers */
 class ConditionFactory {
+
+    /**
+     * Creates container for slots
+     * @returns {String} HTML structure
+     */
     static drawSlotContainer() {
         return '<div class="ConditionWrapper shadow p-1 rounded text-center mb-3">'
             + '<input style="display: inline;" type="text" onchange="Sidebar.ChangeConditionValue(this)" '
@@ -310,6 +341,11 @@ class ConditionFactory {
             + '</div>'
     }
 
+
+    /**
+     * Creates container for adding new slots
+     * @returns {String} HTML structure
+     */
     static drawConditionLinker() {
         return '<div id="condition-linker" class="mb-4">'
             + '<div class="col-12 text-center ml-auto mr-auto">'
@@ -318,6 +354,10 @@ class ConditionFactory {
             + '</div></div>';
     }
 
+    /**
+     * Creates container for adding new slots without the delete option
+     * @returns {String} HTML structure
+     */
     static drawPeacefulLinker() {
         return '<div id="peaceful-linker" class="mb-4">'
             + '<div class="col-12 text-center m-auto">'
@@ -325,6 +365,11 @@ class ConditionFactory {
             + '</div></div>';
     }
 
+
+    /**
+     * Creates a required checkbox for slot containers
+     * @returns {String} HTML structure
+     */
     static drawCheckbox() {
         let randy = Math.floor(Math.random() * 10)
         return '<div class="rounded float-right col-6 mt-1">'
@@ -335,6 +380,10 @@ class ConditionFactory {
             + '</div></div>'
     }
 
+
+    /**
+     * Adds the plus for adding new slot containers
+     */
     static addAnd() {
         let row = $('#condition-linker').parent();
         $('#condition-linker').remove();
@@ -344,10 +393,13 @@ class ConditionFactory {
         $('#focus .header-slot-container').append('<div class="focus-value ml-1 badge badge-light">{{}}</div>')
     }
 
+
+    /**
+     * @param  {Object} self aka this
+     * Removes the newest slot container
+     */
     static delete(self) {
         let headerLength = $('#focus .header-slot-container').children().length;
-        //headerLength = headerLength > 2 ? headerLength : 1;
-        //alert(headerLength-1)
         $('#focus .header-slot-container').children()[headerLength - 1].remove();
 
         let parent = $(self).parent().parent();
@@ -359,7 +411,13 @@ class ConditionFactory {
     }
 }
 
+/** Class responsible for things in detail view */
 class DetailFactory {
+    
+    /**
+     * @param  {Object} self aka this
+     * function for demonstration purposes
+     */
     static show(self) {
         alert($(self).find('.card-body>b').html());
     }

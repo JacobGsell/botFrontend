@@ -70,6 +70,19 @@ class Sidebar {
     }
 
     /**
+     * Returns the current order of topics
+     * @returns {Array} stack Stack with ordered ids
+     */
+    static getOrder() {
+        let topics = $('#topicWrapper').children('.accordion')
+        let stack = [];
+
+        $.each(topics, (i, d) => stack.push(d.id));
+
+        return stack
+    }
+
+    /**
      * Toggles whether the selected topic's slots are active or not
      * @param  {Number} id Topic's id
      */

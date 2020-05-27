@@ -31,11 +31,13 @@ a {
 
 /* File input */
 #IconUploadWrapper label , #UploadWrapper label{
-    margin-top: 2em;
+
     cursor: pointer;
-    padding: 1rem;
-    border: dotted blue;
+    color: white;
+
+    border-radius: 3.2px;
 }
+
 /* End of file input */
 
 .bottom-border {

@@ -20,9 +20,6 @@ class TopicFactory {
         return '<!-- New accordion -->'
             + '<div class="accordion col-xl-12 col-sm-12 p-0" id="Topic_arsch">'
             + this.drawCard()
-            // + '<div id="collapseArsch" class="collapse" aria-labelledby="#headingArsch">'
-            // + '<div class="col-7 m-auto">'
-            // + TopicDetailFactory.drawPlus()
             + '</div>'
             + '<div id="collapseArsch" class="collapse" aria-labelledby="#headingArsch">'
             + '<div class="col-7 m-auto">'
@@ -244,7 +241,7 @@ class TextPoolFactory {
         $(self).parent().parent().remove();
 
         Sidebar.updateNoticeText();
-        Sidebar.updateQuestionText();        
+        Sidebar.updateQuestionText();
     }
 }
 
@@ -328,8 +325,8 @@ class ConditionFactory {
             + '</div></div>';
     }
 
-    static drawCheckbox() {     
-        let randy = Math.floor(Math.random() * 10)   
+    static drawCheckbox() {
+        let randy = Math.floor(Math.random() * 10)
         return '<div class="rounded float-right col-6 mt-1">'
             + '<div class="custom-control custom-checkbox mb-4">'
             + '<input type="checkbox" class="custom-control-input" id="req_' + randy + '"'

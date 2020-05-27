@@ -43,10 +43,10 @@
                             <i class="fas fa-exclamation fa-lg mr-3"></i>
                             <b class="text-dark">Icon</b>
                             <!-- Upload image -->
-                            <div id="IconUploadWrapper" class="mb-4">
+                            <div id="IconUploadWrapper" class="mb-4 mt-4">
                                <form runat="server" class="dropzone">
                                     <div class="form-group text-center">
-                                         <label for="FileInput">
+                                         <label class="p-2 btn btn-primary" for="FileInput">
                                              <i class="fas fa-upload"></i>
                                              <b>Dateiupload</b>
                                          </label>
@@ -188,7 +188,7 @@
             <div class="row">
                 <div class="col-xl-10 col-lg-9 col-md-12 m-auto" id="botWrapper">
                     <div id="botList" class="row pt-md-5 mt-md-3 mb-5">
-                        <div class="col-xl-3 col-sm-4 p-2">
+                        <div class="topic-card col-xl-3 col-sm-4 p-2">
                             <a style="text-decoration:none;">
                                 <div id="Bot_1" class="card card-common" onclick="BotFactory.show(this)">
                                     <span class="badge badge-info">1</span>
@@ -207,7 +207,7 @@
                                 </div>
                             </a>
                         </div>
-                        <div class="col-xl-3 col-sm-4 p-2">
+                        <div class="topic-card col-xl-3 col-sm-4 p-2">
                             <div class="card card-common" onclick="BotFactory.show(this)">
                                 <span class="badge badge-info">2</span>
                                 <div class="card-body">
@@ -224,7 +224,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-sm-4 p-2">
+                        <div class="topic-card col-xl-3 col-sm-4 p-2">
                             <div class="card card-common" onclick="BotFactory.show(this)">
                                 <span class="badge badge-info">3</span>
                                 <div class="card-body">
@@ -241,7 +241,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-sm-4 p-2">
+                        <div class="topic-card col-xl-3 col-sm-4 p-2">
                             <div class="card card-common" onclick="BotFactory.show(this)">
                                 <span class="badge badge-info">4</span>
                                 <div class="card-body">
@@ -258,7 +258,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-3 col-sm-4 p-2">
+                        <div class="topic-card col-xl-3 col-sm-4 p-2">
                             <div class="card card-common" onclick="BotFactory.show(this)">
                                 <span class="badge badge-info">5</span>
                                 <div class="card-body">
@@ -275,7 +275,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="botPlus" class="col-xl-3 col-sm-4 p-2" onclick="BotFactory.add()">
+                        <div id="botPlus" class="topic-card col-xl-3 col-sm-4 p-2" onclick="BotFactory.add()">
                             <div class="card card-common bg-warning">
                                 <div class="card-body">
                                     <div class="display-flex text-center">

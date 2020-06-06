@@ -220,12 +220,26 @@ a {
     animation: createBox .25s;
 }
 
+.modal {
+    animation: flyIn .25s;
+}
+
 @keyframes createBox {
     from {
         transform: scale(0);
     }
     to {
         transform: scale(1);
+    }
+}
+
+@keyframes flyIn {
+    from {
+        transform: translateY(-300px);
+    }
+
+    to {
+        transform: translateY(0px);
     }
 }
 

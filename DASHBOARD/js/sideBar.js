@@ -576,11 +576,10 @@ class Sidebar {
         if (inputText.length <= 0) {
             successor.find('.fa-arrow-down').addClass('text-secondary')
         }
-        console.log(inputText.split(','))
 
         let inputHTML = '';
 
-        let inputArr = inputText.split(',');
+        let inputArr = inputText.split(';');
 
         $.each(inputArr, function (i, d) {
             inputHTML += '<span class="badge badge-dark ml-1 mr-1" style="font-size:100%;">' + d + '</span>';
@@ -779,6 +778,7 @@ class Sidebar {
 
     /**
      * Deletes the selected Detail block
+     *
      */
     static DeleteDetail() {
 

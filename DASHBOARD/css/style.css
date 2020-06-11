@@ -7,6 +7,16 @@ a {
     color: black;
 }
 
+/* Legend */
+
+tbody {
+    font-size: smaller;
+}
+
+tbody i {
+    font-size: larger;
+}
+
 /* navbar */
 
 #navbarNav {
@@ -45,6 +55,7 @@ a {
 }
 
 .sidebar-link {
+    border: 1px solid #f8f9fa;
     transition: all .4s;
 }
 
@@ -55,7 +66,8 @@ a {
 }
 
 .sidebar-link:hover {
-    background-color: #66B;
+    box-sizing: border-box;
+    border: 1px solid #66B ;
     border-radius: 5px;
 }
 
@@ -143,7 +155,7 @@ a {
 }
 
 #SuccessorPlus svg:hover {
-    color: #ffa107;    
+    color: #ffa107;
 }
 
 #SuccessorWrapper .list-group-item .i
@@ -162,7 +174,7 @@ a {
 }
 
 #TextPoolPlus svg:hover {
-    color: #ffa107;    
+    color: #ffa107;
 }
 
 /* Topic detail */
@@ -181,7 +193,7 @@ a {
 }
 
 #topic-title.badge:hover, #bot-title.badge:hover, #detail-title > .badge:hover {
-    background-color: #ffa107;    
+    background-color: #ffa107;
 }
 
 #JumpWrapper, #NoticeWrapper, #UploadWrapper, #QuestionTypeWrapper, #ButtonList {

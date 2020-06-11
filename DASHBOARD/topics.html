@@ -42,8 +42,8 @@
                 <ul class="navbar-nav flex-column mt-4">
                     <li class="nav-item p-2 bg-white shadow rounded mb-3">
                         <div class="nav-link p-3 mb-2">
-                            <i class="fas fa-exclamation fa-lg mr-3"></i>
-                            <b class="text-dark">Icon</b>
+                            <i class="far fa-image fa-lg mr-3"></i>
+                            <b class="text-dark">Profilbild</b>
                         </div>
                         <!-- <select id="IconSelect" class="browser-default custom-select mb-4"
                             onchange="Sidebar.topicIcon(1)">
@@ -134,7 +134,7 @@
                         <a href="./detail.html">
                             <button type="button" class="btn bg-white border-info">
                                 <i class="far fa-comment-alt"></i>
-                                Detail-Ansicht
+                                Detailansicht
                             </button>
                         </a>
                     </li>
@@ -160,6 +160,136 @@
     </div>
     </div>
     <!-- End of Navbar-->
+
+    
+    <!-- Legend modal -->
+    <div class="modal" tabindex="-1" role="dialog" id="legend">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Legende</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Icon</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Beschreibung</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th scope="row">
+                                    <i class="fa fa-redo"></i>
+                                </th>
+                                <td>Wiederholen</td>
+                                <td>Gibt an, wie oft ein Text wiederholt maximal wiederholt wird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="far fa-image"></i>
+                                </th>
+                                <td>Profilbild</td>
+                                <td>Dateiupload für ein Profilbild des Chatbots</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="fas fa-pen"></i>
+                                </th>
+                                <td>Bearbeiten</td>
+                                <td>Abänderung von Inhalten</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="fas fa-trash-alt"></i>
+                                </th>
+                                <td>Entfernen</td>
+                                <td>Löscht das entsprechende Element</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="fas fa-eye"></i>
+                                </th>
+                                <td>Views</td>
+                                <td>Gibt an, wie oft mit dem Bot interagiert wurde</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="far fa-list-alt"></i>
+                                </th>
+                                <td>Gesamtansicht</td>
+                                <td>Öffnet eine Visualisierung der gesamten Chatbotstruktur</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="fas fa-redo"></i>
+                                </th>
+                                <td>Max. Wiederholungen</td>
+                                <td>Gibt an, wie oft ein Text vom Chatbot höchstens wiederholt wird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="far fa-clock"></i>
+                                </th>
+                                <td>Delay</td>
+                                <td>Gibt Verzögerung an, bevor Text ausgegeben wird</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="fas fa-square"></i>
+                                </th>
+                                <td>Typ</td>
+                                <td>Der Typ eines Texts kann eine Nachricht, eine Frage oder eine Button-Gruppe sein</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="far fa-circle"></i>
+                                </th>
+                                <td>Slots</td>
+                                <td>Gibt der Nachricht einen Slot mitsamt optionaler Beschreibung, der befüllt werden soll</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="fas fa-forward"></i>
+                                </th>
+                                <td>Mögl. Nachfolger</td>
+                                <td>Alle Nachrichten, die auf die aktuelle folgen könnten. Zu jedem Nachfolger wird eine <b>Bedingung</b> angegeben</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="fa fa-arrow-down"></i>
+                                </th>
+                                <td>Bedingung</td>
+                                <td>Nutzereingaben, die zu einem <b>möglichen Nachfolger</b> führen</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="fas fa-comment"></i>
+                                </th>
+                                <td>Text-Pool</td>
+                                <td>Menge aus Texten, aus denen zufällig gewählt wird, welchen der Bot in der entsprechenden Nachricht an den Nutzer schickt</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">
+                                    <i class="fas fa-plus-square"></i>
+                                </th>
+                                <td>Hinzufügen</td>
+                                <td>Fügt ein neues Element der entsprechenden Menge hinzu</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-warning" data-dismiss="modal">Schließen</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End of legend modal -->
 
     <!-- Log out modal -->
     <div class="modal" tabindex="-1" role="dialog" id="sign-out">
@@ -246,10 +376,10 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link">
+                            <div style="cursor: pointer;" class="nav-link text-dark p-3 mb-2 sidebar-link" data-toggle="modal" data-target="#legend">
                                 <i class="fas fa-exclamation text-dark fa-lg mr-3"></i>
                                 Legende
-                            </a>
+                            </div>
                         </li>
                         <li class="nav-item">
                             <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link" data-toggle="modal"

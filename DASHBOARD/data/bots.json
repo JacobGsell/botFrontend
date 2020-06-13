@@ -1,0 +1,105 @@
+{
+    "Metadata": {
+      "chatbotID": 48732,
+      "UserID": 19935,
+      "name": "Pizza Place",
+      "settings": {
+        "onboarding": "Intent-ID",
+        "icon": "pizzaIcon",
+        "delay": null,
+        "typingSymbol": null,
+        "isActive": true
+      }
+    },
+    "Content": {
+      "globals": [
+        {
+          "globalID": null,
+          "text": null,
+          "isActive": false,
+          "delay": 2,
+          "richInteractions": [
+            {
+              "id": 5,
+              "data": null,
+              "dataType": "Picture/Button/Textfile/etc.",
+              "showData": true
+            }
+          ]
+        }
+      ],
+      "fallbacks": [
+        {
+          "fallbackID": 1,
+          "textPool": [
+            "Das habe ich leider nicht verstanden. Könnten Sie das wiederholen?"
+          ],
+          "Text": 0,
+          "isActive": false,
+          "delay": 2,
+          "Successor": "ursprüngliche Dialog-ID",
+          "richInteractions": [
+            {
+              "id": 5,
+              "data": null,
+              "mimeType": "Picture/Button/Textfile/etc.",
+              "showData": true
+            }
+          ]
+        }
+      ],
+      "intents (Konversationen)": [
+        {
+          "intentID": null,
+          "topic": "Email",
+          "icon": "exclamation mark",
+          "isActive": false,
+          "isOnboarding": true,
+          "predecessor": null,
+          "successor": [
+                        1422,
+                        8723
+                      ],
+          "dialogs": [
+            {
+              "dialogID": 1,
+              "textPool": [
+                "Kann ich sie haben?",
+                "Kriege ich deine Adresse?"
+              ],
+              "chosenText": null,
+              "possibleAnswers": [],
+              "answerType": "global/lokal",
+              "isActive": false,
+              "type": "question",
+              "delay": 2,
+              "possibleSuccessorDialogs": [
+                5,
+                6
+              ],
+              "forwarding": null,
+              "triggerNotification": "notificationID",
+              "richInteractions": [
+                {
+                  "id": 5,
+                  "data": null,
+                  "mimeType": "Picture/Textfile/Video/etc.",
+                  "showData": true
+                }
+              ],
+              "slot (Entities)": [
+                {
+                  "slotID": null,
+                  "slotName": null,
+                  "required": true,
+                  "isActive": false,
+                  "comment": null
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+  

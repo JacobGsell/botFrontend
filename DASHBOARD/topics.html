@@ -161,7 +161,7 @@
     </div>
     <!-- End of Navbar-->
 
-    
+
     <!-- Legend modal -->
     <div class="modal" tabindex="-1" role="dialog" id="legend">
         <div class="modal-dialog" role="document">
@@ -236,21 +236,24 @@
                                     <i class="fas fa-square"></i>
                                 </th>
                                 <td>Typ</td>
-                                <td>Der Typ eines Texts kann eine Nachricht, eine Frage oder eine Button-Gruppe sein</td>
+                                <td>Der Typ eines Texts kann eine Nachricht, eine Frage oder eine Button-Gruppe sein
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">
                                     <i class="far fa-circle"></i>
                                 </th>
                                 <td>Slots</td>
-                                <td>Gibt der Nachricht einen Slot mitsamt optionaler Beschreibung, der befüllt werden soll</td>
+                                <td>Gibt der Nachricht einen Slot mitsamt optionaler Beschreibung, der befüllt werden
+                                    soll</td>
                             </tr>
                             <tr>
                                 <th scope="row">
                                     <i class="fas fa-forward"></i>
                                 </th>
                                 <td>Mögl. Nachfolger</td>
-                                <td>Alle Nachrichten, die auf die aktuelle folgen könnten. Zu jedem Nachfolger wird eine <b>Bedingung</b> angegeben</td>
+                                <td>Alle Nachrichten, die auf die aktuelle folgen könnten. Zu jedem Nachfolger wird eine
+                                    <b>Bedingung</b> angegeben</td>
                             </tr>
                             <tr>
                                 <th scope="row">
@@ -264,7 +267,8 @@
                                     <i class="fas fa-comment"></i>
                                 </th>
                                 <td>Text-Pool</td>
-                                <td>Menge aus Texten, aus denen zufällig gewählt wird, welchen der Bot in der entsprechenden Nachricht an den Nutzer schickt</td>
+                                <td>Menge aus Texten, aus denen zufällig gewählt wird, welchen der Bot in der
+                                    entsprechenden Nachricht an den Nutzer schickt</td>
                             </tr>
                             <tr>
                                 <th scope="row">
@@ -369,7 +373,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <div style="cursor: pointer;" class="nav-link text-dark p-3 mb-2 sidebar-link" data-toggle="modal" data-target="#legend">
+                            <div style="cursor: pointer;" class="nav-link text-dark p-3 mb-2 sidebar-link"
+                                data-toggle="modal" data-target="#legend">
                                 <i class="fas fa-exclamation text-dark fa-lg mr-3"></i>
                                 Legende
                             </div>
@@ -759,10 +764,119 @@
         Sortable.create(topicWrapper, {});
     </script>
 
+    <script src="js/util.js"></script>
     <script src="script.js"></script>
     <script src="js/sideBar.js"></script>
     <script src="js/addBlocks.js"></script>
     <script src="js/entities.js"></script>
+
+    <script>
+        let data = {
+            "Metadata": {
+                "chatbotID": 48732,
+                "UserID": 19935,
+                "name": "Pizza Place",
+                "settings": {
+                    "onboarding": "Intent-ID",
+                    "icon": "pizzaIcon",
+                    "delay": null,
+                    "typingSymbol": null,
+                    "isActive": true
+                }
+            },
+            "Content": {
+                "globals": [
+                    {
+                        "globalID": null,
+                        "text": null,
+                        "isActive": false,
+                        "delay": 2,
+                        "richInteractions": [
+                            {
+                                "id": 5,
+                                "data": null,
+                                "dataType": "Picture/Button/Textfile/etc.",
+                                "showData": true
+                            }
+                        ]
+                    }
+                ],
+                "fallbacks": [
+                    {
+                        "fallbackID": 1,
+                        "textPool": [
+                            "Das habe ich leider nicht verstanden. Könnten Sie das wiederholen?"
+                        ],
+                        "Text": 0,
+                        "isActive": false,
+                        "delay": 2,
+                        "Successor": "ursprüngliche Dialog-ID",
+                        "richInteractions": [
+                            {
+                                "id": 5,
+                                "data": null,
+                                "mimeType": "Picture/Button/Textfile/etc.",
+                                "showData": true
+                            }
+                        ]
+                    }
+                ],
+                "intents": [
+                    {
+                        "intentID": null,
+                        "topic": "Email",
+                        "icon": "exclamation mark",
+                        "isActive": false,
+                        "isOnboarding": true,
+                        "predecessor": null,
+                        "successor": [
+                            1422,
+                            8723
+                        ],
+                        "dialogs": [
+                            {
+                                "dialogID": 1,
+                                "textPool": [
+                                    "Kann ich sie haben?",
+                                    "Kriege ich deine Adresse?"
+                                ],
+                                "chosenText": null,
+                                "possibleAnswers": [],
+                                "answerType": "global/lokal",
+                                "isActive": false,
+                                "type": "question",
+                                "delay": 2,
+                                "possibleSuccessorDialogs": [
+                                    5,
+                                    6
+                                ],
+                                "forwarding": null,
+                                "triggerNotification": "notificationID",
+                                "richInteractions": [
+                                    {
+                                        "id": 5,
+                                        "data": null,
+                                        "mimeType": "Picture/Textfile/Video/etc.",
+                                        "showData": true
+                                    }
+                                ],
+                                "slot (Entities)": [
+                                    {
+                                        "slotID": null,
+                                        "slotName": null,
+                                        "required": true,
+                                        "isActive": false,
+                                        "comment": null
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        };
+        json2Intent(data);
+    </script>
 </body>
 
 </html>

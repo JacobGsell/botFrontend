@@ -12,6 +12,362 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <title>Detailansicht</title>
+  <!-- TEST JSON -->
+  <script>
+    let json = {
+      "chatbots": [{
+          "Metadata": {
+            "chatbotID": 48732,
+            "UserID": 19935,
+            "name": "Pizza Place",
+            "settings": {
+              "onboarding": "Intent-ID",
+              "icon": "pizzaIcon",
+              "delay": null,
+              "typingSymbol": null,
+              "isActive": true
+            }
+          },
+          "Content": {
+            "globals": [{
+              "globalID": null,
+              "text": null,
+              "isActive": false,
+              "delay": 2,
+              "richInteractions": [{
+                "id": 5,
+                "data": null,
+                "dataType": "Picture/Button/Textfile/etc.",
+                "showData": true
+              }]
+            }],
+            "fallbacks": [{
+              "fallbackID": 1,
+              "textPool": [
+                "Das habe ich leider nicht verstanden. Könnten Sie das wiederholen?"
+              ],
+              "Text": 0,
+              "isActive": false,
+              "delay": 2,
+              "Successor": "ursprüngliche Dialog-ID",
+              "richInteractions": [{
+                "id": 5,
+                "data": null,
+                "mimeType": "Picture/Button/Textfile/etc.",
+                "showData": true
+              }]
+            }],
+            "intents (Konversationen)": [{
+                "intentID": null,
+                "topic": "Willkommen",
+                "icon": "exclamation mark",
+                "isActive": false,
+                "isOnboarding": true,
+                "predecessor": null,
+                "successor": [
+                  1422,
+                  8723
+                ],
+                "dialogs": [{
+                    "dialogID": 1,
+                    "textPool": [
+                      "Herzlich willkommen",
+                      "Kriege ich deine Adresse?"
+                    ],
+                    "chosenText": null,
+                    "possibleAnswers": [],
+                    "answerType": "global/lokal",
+                    "isActive": false,
+                    "type": "question",
+                    "delay": 2,
+                    "possibleSuccessorDialogs": [
+                      5,
+                      6
+                    ],
+                    "forwarding": null,
+                    "triggerNotification": "notificationID",
+                    "richInteractions": [{
+                      "id": 5,
+                      "data": null,
+                      "mimeType": "Picture/Textfile/Video/etc.",
+                      "showData": true
+                    }],
+                    "slot (Entities)": [{
+                      "slotID": 1,
+                      "slotName": "plz",
+                      "required": true,
+                      "isActive": false,
+                      "comment": null
+                    }, {
+                      "slotID": 2,
+                      "slotName": "address",
+                      "required": true,
+                      "isActive": false,
+                      "comment": null
+                    }, {
+                      "slotID": 3,
+                      "slotName": "pizzaType",
+                      "required": true,
+                      "isActive": false,
+                      "comment": null
+                    }]
+                  },
+                  {
+                    "dialogID": 2,
+                    "textPool": [
+                      "Sie möchten gerne etwas bestellen.",
+                      "Kriege ich deine Adresse?"
+                    ],
+                    "chosenText": null,
+                    "possibleAnswers": [],
+                    "answerType": "global/lokal",
+                    "isActive": false,
+                    "type": "question",
+                    "delay": 2,
+                    "possibleSuccessorDialogs": [
+                      5,
+                      6
+                    ],
+                    "forwarding": null,
+                    "triggerNotification": "notificationID",
+                    "richInteractions": [{
+                      "id": 5,
+                      "data": null,
+                      "mimeType": "Picture/Textfile/Video/etc.",
+                      "showData": true
+                    }],
+                    "slot (Entities)": [{
+                      "slotID": null,
+                      "slotName": null,
+                      "required": true,
+                      "isActive": false,
+                      "comment": null
+                    }]
+                  },
+                  {
+                    "dialogID": 3,
+                    "textPool": [
+                      "Ihre Straße ist {{ straße }}.",
+                      "Kriege ich deine Adresse?"
+                    ],
+                    "chosenText": null,
+                    "possibleAnswers": [],
+                    "answerType": "global/lokal",
+                    "isActive": false,
+                    "type": "question",
+                    "delay": 2,
+                    "possibleSuccessorDialogs": [
+                      5,
+                      6
+                    ],
+                    "forwarding": null,
+                    "triggerNotification": "notificationID",
+                    "richInteractions": [{
+                      "id": 5,
+                      "data": null,
+                      "mimeType": "Picture/Textfile/Video/etc.",
+                      "showData": true
+                    }],
+                    "slot (Entities)": [{
+                      "slotID": null,
+                      "slotName": null,
+                      "required": true,
+                      "isActive": false,
+                      "comment": null
+                    }]
+                  }
+                ]
+              },
+              {
+                "intentID": null,
+                "topic": "Bestellung",
+                "icon": "exclamation mark",
+                "isActive": false,
+                "isOnboarding": true,
+                "predecessor": null,
+                "successor": [
+                  1422,
+                  8723
+                ],
+                "dialogs": [{
+                  "dialogID": 1,
+                  "textPool": [
+                    "Kann ich sie haben?",
+                    "Kriege ich deine Adresse?"
+                  ],
+                  "chosenText": null,
+                  "possibleAnswers": [],
+                  "answerType": "global/lokal",
+                  "isActive": false,
+                  "type": "question",
+                  "delay": 2,
+                  "possibleSuccessorDialogs": [
+                    5,
+                    6
+                  ],
+                  "forwarding": null,
+                  "triggerNotification": "notificationID",
+                  "richInteractions": [{
+                    "id": 5,
+                    "data": null,
+                    "mimeType": "Picture/Textfile/Video/etc.",
+                    "showData": true
+                  }],
+                  "slot (Entities)": [{
+                    "slotID": null,
+                    "slotName": null,
+                    "required": true,
+                    "isActive": false,
+                    "comment": null
+                  }]
+                }]
+              },
+              {
+                "intentID": null,
+                "topic": "Abschied nehmen",
+                "icon": "exclamation mark",
+                "isActive": false,
+                "isOnboarding": true,
+                "predecessor": null,
+                "successor": [
+                  1422,
+                  8723
+                ],
+                "dialogs": [{
+                  "dialogID": 1,
+                  "textPool": [
+                    "Kann ich sie haben?",
+                    "Kriege ich deine Adresse?"
+                  ],
+                  "chosenText": null,
+                  "possibleAnswers": [],
+                  "answerType": "global/lokal",
+                  "isActive": false,
+                  "type": "question",
+                  "delay": 2,
+                  "possibleSuccessorDialogs": [
+                    5,
+                    6
+                  ],
+                  "forwarding": null,
+                  "triggerNotification": "notificationID",
+                  "richInteractions": [{
+                    "id": 5,
+                    "data": null,
+                    "mimeType": "Picture/Textfile/Video/etc.",
+                    "showData": true
+                  }],
+                  "slot (Entities)": [{
+                    "slotID": null,
+                    "slotName": null,
+                    "required": true,
+                    "isActive": false,
+                    "comment": null
+                  }]
+                }]
+              }
+            ]
+          }
+        },
+        {
+          "Metadata": {
+            "chatbotID": 48732,
+            "UserID": 19935,
+            "name": "Pizza Place",
+            "settings": {
+              "onboarding": "Intent-ID",
+              "icon": "pizzaIcon",
+              "delay": null,
+              "typingSymbol": null,
+              "isActive": true
+            }
+          },
+          "Content": {
+            "globals": [{
+              "globalID": null,
+              "text": null,
+              "isActive": false,
+              "delay": 2,
+              "richInteractions": [{
+                "id": 5,
+                "data": null,
+                "dataType": "Picture/Button/Textfile/etc.",
+                "showData": true
+              }]
+            }],
+            "fallbacks": [{
+              "fallbackID": 1,
+              "textPool": [
+                "Das habe ich leider nicht verstanden. Könnten Sie das wiederholen?"
+              ],
+              "Text": 0,
+              "isActive": false,
+              "delay": 2,
+              "Successor": "ursprüngliche Dialog-ID",
+              "richInteractions": [{
+                "id": 5,
+                "data": null,
+                "mimeType": "Picture/Button/Textfile/etc.",
+                "showData": true
+              }]
+            }],
+            "intents (Konversationen)": [{
+              "intentID": null,
+              "topic": "Email",
+              "icon": "exclamation mark",
+              "isActive": false,
+              "isOnboarding": true,
+              "predecessor": null,
+              "successor": [
+                1422,
+                8723
+              ],
+              "dialogs": [{
+                "dialogID": 1,
+                "textPool": [
+                  "Kann ich sie haben?",
+                  "Kriege ich deine Adresse?"
+                ],
+                "chosenText": null,
+                "possibleAnswers": [],
+                "answerType": "global/lokal",
+                "isActive": false,
+                "type": "question",
+                "delay": 2,
+                "possibleSuccessorDialogs": [
+                  5,
+                  6
+                ],
+                "forwarding": null,
+                "triggerNotification": "notificationID",
+                "richInteractions": [{
+                  "id": 5,
+                  "data": null,
+                  "mimeType": "Picture/Textfile/Video/etc.",
+                  "showData": true
+                }],
+                "slot (Entities)": [{
+                  "slotID": null,
+                  "slotName": null,
+                  "required": true,
+                  "isActive": false,
+                  "comment": null
+                }]
+              }]
+            }]
+          }
+        }
+      ]
+    }
+
+
+    console.log('Anzahl Dialoge', json["chatbots"][0]['Content']['intents (Konversationen)'][0]['dialogs'].length)
+    console.log('Dialoge', json["chatbots"][0]['Content']['intents (Konversationen)'][0]['dialogs'])
+
+    console.log('Anzahl slots', json["chatbots"][0]['Content']['intents (Konversationen)'][0]['dialogs'][0]['slot (Entities)'].length)
+    console.log('Slots', json["chatbots"][0]['Content']['intents (Konversationen)'][0]['dialogs'][0]['slot (Entities)'])
+    console.log(json);
+  </script>
 </head>
 
 <body>
@@ -336,97 +692,99 @@
             </thead>
             <tbody>
               <tr>
-                  <th scope="row">
-                      <i class="far fa-image"></i>
-                  </th>
-                  <td>Profilbild</td>
-                  <td>Dateiupload für ein Profilbild</td>
+                <th scope="row">
+                  <i class="far fa-image"></i>
+                </th>
+                <td>Profilbild</td>
+                <td>Dateiupload für ein Profilbild</td>
               </tr>
               <tr>
-                  <th scope="row">
-                      <i class="fas fa-pen"></i>
-                  </th>
-                  <td>Bearbeiten</td>
-                  <td>Abänderung von Inhalten</td>
+                <th scope="row">
+                  <i class="fas fa-pen"></i>
+                </th>
+                <td>Bearbeiten</td>
+                <td>Abänderung von Inhalten</td>
               </tr>
               <tr>
-                  <th scope="row">
-                      <i class="fas fa-trash-alt"></i>
-                  </th>
-                  <td>Entfernen</td>
-                  <td>Löscht das entsprechende Element</td>
+                <th scope="row">
+                  <i class="fas fa-trash-alt"></i>
+                </th>
+                <td>Entfernen</td>
+                <td>Löscht das entsprechende Element</td>
               </tr>
               <tr>
-                  <th scope="row">
-                      <i class="fas fa-eye"></i>
-                  </th>
-                  <td>Views</td>
-                  <td>Gibt an, wie oft mit dem Bot interagiert wurde</td>
+                <th scope="row">
+                  <i class="fas fa-eye"></i>
+                </th>
+                <td>Views</td>
+                <td>Gibt an, wie oft mit dem Bot interagiert wurde</td>
               </tr>
               <tr>
-                  <th scope="row">
-                      <i class="far fa-list-alt"></i>
-                  </th>
-                  <td>Gesamtansicht</td>
-                  <td>Öffnet eine Visualisierung der gesamten Chatbotstruktur</td>
+                <th scope="row">
+                  <i class="far fa-list-alt"></i>
+                </th>
+                <td>Gesamtansicht</td>
+                <td>Öffnet eine Visualisierung der gesamten Chatbotstruktur</td>
               </tr>
               <tr>
-                  <th scope="row">
-                      <i class="fas fa-redo"></i>
-                  </th>
-                  <td>Max. Wiederholungen</td>
-                  <td>Gibt an, wie oft ein Text vom Chatbot höchstens wiederholt wird</td>
+                <th scope="row">
+                  <i class="fas fa-redo"></i>
+                </th>
+                <td>Max. Wiederholungen</td>
+                <td>Gibt an, wie oft ein Text vom Chatbot höchstens wiederholt wird</td>
               </tr>
               <tr>
-                  <th scope="row">
-                      <i class="far fa-clock"></i>
-                  </th>
-                  <td>Delay</td>
-                  <td>Gibt Verzögerung an, bevor Text ausgegeben wird</td>
+                <th scope="row">
+                  <i class="far fa-clock"></i>
+                </th>
+                <td>Delay</td>
+                <td>Gibt Verzögerung an, bevor Text ausgegeben wird</td>
               </tr>
               <tr>
-                  <th scope="row">
-                      <i class="fas fa-square"></i>
-                  </th>
-                  <td>Typ</td>
-                  <td>Der Typ eines Texts kann eine Nachricht, eine Frage oder eine Button-Gruppe sein</td>
+                <th scope="row">
+                  <i class="fas fa-square"></i>
+                </th>
+                <td>Typ</td>
+                <td>Der Typ eines Texts kann eine Nachricht, eine Frage oder eine Button-Gruppe sein</td>
               </tr>
               <tr>
-                  <th scope="row">
-                      <i class="far fa-circle"></i>
-                  </th>
-                  <td>Slots</td>
-                  <td>Gibt der Nachricht einen Slot mitsamt optionaler Beschreibung, der befüllt werden soll</td>
+                <th scope="row">
+                  <i class="far fa-circle"></i>
+                </th>
+                <td>Slots</td>
+                <td>Gibt der Nachricht einen Slot mitsamt optionaler Beschreibung, der befüllt werden soll</td>
               </tr>
               <tr>
-                  <th scope="row">
-                      <i class="fas fa-forward"></i>
-                  </th>
-                  <td>Mögl. Nachfolger</td>
-                  <td>Alle Nachrichten, die auf die aktuelle folgen könnten. Zu jedem Nachfolger wird eine <b>Bedingung</b> angegeben</td>
+                <th scope="row">
+                  <i class="fas fa-forward"></i>
+                </th>
+                <td>Mögl. Nachfolger</td>
+                <td>Alle Nachrichten, die auf die aktuelle folgen könnten. Zu jedem Nachfolger wird eine
+                  <b>Bedingung</b> angegeben</td>
               </tr>
               <tr>
-                  <th scope="row">
-                      <i class="fa fa-arrow-down"></i>
-                  </th>
-                  <td>Bedingung</td>
-                  <td>Nutzereingaben, die zu einem <b>möglichen Nachfolger</b> führen</td>
+                <th scope="row">
+                  <i class="fa fa-arrow-down"></i>
+                </th>
+                <td>Bedingung</td>
+                <td>Nutzereingaben, die zu einem <b>möglichen Nachfolger</b> führen</td>
               </tr>
               <tr>
-                  <th scope="row">
-                      <i class="fas fa-comment"></i>
-                  </th>
-                  <td>Text-Pool</td>
-                  <td>Menge aus Texten, aus denen zufällig gewählt wird, welchen der Bot in der entsprechenden Nachricht an den Nutzer schickt</td>
+                <th scope="row">
+                  <i class="fas fa-comment"></i>
+                </th>
+                <td>Text-Pool</td>
+                <td>Menge aus Texten, aus denen zufällig gewählt wird, welchen der Bot in der entsprechenden Nachricht
+                  an den Nutzer schickt</td>
               </tr>
               <tr>
-                  <th scope="row">
-                      <i class="fas fa-plus-square"></i>
-                  </th>
-                  <td>Hinzufügen</td>
-                  <td>Fügt ein neues Element der entsprechenden Menge hinzu</td>
+                <th scope="row">
+                  <i class="fas fa-plus-square"></i>
+                </th>
+                <td>Hinzufügen</td>
+                <td>Fügt ein neues Element der entsprechenden Menge hinzu</td>
               </tr>
-          </tbody>
+            </tbody>
           </table>
         </div>
         <div class="modal-footer">
@@ -500,11 +858,12 @@
               </a>
             </li>
             <li class="nav-item">
-              <div style="cursor: pointer;" class="nav-link text-dark p-3 mb-2 sidebar-link" data-toggle="modal" data-target="#legend">
-                  <i class="fas fa-exclamation text-dark fa-lg mr-3"></i>
-                  Legende
+              <div style="cursor: pointer;" class="nav-link text-dark p-3 mb-2 sidebar-link" data-toggle="modal"
+                data-target="#legend">
+                <i class="fas fa-exclamation text-dark fa-lg mr-3"></i>
+                Legende
               </div>
-          </li>
+            </li>
             <li class="nav-item">
               <a href="#" class="nav-link text-dark p-3 mb-2 sidebar-link" data-toggle="modal" data-target="#sign-out"">
                 <i class=" fas fa-sign-out-alt text-dark fa-lg mr-3"></i>
@@ -658,14 +1017,14 @@
   <!-- end of cards -->
 
   <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+  </script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-    crossorigin="anonymous"></script>
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+  </script>
   <script src="script.js"></script>
   <script src="js/sideBar.js"></script>
   <script src="js/addBlocks.js"></script>

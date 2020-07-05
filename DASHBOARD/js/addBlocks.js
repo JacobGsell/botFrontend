@@ -256,7 +256,6 @@ class TextPoolFactory {
         Sidebar.updateNoticeText();
         Sidebar.updateQuestionText();
     }
-
     
     /**
      * @param  {Object} self aka this

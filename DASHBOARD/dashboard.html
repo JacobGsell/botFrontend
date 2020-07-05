@@ -11,6 +11,192 @@
     <script defer src="https://use.fontawesome.com/releases/v5.12.1/js/all.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
+    <!-- TEST JSON -->
+    <script>
+        let json = {
+            "chatbots": [{
+                    "Metadata": {
+                        "chatbotID": 48732,
+                        "UserID": 19935,
+                        "name": "Pizza Place",
+                        "settings": {
+                            "onboarding": "Intent-ID",
+                            "icon": "pizzaIcon",
+                            "delay": null,
+                            "typingSymbol": null,
+                            "isActive": true
+                        }
+                    },
+                    "Content": {
+                        "globals": [{
+                            "globalID": null,
+                            "text": null,
+                            "isActive": false,
+                            "delay": 2,
+                            "richInteractions": [{
+                                "id": 5,
+                                "data": null,
+                                "dataType": "Picture/Button/Textfile/etc.",
+                                "showData": true
+                            }]
+                        }],
+                        "fallbacks": [{
+                            "fallbackID": 1,
+                            "textPool": [
+                                "Das habe ich leider nicht verstanden. Könnten Sie das wiederholen?"
+                            ],
+                            "Text": 0,
+                            "isActive": false,
+                            "delay": 2,
+                            "Successor": "ursprüngliche Dialog-ID",
+                            "richInteractions": [{
+                                "id": 5,
+                                "data": null,
+                                "mimeType": "Picture/Button/Textfile/etc.",
+                                "showData": true
+                            }]
+                        }],
+                        "intents (Konversationen)": [{
+                            "intentID": null,
+                            "topic": "Email",
+                            "icon": "exclamation mark",
+                            "isActive": false,
+                            "isOnboarding": true,
+                            "predecessor": null,
+                            "successor": [
+                                1422,
+                                8723
+                            ],
+                            "dialogs": [{
+                                "dialogID": 1,
+                                "textPool": [
+                                    "Kann ich sie haben?",
+                                    "Kriege ich deine Adresse?"
+                                ],
+                                "chosenText": null,
+                                "possibleAnswers": [],
+                                "answerType": "global/lokal",
+                                "isActive": false,
+                                "type": "question",
+                                "delay": 2,
+                                "possibleSuccessorDialogs": [
+                                    5,
+                                    6
+                                ],
+                                "forwarding": null,
+                                "triggerNotification": "notificationID",
+                                "richInteractions": [{
+                                    "id": 5,
+                                    "data": null,
+                                    "mimeType": "Picture/Textfile/Video/etc.",
+                                    "showData": true
+                                }],
+                                "slot (Entities)": [{
+                                    "slotID": null,
+                                    "slotName": null,
+                                    "required": true,
+                                    "isActive": false,
+                                    "comment": null
+                                }]
+                            }]
+                        }]
+                    }
+                },
+                {
+                    "Metadata": {
+                        "chatbotID": 48732,
+                        "UserID": 19935,
+                        "name": "Pizza Place",
+                        "settings": {
+                            "onboarding": "Intent-ID",
+                            "icon": "pizzaIcon",
+                            "delay": null,
+                            "typingSymbol": null,
+                            "isActive": true
+                        }
+                    },
+                    "Content": {
+                        "globals": [{
+                            "globalID": null,
+                            "text": null,
+                            "isActive": false,
+                            "delay": 2,
+                            "richInteractions": [{
+                                "id": 5,
+                                "data": null,
+                                "dataType": "Picture/Button/Textfile/etc.",
+                                "showData": true
+                            }]
+                        }],
+                        "fallbacks": [{
+                            "fallbackID": 1,
+                            "textPool": [
+                                "Das habe ich leider nicht verstanden. Könnten Sie das wiederholen?"
+                            ],
+                            "Text": 0,
+                            "isActive": false,
+                            "delay": 2,
+                            "Successor": "ursprüngliche Dialog-ID",
+                            "richInteractions": [{
+                                "id": 5,
+                                "data": null,
+                                "mimeType": "Picture/Button/Textfile/etc.",
+                                "showData": true
+                            }]
+                        }],
+                        "intents (Konversationen)": [{
+                            "intentID": null,
+                            "topic": "Email",
+                            "icon": "exclamation mark",
+                            "isActive": false,
+                            "isOnboarding": true,
+                            "predecessor": null,
+                            "successor": [
+                                1422,
+                                8723
+                            ],
+                            "dialogs": [{
+                                "dialogID": 1,
+                                "textPool": [
+                                    "Kann ich sie haben?",
+                                    "Kriege ich deine Adresse?"
+                                ],
+                                "chosenText": null,
+                                "possibleAnswers": [],
+                                "answerType": "global/lokal",
+                                "isActive": false,
+                                "type": "question",
+                                "delay": 2,
+                                "possibleSuccessorDialogs": [
+                                    5,
+                                    6
+                                ],
+                                "forwarding": null,
+                                "triggerNotification": "notificationID",
+                                "richInteractions": [{
+                                    "id": 5,
+                                    "data": null,
+                                    "mimeType": "Picture/Textfile/Video/etc.",
+                                    "showData": true
+                                }],
+                                "slot (Entities)": [{
+                                    "slotID": null,
+                                    "slotName": null,
+                                    "required": true,
+                                    "isActive": false,
+                                    "comment": null
+                                }]
+                            }]
+                        }]
+                    }
+                }
+            ]
+        }
+
+        console.log('name', json["chatbots"][0]['Metadata'].name);
+        console.log('Anzahl Intents', json["chatbots"][0]['Content']['intents (Konversationen)'].length);
+        console.log(json);
+    </script>
     <title>Dashboard</title>
 </head>
 
@@ -22,7 +208,7 @@
             <div class="col-2 sidebar fixed-top d-none d-sm-none d-lg-block" id="navbarNav">
                 <div class="bottom-border pt-4">
                     <h3 href=#" id="bot-title" class="text-dark" onclick="Sidebar.EditBotTitle()">
-                        Studierfähigkeit
+                        Neuer Chatbot
                         <span class="badge badge-warning float-right"><i class="fas fa-pen"></i></span>
                     </h3>
                     <div id="bot-title-edit" class="input-group mb-3">
@@ -169,21 +355,24 @@
                                     <i class="fas fa-square"></i>
                                 </th>
                                 <td>Typ</td>
-                                <td>Der Typ eines Texts kann eine Nachricht, eine Frage oder eine Button-Gruppe sein</td>
+                                <td>Der Typ eines Texts kann eine Nachricht, eine Frage oder eine Button-Gruppe sein
+                                </td>
                             </tr>
                             <tr>
                                 <th scope="row">
                                     <i class="far fa-circle"></i>
                                 </th>
                                 <td>Slots</td>
-                                <td>Gibt der Nachricht einen Slot mitsamt optionaler Beschreibung, der befüllt werden soll</td>
+                                <td>Gibt der Nachricht einen Slot mitsamt optionaler Beschreibung, der befüllt werden
+                                    soll</td>
                             </tr>
                             <tr>
                                 <th scope="row">
                                     <i class="fas fa-forward"></i>
                                 </th>
                                 <td>Mögl. Nachfolger</td>
-                                <td>Alle Nachrichten, die auf die aktuelle folgen könnten. Zu jedem Nachfolger wird eine <b>Bedingung</b> angegeben</td>
+                                <td>Alle Nachrichten, die auf die aktuelle folgen könnten. Zu jedem Nachfolger wird eine
+                                    <b>Bedingung</b> angegeben</td>
                             </tr>
                             <tr>
                                 <th scope="row">
@@ -197,7 +386,8 @@
                                     <i class="fas fa-comment"></i>
                                 </th>
                                 <td>Text-Pool</td>
-                                <td>Menge aus Texten, aus denen zufällig gewählt wird, welchen der Bot in der entsprechenden Nachricht an den Nutzer schickt</td>
+                                <td>Menge aus Texten, aus denen zufällig gewählt wird, welchen der Bot in der
+                                    entsprechenden Nachricht an den Nutzer schickt</td>
                             </tr>
                             <tr>
                                 <th scope="row">
@@ -300,7 +490,8 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <div style="cursor: pointer;" class="nav-link text-dark p-3 mb-2 sidebar-link" data-toggle="modal" data-target="#legend">
+                            <div style="cursor: pointer;" class="nav-link text-dark p-3 mb-2 sidebar-link"
+                                data-toggle="modal" data-target="#legend">
                                 <i class="fas fa-exclamation text-dark fa-lg mr-3"></i>
                                 Legende
                             </div>
@@ -327,7 +518,7 @@
                                     <div class="card-body">
                                         <div class="display-flex justify-content-between">
                                             <div class="text-right text-secondary">
-                                                <h5>Pizza Place</h5>
+                                                <h5>Neuer Chatbot</h5>
                                                 <h6>5 Konversationen</h6>
                                             </div>
                                         </div>
@@ -443,18 +634,20 @@
 
     <!-- end of cards -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
     <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/jquery-sortablejs@latest/jquery-sortable.js"></script>
     <script>
-        Sortable.create(botList, { /* options */ });
+        Sortable.create(botList, {
+            /* options */
+        });
     </script>
 
     <script src="script.js"></script>
